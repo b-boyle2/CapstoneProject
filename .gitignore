@@ -30,3 +30,19 @@
 *.exe
 *.out
 *.app
+
+*.psd
+
+# XAMPP / OS
+.DS_Store
+Thumbs.db
+
+# Environment / credentials
+.env
+config.local.php
+
+# Dependency folders
+node_modules/
+
+# Logs
+*.log
