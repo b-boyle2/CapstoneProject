@@ -30,12 +30,44 @@
 
     <div class="mainSection">
         <div class="header">
-            <h1>Products</h1>  
+            <h1>Products</h1>
         </div>
 
         <div class="content">
             <div class="section">
-                
+                <form action="">
+                    <label for="weaponType" id="weaponTypeSelection"></label>
+                    <select name="weaponTypeSelection" id="weaponTypeSelection">
+                        <option value="swords">Swords</option>
+                        <option value="daggers">Daggers</option>
+                        <option value="bunthandweapons">Blunt Hand</option>
+                        <option value="polearms">Polearms</option>
+                        <option value="ranger">Ranged</option>
+                    </select>
+                </form>
+                <table class="listedItems">
+                    <tr>
+                        <th class="edit"></th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Subcategory</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td class="edit"><img src="Images/pencilIcon.svg" class="editIcon" alt=""></td>
+                        <td>The Duskward Defender</td>
+                        <td>../Images/ArmingSwords/duskwardDefender.png</td>
+                        <td>Arming Sword</td>
+                        <td>1200</td>
+                    </tr>
+                    <tr>
+                        <td class="edit"><img src="Images/pencilIcon.svg" class="editIcon" alt=""></td>
+                        <td>The Duskward Defender</td>
+                        <td>../Images/ArmingSwords/duskwardDefender.png</td>
+                        <td>Arming Sword</td>
+                        <td>1200</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

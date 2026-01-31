@@ -106,3 +106,28 @@ h1.siteTitle{
     margin: 15px 0 20px 20px;
     font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
 }
+
+.section{
+    width: 95%;
+    box-shadow: 3px 0 7px 0 rgba(0,0,0,0.15);
+    border-radius: 8px;
+    margin-top: 27px;
+    padding: 7px 10px;
+}
+
+.listedItems{
+    width: 100%;
+    text-align: left;
+}
+
+td{
+    vertical-align: middle;
+}
+
+.edit{
+    justify-content: center;
+}
+
+.editIcon{
+    width: 17px;
+}
