@@ -1,0 +1,108 @@
+@font-face {
+    font-family: medievalSharp;
+    src: url('../Fonts/MedievalSharp/MedievalSharp-Regular.woff2') format('woff2');
+    src: url('../Fonts/MedievalSharp/MedievalSharp-Regular.woff') format('woff'),
+         url('../Fonts/MedievalSharp/MedievalSharp-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+:root{
+    --mainDarkGray: #0E1010;
+    --darkRed: #991B1E;
+    --gray: #3C3F40;
+    --gold: #926D41;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--mainDarkGray);
+    font-family: 'palatino-linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+.mainSection{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #abb0b127;
+    padding-left: 50px;
+}
+
+nav{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-shadow: 3px 0 7px 0 rgba(0,0,0,0.15);
+    width: fit-content;
+}
+
+.navLink{
+    display: flex;
+    padding: 15px 0px 15px 30px;
+    border: none;
+    background-color: white;
+    width: 230px;
+    font-size: 13pt;
+    text-align: left;
+    align-items: center;
+}
+
+.navLink:hover{
+    background-color: var(--darkRed);
+    color: white;
+}
+
+#here{
+    background-color: var(--darkRed);
+    color: white;
+    font-weight: bold;
+}
+
+.navLink:hover .navIcon, #here .navIcon{
+    filter: invert(100%);
+}
+
+.navIcon{
+    width: 21px;
+    margin-right: 10px;
+}
+
+.collapseNav{
+    all: unset;
+    position: absolute;
+    top: 17px;
+    right: 7px;
+    width: 20px;
+    height: 20px;
+}
+
+.chevron:after {
+    content: ' ';
+    display: inline-block;
+    border-bottom: 3px solid var(--mainDarkGray);
+    border-right: 3px solid var(--mainDarkGray);
+    height: 8px;
+    width: 8px;
+    transform: rotate(135deg);
+}
+
+h1{
+    font-size: 17pt;
+    font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
+    color: var(--mainDarkGray);
+    margin-top: 15px;
+}
+
+h1.siteTitle{
+    font-size: 1.5em;
+    margin: 15px 0 20px 20px;
+    font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
+}
