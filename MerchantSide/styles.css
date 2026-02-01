@@ -107,12 +107,94 @@ h1.siteTitle{
     font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
 }
 
+/* FILTERS START */
+.filterSelect{
+    position: relative;
+    min-width: 150px;
+    width: fit-content;
+    cursor: pointer;
+    justify-self: flex-end;
+    margin: 0 24px;
+    background-color: var(--gold);
+}
+
+.filterSelect::before,
+.filterSelect::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  background: inherit;
+}
+
+.filterSelect::before {
+  left: -22px;
+  clip-path: polygon(90% 0, 100% 0, 100% 100%, 90% 100%, 15% 50%)
+}
+
+.filterSelect::after {
+  right: -22px;
+  clip-path: polygon(10% 0, 0 0, 0 100%, 10% 100%, 75% 50%);
+}
+
+.filterSelect .subcategoryFilter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 15px;
+    font-size: 13pt;
+    z-index: 10;
+    color: white;
+}
+.subcategoryFilter span, .options div{
+    color: white;
+}
+.filterSelect .options{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-radius: 0px 0px 8px 8px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: inherit;
+    color: white;
+}
+
+.filterSelect .options div:hover{
+    background-color: var(--gold);
+}
+
+.filterSelect .options div{
+    padding: 8px;
+    background-color: var(--mainDarkGray);
+}
+
+.filterCarrot{
+    width: 0.8em;
+    height: 0.5em;
+    margin-left: 10px;
+    background-color: white;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+/* FILTERS END */
+
 .section{
+    background-color: white;
     width: 95%;
     box-shadow: 3px 0 7px 0 rgba(0,0,0,0.15);
     border-radius: 8px;
     margin-top: 27px;
-    padding: 7px 10px;
+    padding: 7px 10px 10px;
+}
+
+.sectionHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .listedItems{
@@ -125,9 +207,25 @@ td{
 }
 
 .edit{
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .editIcon{
     width: 17px;
+}
+
+select, select:focus{
+    border: none;
+    font-size: 24px;
+}
+
+select option{
+    font-size: 15px;
+    border: none;
+}
+
+table{
+    border-spacing: 0 10px;
 }

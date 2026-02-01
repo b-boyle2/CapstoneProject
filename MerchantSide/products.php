@@ -31,45 +31,104 @@
     <div class="mainSection">
         <div class="header">
             <h1>Products</h1>
+            
         </div>
 
         <div class="content">
             <div class="section">
-                <form action="">
-                    <label for="weaponType" id="weaponTypeSelection"></label>
-                    <select name="weaponTypeSelection" id="weaponTypeSelection">
-                        <option value="swords">Swords</option>
-                        <option value="daggers">Daggers</option>
-                        <option value="bunthandweapons">Blunt Hand</option>
-                        <option value="polearms">Polearms</option>
-                        <option value="ranger">Ranged</option>
-                    </select>
-                </form>
+                <div class="sectionHeader">
+                    <form action="">
+                        <label for="weaponTypeSelection"></label>
+                        <select name="weaponTypeSelection" id="weaponTypeSelection">
+                            <option value="swords">Swords</option>
+                            <option value="daggers">Daggers</option>
+                            <option value="blunthandweapons">Blunt Hand</option>
+                            <option value="polearms">Polearms</option>
+                            <option value="ranged">Ranged</option>
+                        </select>
+                    </form>
+
+                    <div class="filterSelect">
+                        <div class="subcategoryFilter" id="swords">
+                            <span class="selected">All</span>
+                            <div class="filterCarrot"></div>
+                            <div class="options">
+                                <div data-value="">All</div>
+                                <div data-value="1">Arming Swords</div>
+                                <div data-value="2">Broadswords</div>
+                                <div data-value="3">Longswords</div>
+                                <div data-value="4">Falchions</div>
+                            </div>
+                        </div>
+
+                        <div class="subcategoryFilter" id="daggers">
+                            <span class="selected">All</span>
+                            <div class="filterCarrot"></div>
+                            <div class="options">
+                                <div data-value="">All</div>
+                                <div data-value="5">Anelace</div>
+                                <div data-value="6">Stiletto</div>
+                                <div data-value="7">Poignard</div>
+                                <div data-value="8">Rondel</div>
+                                <div data-value="9">Sica</div>
+                                <div data-value="10">Dagger</div>
+                            </div>
+                        </div>
+
+                        <div class="subcategoryFilter" id=blunthandweapons>
+                            <span class="selected">All</span>
+                            <div class="filterCarrot"></div>
+                            <div class="options">
+                                <div data-value="">All</div>
+                                <div data-value="11">Mace</div>
+                                <div data-value="12">Morningstar</div>
+                                <div data-value="13">Flail</div>
+                                <div data-value="14">War Hammer</div>
+                                <div data-value="15">Horsemen's Pick</div>
+                            </div>
+                        </div>
+
+                        <div class="subcategoryFilter" id="polearms">
+                            <span class="selected">All</span>
+                            <div class="filterCarrot"></div>
+                            <div class="options">
+                                <div data-value="">All</div>
+                                <div data-value="16">Spear</div>
+                                <div data-value="17">Lance</div>
+                                <div data-value="18">Poleaxe</div>
+                                <div data-value="19">Halberd</div>
+                                <div data-value="20">Corseque</div>
+                            </div>
+                        </div>
+
+                        <div class="subcategoryFilter" id="ranged">
+                            <span class="selected">All</span>
+                            <div class="filterCarrot"></div>
+                            <div class="options">
+                                <div data-value="">All</div>
+                                <div data-value="21">Throwing Axes</div>
+                                <div data-value="22">Javelins</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <table class="listedItems">
-                    <tr>
+                    <thead>
                         <th class="edit"></th>
                         <th>Name</th>
                         <th>Image</th>
                         <th>Subcategory</th>
                         <th>Price</th>
-                    </tr>
-                    <tr>
-                        <td class="edit"><img src="Images/pencilIcon.svg" class="editIcon" alt=""></td>
-                        <td>The Duskward Defender</td>
-                        <td>../Images/ArmingSwords/duskwardDefender.png</td>
-                        <td>Arming Sword</td>
-                        <td>1200</td>
-                    </tr>
-                    <tr>
-                        <td class="edit"><img src="Images/pencilIcon.svg" class="editIcon" alt=""></td>
-                        <td>The Duskward Defender</td>
-                        <td>../Images/ArmingSwords/duskwardDefender.png</td>
-                        <td>Arming Sword</td>
-                        <td>1200</td>
-                    </tr>
+                    </thead>
+                    <tbody>
+                        <!-- PRODUCTS LISTED HERE -->
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    <script src='productListings.js'></script>
 </body>
 </html>
