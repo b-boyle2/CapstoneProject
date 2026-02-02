@@ -13,6 +13,7 @@
     --darkRed: #991B1E;
     --gray: #3C3F40;
     --gold: #926D41;
+    --yellow: #D5B85A;
 }
 
 *{
@@ -32,7 +33,7 @@ body{
     flex-direction: column;
     width: 100%;
     background-color: #abb0b127;
-    padding-left: 50px;
+    padding: 0 25px 0 50px;
 }
 
 nav{
@@ -148,9 +149,11 @@ h1.siteTitle{
     z-index: 10;
     color: white;
 }
+
 .subcategoryFilter span, .options div{
     color: white;
 }
+
 .filterSelect .options{
     display: none;
     position: absolute;
@@ -188,7 +191,7 @@ h1.siteTitle{
     box-shadow: 3px 0 7px 0 rgba(0,0,0,0.15);
     border-radius: 8px;
     margin-top: 27px;
-    padding: 7px 10px 10px;
+    padding: 20px;
 }
 
 .sectionHeader{
@@ -216,16 +219,68 @@ td{
     width: 17px;
 }
 
-select, select:focus{
+#weaponTypeSelection, #weaponTypeSelection:focus{
     border: none;
     font-size: 24px;
 }
 
-select option{
+#weaponTypeSelection option{
     font-size: 15px;
     border: none;
 }
 
 table{
     border-spacing: 0 10px;
+    padding: 0 7px;
 }
+
+.price{
+    text-align: end;
+}
+
+/*  FORMS START */
+#addWeaponForm{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    font-size: 13pt;
+}
+
+.weaponSpecificForm{
+    display: flex;
+    flex-direction: column;
+}
+
+input, #addWeaponForm select{
+    font-size: 12pt;
+    margin: 5px 0 15px;
+    padding: 5px 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.customFileUpload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+form h3{
+    margin-top: 5px;
+}
+
+.weaponSpecificForm{
+    display: none;
+    
+}
+
+#submit{
+    margin-top: 20px;
+    font-size: 15pt;
+    background-color: var(--yellow);
+    border: 1.5px solid var(--gold);
+}
+/* FORMS END */

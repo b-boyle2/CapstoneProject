@@ -411,10 +411,10 @@ VALUES
 ('Ironfang Morningstar', '../Images/BluntHandWeapons/ironfangMorningstar.png', 12, 3, 8, NULL, 4, 2, 1, 3, NULL, NULL, 60.96, 3.5, 720),
 ('Grimspike War Hammer', '../Images/BluntHandWeapons/grimspikeWarHammer.png', 14, 1, 1, NULL, 2, 1, 12, 1, NULL, NULL, 71.12, 4.5, 1050),
 ('Ravager Horseman’s Pick', '../Images/BluntHandWeapons/ravagerHorsemanPick.png', 15, 1, 1, NULL, 9, 7, 8, 1, NULL, NULL, 55.88, 3.8, 950),
-('Chain of Blackmere', '../Images/BluntHandWeapons/chainOfBlackmere.png', 13, 4, 8, 20.32, 6, 1, 8, 1, NULL, NULL, 66.04, 4.0, 420),
+('Chain of Blackmere', '../Images/BluntHandWeapons/chainBlackmere.png', 13, 4, 8, 20.32, 6, 1, 8, 1, NULL, NULL, 66.04, 4.0, 420),
 ('Ironreach War Hammer', '../Images/BluntHandWeapons/ironreachWarHammer.png', 14, 1, 1, NULL, 2, 7, 2, 1, NULL, NULL, 55.88, 3.2, 460),
 ('Saddlebreak Pick', '../Images/BluntHandWeapons/saddlebreakPick.png', 15, 1, 1, NULL, 1, 7, 12, 1, NULL, NULL, 50.8, 2.9, 440),
-('Crown of Stonefall', '../Images/BluntHandWeapons/crownOfStonefall.png', 11, 1, 6, NULL, 7, 7, 1, 1, NULL, NULL, 53.34, 3.1, 390),
+('Crown of Stonefall', '../Images/BluntHandWeapons/crownStonefall.png', 11, 1, 6, NULL, 7, 7, 1, 1, NULL, NULL, 53.34, 3.1, 390),
 ('Dawnbreak Spire', '../Images/BluntHandWeapons/dawnbreakSpire.png', 12, 1, 8, NULL, 4, 7, 12, 1, NULL, NULL, 58.42, 3.3, 410),
 ('Blackridge Breaker', '../Images/BluntHandWeapons/blackridgeBreaker.png', 14, 1, 1, NULL, 7, 7, 12, 1, NULL, NULL, 48.26, 3.0, 450);
 

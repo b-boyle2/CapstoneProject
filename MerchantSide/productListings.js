@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subcategory.textContent = weapon.Subcategory;
 
             const price = document.createElement("td");
+            price.classList.add("price");
             price.textContent = weapon.Price;
 
             row.appendChild(iconCell);
@@ -137,4 +138,88 @@ document.addEventListener("DOMContentLoaded", () => {
     const tableName = weaponTypeSelection.value;
     loadWeapons(tableName);
     })
+
+    // For the addWeaponForm
+    const form = document.getElementById("addWeaponForm")
+
+    const weaponTypeSelect = document.getElementById("weaponTypeSelect");
+
+    // map weapon types to which divs should be visible
+    const weaponFormDivs = {
+        swords: document.getElementById("swordsForm"),
+        daggers: document.getElementById("daggersForm"),
+        blunthandweapons: document.getElementById("bluntHandsForm"),
+        polearms: document.getElementById("polearmsForm"),
+        ranged: document.getElementById("rangedForm")
+    };
+
+    function updateWeaponForms() {
+        const selectedType = weaponTypeSelect.value;
+        //hide all weaponFormDivs first
+        Object.values(weaponFormDivs).forEach(div => div.style.display = "none");
+        //only show the relevant weaponFormDiv and disable all other entry forms
+        Object.entries(weaponFormDivs).forEach(([key, div]) => {
+            if (key === selectedType) {
+                div.style.display = "flex";
+                div.querySelectorAll("input, select").forEach(el => el.disabled = false);
+            } else {
+                div.style.display = "none";
+                div.querySelectorAll("input, select").forEach(el => el.disabled = true);
+            }
+        });
+    }
+
+    updateWeaponForms();
+
+    // show uploaded image name
+    const imageUpload = document.querySelector(".customFileUpload")
+    const uploadedImg = document.getElementById("fileUpload");
+    uploadedImg.addEventListener("change", function(event) {
+        if (uploadedImg.files.length > 0) {
+            imageUpload.textContent = uploadedImg.files[0].name;
+        } 
+        else {
+            imageUpload.textContent = "Upload Image";
+        }
+    })
+
+    weaponTypeSelect.addEventListener("change", updateWeaponForms);
+
+    form.addEventListener("submit", function(event){
+        event.preventDefault(); // prevent page reload
+        
+        const formData = new FormData(form);
+        
+        const weaponType = formData.get('weaponTypeSelect');
+
+        let tableToAddTo = '';
+        if (weaponType == "swords") {
+            tableToAddTo = "addNewSword.php";
+        }
+        else if (weaponType=="daggers"){
+            tableToAddTo = "addNewDagger.php";
+        }
+        else if (weaponType=="blunthandweapons"){
+            tableToAddTo = "addNewBluntHandWeapon.php";
+        }
+        else if (weaponType=="polearms"){
+            tableToAddTo = "addNewPolearm.php";
+        }
+        else if (weaponType=="ranged"){
+            tableToAddTo = "addNewRanged.php";
+        }
+        
+        
+        fetch(tableToAddTo, {
+            method: "POST",
+            body: formData
+        })
+        /*.then(res => res.json()) // only if PHP returns JSON
+        .then(data => console.log(data))*/
+        .then(res => res.text())
+        .then(text => console.log(text))
+        .catch(err => console.error(err));
+    });
+
+
 })
