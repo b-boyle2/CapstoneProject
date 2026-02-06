@@ -187,10 +187,11 @@ h1.siteTitle{
 
 .section{
     background-color: white;
+    flex-direction: column;
     width: 95%;
     box-shadow: 3px 0 7px 0 rgba(0,0,0,0.15);
     border-radius: 8px;
-    margin-top: 27px;
+    margin-top: 20px;
     padding: 20px;
 }
 
@@ -238,11 +239,35 @@ table{
     text-align: end;
 }
 
+.otherButtons{
+    display: flex;
+    justify-self: right;
+    width: fit-content;
+    margin-right: 3%;
+    height: 25px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.otherButtons:hover{
+    cursor: pointer;
+}
+
+#backButton{
+    display: none;
+    justify-self: left;
+    font-size: 30pt;
+}
+
 /*  FORMS START */
+#productForm{
+    display: none;
+}
+
 #addWeaponForm{
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 30px 30px 15px;
     font-size: 13pt;
 }
 
@@ -278,9 +303,15 @@ form h3{
 }
 
 #submit{
-    margin-top: 20px;
+    margin: 20px 0 0;
     font-size: 15pt;
     background-color: var(--yellow);
-    border: 1.5px solid var(--gold);
+    border: none;
+    /*border: 1.5px solid var(--gold);*/
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,0.25);
+}
+
+#submit:hover {
+    cursor: pointer;
 }
 /* FORMS END */

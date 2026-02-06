@@ -33,9 +33,13 @@
             <h1>Products</h1>
             
         </div>
-
+        
+        
         <div class="content">
-            <div class="section">
+            <div class="otherButtons" id="addWeaponButton">Add New Weapon</div>
+            <div class="otherButtons" id="backButton">&#8249;</div>
+
+            <div class="section" id="weaponList">
                 <div class="sectionHeader">
                     <form action="">
                         <label for="weaponTypeSelection"></label>
@@ -127,6 +131,7 @@
                 </table>
             </div>
 
+            
             <div class="section" id="productForm">
                 <h2>Add Product</h2>
                 <form id="addWeaponForm">
@@ -134,7 +139,7 @@
                     <select name="weaponTypeSelect" id="weaponTypeSelect">
                         <option value="swords">Swords</option>
                         <option value="daggers">Daggers</option>
-                        <option value="blunthandweapons">Blunt Hand</option>
+                        <option value="blunthandweapons">Blunt Hand Weapons</option>
                         <option value="polearms">Polearms</option>
                         <option value="ranged">Ranged</option>
                     </select>
@@ -622,6 +627,7 @@
                         <input type="number" id="bluntHandWeight" name="weight" step="0.01" min="0.00" required>
                         
                         <label for="bluntHandPrice">Price</label>
+                        <input type="number" id="bluntHandPrice" name="price" step="0.01" min="0.00" required>
                     </div>
 
                     <div class="weaponSpecificForm" id="polearmsForm">

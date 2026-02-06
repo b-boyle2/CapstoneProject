@@ -221,5 +221,27 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => console.error(err));
     });
 
+    const backButton = document.getElementById("backButton");
+    const addWeapon = document.getElementById("addWeaponButton");
+    const weaponList = document.getElementById("weaponList");
+    const formSection = document.getElementById("productForm");
+
+    addWeapon.onclick = (e) => {
+        addWeapon.style.display = "none";
+        weaponList.style.display = "none";
+
+        formSection.style.display = "flex";
+        backButton.style.display = "flex";
+
+    }
+
+    backButton.onclick = (e) => {
+        formSection.style.display = "none";
+        backButton.style.display = "none";
+
+        addWeapon.style.display = "flex";
+        weaponList.style.display = "flex";
+    }
+
 
 })
