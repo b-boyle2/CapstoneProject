@@ -141,6 +141,7 @@ a:hover {
 
 .navBar button:hover{
     background-color: var(--darkRed);
+    cursor: pointer;
 }
 
 .dropdownContent{
@@ -254,6 +255,7 @@ h4{
 
 .button1:hover, .button2:hover{
     background-color: var(--darkRed);
+    cursor: pointer;
 }
 
 .button1::before,
@@ -504,6 +506,7 @@ p{
 
 .weaponItemListing:hover .listingHoverBorderContainer, .weaponItemListing:focus-within .listingHoverBorderContainer{
     opacity: 1;
+    cursor: pointer;
 }
 
 /* WEAPON LISTINGS END */
