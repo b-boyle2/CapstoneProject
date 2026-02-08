@@ -215,10 +215,15 @@ document.addEventListener("DOMContentLoaded", () => {
             method: "POST",
             body: formData
         })
-        /*.then(res => res.json()) // only if PHP returns JSON
-        .then(data => console.log(data))*/
-        .then(res => res.text())
-        .then(text => console.log(text))
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                weaponTypeSelection.value = weaponType;
+                backToMainSection(weaponType);
+            } else {
+                console.error("Update failed:", data.error);
+            }
+        })
         .catch(err => console.error(err));
     });
 
@@ -237,16 +242,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     backButton.onclick = (e) => {
+        backToMainSection();
+    }
+
+    function backToMainSection(tableToView = tableName) {
         formSection.style.display = "none";
         backButton.style.display = "none";
         editProductForm.style.display = "none";
 
         addWeaponButton.style.display = "flex";
         weaponList.style.display = "flex";
+        loadWeapons(tableToView);
     }
 
     //FOR EDITING A PRODUCT
     const editProductForm = document.getElementById("editProductForm");
+    const editForm = document.getElementById("editWeaponForm");
     
     const editWeaponFormDivs = {
         swords: document.getElementById("editSwordsForm"),
@@ -256,13 +267,14 @@ document.addEventListener("DOMContentLoaded", () => {
         ranged: document.getElementById("editRangedForm")
     };
 
+    let weaponID = 0;
+    let originalWeaponName = '';
     weaponList.addEventListener("click", (e) => {
         const editButton = e.target.closest(".editButton");
         if (!editButton) return;
 
         const row = editButton.closest("tr");
-        const weaponID = row.dataset.weaponID;
-        const weaponType = row.dataset.weaponType;
+        weaponID = row.dataset.weaponID;
 
         const weaponIdData = new FormData();
         weaponIdData.append("weaponID", weaponID);
@@ -274,8 +286,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Table: ",  tableName);
 
         for (let pair of weaponIdData.entries()) {
-    console.log(pair[0], pair[1]);
-}
+            console.log(pair[0], pair[1]);
+        }
 
         fetch("GetSingleProductData.php", {
             method: "POST",
@@ -307,12 +319,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 activeSection = editProductForm.querySelector("#editRangedForm");
             }
 
+            
+
             Object.entries(weapon).forEach(([key, value]) => {
                 const input = activeSection.querySelector(`[name='${key}']`);
                 if (input) {
                     input.value = value ?? ''; // default to empty string if null
                 }
             });
+            originalWeaponName = weapon.Name;
 
             const uploadedImg = document.getElementById("editFormImg");
             uploadedImg.textContent = weapon.Image;
@@ -336,21 +351,49 @@ document.addEventListener("DOMContentLoaded", () => {
         editProductForm.style.display = "flex";
     })
     
-    /*editProductForm.addEventListener("submit", function(event){
+    editProductForm.addEventListener("submit", function(event){
         event.preventDefault(); // prevent page reload
         
-        const formData = new FormData(form);
+        let formData = new FormData(editForm);
+        formData.append("weaponID", weaponID);
+        formData.append("table", tableName);
         
-        
-        fetch(tableToAddTo, {
+        fetch("editProduct.php", {
             method: "POST",
             body: formData
         })
-            .then(res => res.json()) // only if PHP returns JSON
-            .then(data => console.log(data))
-        .then(res => res.text())
-        .then(text => console.log(text))
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                backToMainSection();
+            } else {
+                console.error("Update failed:", data.error);
+            }
+        })
         .catch(err => console.error(err));
-    });*/
+    });
+
+    const deleteButton = document.querySelector(".deleteButton");
+    deleteButton.addEventListener("click",(e) => {
+        if (confirm(`Are you sure you want to delete ${originalWeaponName}?`) == true) {
+            const weaponIdData = new FormData();
+            weaponIdData.append("weaponID", weaponID);
+            weaponIdData.append("table", tableName);
+
+            fetch("deleteProduct.php", {
+                method: "POST",
+                body: weaponIdData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    backToMainSection();
+                } else {
+                    console.error("Update failed:", data.error);
+                }
+            })
+            .catch(err => console.error(err));
+        }
+    })
 
 })

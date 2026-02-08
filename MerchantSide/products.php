@@ -159,175 +159,207 @@
                         </select>
 
                         <h3>Blade</h3>
-                        <label for="swordBladeMaterial">Material</label>
-                        <select name="bladeMaterial" id="swordBladeMaterial">
-                            <option value="1">High-Carbon Steel</option>
-                            <option value="2">Tool Steel</option>
-                            <option value="3">PM Stainless</option>
-                            <option value="4">Titanium Alloy</option>
-                            <option value="5">Tungsten Carbide</option>
-                            <option value="6">Maraging Steel</option>
-                            <option value="7">Bronze Alloy</option>
-                            <option value="8">Dark Steel</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="swordBladeMaterial">Material</label>
+                                <select name="bladeMaterial" id="swordBladeMaterial">
+                                    <option value="1">High-Carbon Steel</option>
+                                    <option value="2">Tool Steel</option>
+                                    <option value="3">PM Stainless</option>
+                                    <option value="4">Titanium Alloy</option>
+                                    <option value="5">Tungsten Carbide</option>
+                                    <option value="6">Maraging Steel</option>
+                                    <option value="7">Bronze Alloy</option>
+                                    <option value="8">Dark Steel</option>
+                                </select>
+                            </div>
 
-                        <label for="swordBladeShape">Shape</label>
-                        <select name="bladeShape" id="swordBladeShape">
-                            <option value="1">Clip</option>
-                            <option value="2">Drop</option>
-                            <option value="3">Tanto</option>
-                            <option value="4">Fuller</option>
-                            <option value="5">Leaf</option>
-                            <option value="6">Scimitar</option>
-                            <option value="7">Falchion</option>
-                            <option value="8">Bowie</option>
-                            <option value="9">Wharncliffe</option>
-                            <option value="10">Recurve</option>
-                            <option value="11">Kukri</option>
-                            <option value="12">Estoc</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="swordBladeShape">Shape</label>
+                                <select name="bladeShape" id="swordBladeShape">
+                                    <option value="1">Clip</option>
+                                    <option value="2">Drop</option>
+                                    <option value="3">Tanto</option>
+                                    <option value="4">Fuller</option>
+                                    <option value="5">Leaf</option>
+                                    <option value="6">Scimitar</option>
+                                    <option value="7">Falchion</option>
+                                    <option value="8">Bowie</option>
+                                    <option value="9">Wharncliffe</option>
+                                    <option value="10">Recurve</option>
+                                    <option value="11">Kukri</option>
+                                    <option value="12">Estoc</option>
+                                </select>
+                            </div>
 
-                        <label for="swordBladeEdge">Edge Style</label>
-                        <select name="bladeEdge" id="swordBladeEdge">
-                            <option value="1">Single Edge</option>
-                            <option value="2">Double Edge</option>
-                            <option value="3">False Edge</option>
-                            <option value="4">Blunt</option>
-                            <option value="5">Plain</option>
-                            <option value="6">Serrated</option>
-                            <option value="7">Hybrid</option>
-                            <option value="8">Flat Grind</option>
-                            <option value="9">Hollow</option>
-                            <option value="10">Convex</option>
-                            <option value="11">Chisel</option>
-                            <option value="12">Scandi</option>
-                            <option value="13">Saber</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="swordBladeEdge">Edge Style</label>
+                                <select name="bladeEdge" id="swordBladeEdge">
+                                    <option value="1">Single Edge</option>
+                                    <option value="2">Double Edge</option>
+                                    <option value="3">False Edge</option>
+                                    <option value="4">Blunt</option>
+                                    <option value="5">Plain</option>
+                                    <option value="6">Serrated</option>
+                                    <option value="7">Hybrid</option>
+                                    <option value="8">Flat Grind</option>
+                                    <option value="9">Hollow</option>
+                                    <option value="10">Convex</option>
+                                    <option value="11">Chisel</option>
+                                    <option value="12">Scandi</option>
+                                    <option value="13">Saber</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Hilt</h3>
-                        <label for="swordHiltMaterial">Material</label>
-                        <select name="hiltMaterial" id="swordHiltMaterial">
-                            <option value="1">Hickory</option>
-                            <option value="2">Ash</option>
-                            <option value="3">Ironwood</option>
-                            <option value="4">Purpleheart</option>
-                            <option value="5">Beech</option>
-                            <option value="6">Birch</option>
-                            <option value="7">Maple</option>
-                            <option value="8">Poplar</option>
-                            <option value="9">Black Walnut</option>
-                            <option value="10">Hornbeam</option>
-                            <option value="11">Lignum Vitae</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="swordHiltMaterial">Material</label>
+                                <select name="hiltMaterial" id="swordHiltMaterial">
+                                    <option value="1">Hickory</option>
+                                    <option value="2">Ash</option>
+                                    <option value="3">Ironwood</option>
+                                    <option value="4">Purpleheart</option>
+                                    <option value="5">Beech</option>
+                                    <option value="6">Birch</option>
+                                    <option value="7">Maple</option>
+                                    <option value="8">Poplar</option>
+                                    <option value="9">Black Walnut</option>
+                                    <option value="10">Hornbeam</option>
+                                    <option value="11">Lignum Vitae</option>
+                                </select>
+                            </div>
 
-                        <label for="swordGrip">Grip Style</label>
-                        <select name="grip" id="swordGrip">
-                            <option value="1">Straight</option>
-                            <option value="2">Waisted</option>
-                            <option value="3">Curved</option>
-                            <option value="4">Flared</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Cord-wrapped</option>
-                            <option value="7">Leather</option>
-                            <option value="8">Wire</option>
-                            <option value="9">Wood</option>
-                            <option value="10">Bone</option>
-                            <option value="11">Segmented</option>
-                            <option value="12">Integral</option>
-                            <option value="13">Capped</option>
-                            <option value="14">Ornate</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="swordGrip">Grip Style</label>
+                                <select name="grip" id="swordGrip">
+                                    <option value="1">Straight</option>
+                                    <option value="2">Waisted</option>
+                                    <option value="3">Curved</option>
+                                    <option value="4">Flared</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Cord-wrapped</option>
+                                    <option value="7">Leather</option>
+                                    <option value="8">Wire</option>
+                                    <option value="9">Wood</option>
+                                    <option value="10">Bone</option>
+                                    <option value="11">Segmented</option>
+                                    <option value="12">Integral</option>
+                                    <option value="13">Capped</option>
+                                    <option value="14">Ornate</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Pommel</h3>
-                        <label for="swordPommel">Type</label>
-                        <select name="pommel" id="swordPommel">
-                            <option value="1">Sphere</option>
-                            <option value="2">Disc</option>
-                            <option value="3">Wheel</option>
-                            <option value="4">Spike</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Ring</option>
-                            <option value="7">Hook</option>
-                            <option value="8">Knob</option>
-                            <option value="9">Gem</option>
-                            <option value="10">Cage</option>
-                            <option value="11">Counterweight</option>
-                            <option value="12">Flat</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="swordPommel">Type</label>
+                                <select name="pommel" id="swordPommel">
+                                    <option value="1">Sphere</option>
+                                    <option value="2">Disc</option>
+                                    <option value="3">Wheel</option>
+                                    <option value="4">Spike</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Ring</option>
+                                    <option value="7">Hook</option>
+                                    <option value="8">Knob</option>
+                                    <option value="9">Gem</option>
+                                    <option value="10">Cage</option>
+                                    <option value="11">Counterweight</option>
+                                    <option value="12">Flat</option>
+                                </select>
+                            </div>
 
-                        <label for="swordPommelMaterial">Material</label>
-                        <select name="pommelMaterial" id="swordPommelMaterial">
-                            <option value="1">High-Carbon Steel</option>
-                            <option value="2">Tool Steel</option>
-                            <option value="3">PM Stainless</option>
-                            <option value="4">Titanium Alloy</option>
-                            <option value="5">Tungsten Carbide</option>
-                            <option value="6">Maraging Steel</option>
-                            <option value="7">Bronze Alloy</option>
-                            <option value="8">Dark Steel</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="swordPommelMaterial">Material</label>
+                                <select name="pommelMaterial" id="swordPommelMaterial">
+                                    <option value="1">High-Carbon Steel</option>
+                                    <option value="2">Tool Steel</option>
+                                    <option value="3">PM Stainless</option>
+                                    <option value="4">Titanium Alloy</option>
+                                    <option value="5">Tungsten Carbide</option>
+                                    <option value="6">Maraging Steel</option>
+                                    <option value="7">Bronze Alloy</option>
+                                    <option value="8">Dark Steel</option>
+                                </select>
+                            </div>
 
-                        <label for="swordPommelAccent">Accent</label>
-                        <select name="pommelAccent" id="swordPommelAccent">
-                            <option value="">None</option>
-                            <option value="1">High-Carbon Steel</option>
-                            <option value="2">Tool Steel</option>
-                            <option value="3">PM Stainless</option>
-                            <option value="4">Titanium Alloy</option>
-                            <option value="5">Tungsten Carbide</option>
-                            <option value="6">Maraging Steel</option>
-                            <option value="7">Bronze Alloy</option>
-                            <option value="8">Dark Steel</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="swordPommelAccent">Accent</label>
+                                <select name="pommelAccent" id="swordPommelAccent">
+                                    <option value="">None</option>
+                                    <option value="1">High-Carbon Steel</option>
+                                    <option value="2">Tool Steel</option>
+                                    <option value="3">PM Stainless</option>
+                                    <option value="4">Titanium Alloy</option>
+                                    <option value="5">Tungsten Carbide</option>
+                                    <option value="6">Maraging Steel</option>
+                                    <option value="7">Bronze Alloy</option>
+                                    <option value="8">Dark Steel</option>
+                                </select>
+                            </div>
 
-                        <label for="swordPommelGem">Gem</label>
-                        <select name="pommelGem" id="swordPommelGem">
-                            <option value="">None</option>
-                            <option value="1">Garnet</option>
-                            <option value="2">Sapphire</option>
-                            <option value="3">Ruby</option>
-                            <option value="4">Jade</option>
-                            <option value="5">Quartz</option>
-                            <option value="6">Topaz</option>
-                            <option value="7">Pearl</option>
-                            <option value="8">Onyx</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="swordPommelGem">Gem</label>
+                                <select name="pommelGem" id="swordPommelGem">
+                                    <option value="">None</option>
+                                    <option value="1">Garnet</option>
+                                    <option value="2">Sapphire</option>
+                                    <option value="3">Ruby</option>
+                                    <option value="4">Jade</option>
+                                    <option value="5">Quartz</option>
+                                    <option value="6">Topaz</option>
+                                    <option value="7">Pearl</option>
+                                    <option value="8">Onyx</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Sheath</h3>
-                        <label for="swordSheathType">Type</label>
-                        <select name="sheathType" id="swordSheathType">
-                            <option value="1">Minimal</option>
-                            <option value="2">Ornate</option>
-                            <option value="3">Jeweled</option>
-                            <option value="4">Wrapped</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="swordSheathType">Type</label>
+                                <select name="sheathType" id="swordSheathType">
+                                    <option value="1">Minimal</option>
+                                    <option value="2">Ornate</option>
+                                    <option value="3">Jeweled</option>
+                                    <option value="4">Wrapped</option>
+                                </select>
+                            </div>
 
-                        <label for="swordSheathMaterial">Material</label>
-                        <select name="sheathMaterial" id="swordSheathMaterial">
-                            <option value="1">Leather</option>
-                            <option value="2">Wooden</option>
-                            <option value="3">Metal</option>
-                            <option value="4">Laquered</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="swordSheathMaterial">Material</label>
+                                <select name="sheathMaterial" id="swordSheathMaterial">
+                                    <option value="1">Leather</option>
+                                    <option value="2">Wooden</option>
+                                    <option value="3">Metal</option>
+                                    <option value="4">Laquered</option>
+                                </select>
+                            </div>
 
-                        <label for="swordSheathColor">Color</label>
-                        <select name="sheathColor" id="swordSheathColor">
-                            <option value="1">Black</option>
-                            <option value="2">Dark Brown</option>
-                            <option value="3">Chestnut</option>
-                            <option value="4">Mahogany</option>
-                            <option value="5">Deep Indigo</option>
-                            <option value="6">Crimson</option>
-                            <option value="7">Dark Green</option>
-                            <option value="8">Forest Green</option>
-                            <option value="9">Navy</option>
-                            <option value="10">Steel Gray</option>
-                            <option value="11">Charcoal</option>
-                            <option value="12">Natural</option>
-                            <option value="13">Bone White</option>
-                            <option value="14">Midnight Blue</option>
-                            <option value="15">Oxblood</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="swordSheathColor">Color</label>
+                                <select name="sheathColor" id="swordSheathColor">
+                                    <option value="1">Black</option>
+                                    <option value="2">Dark Brown</option>
+                                    <option value="3">Chestnut</option>
+                                    <option value="4">Mahogany</option>
+                                    <option value="5">Deep Indigo</option>
+                                    <option value="6">Crimson</option>
+                                    <option value="7">Dark Green</option>
+                                    <option value="8">Forest Green</option>
+                                    <option value="9">Navy</option>
+                                    <option value="10">Steel Gray</option>
+                                    <option value="11">Charcoal</option>
+                                    <option value="12">Natural</option>
+                                    <option value="13">Bone White</option>
+                                    <option value="14">Midnight Blue</option>
+                                    <option value="15">Oxblood</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Other</h3>
                         <label for="swordEngravings">Engravings</label>
@@ -336,11 +368,17 @@
                         <label for="swordInscriptions">Inscriptions</label>
                         <input type="text" name="inscriptions" id="swordInscriptions" maxlength="255">
 
-                        <label for="swordBladeLength">Blade Length (cm)</label>
-                        <input type="number" id="swordBladeLength" name="bladeLength" step="0.01" min="0.00" required>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="swordBladeLength">Blade Length (cm)</label>
+                                <input type="number" id="swordBladeLength" name="bladeLength" step="0.01" min="0.00" required>
+                            </div>
 
-                        <label for="swordWeight">Weight (kg)</label>
-                        <input type="number" id="swordWeight" name="weight" step="0.01" min="0.00" required>
+                            <div class="formItem">
+                                <label for="swordWeight">Weight (kg)</label>
+                                <input type="number" id="swordWeight" name="weight" step="0.01" min="0.00" required>
+                            </div>
+                        </div>
                         
                         <label for="swordPrice">Price</label>
                         <input type="number" id="swordPrice" name="price" step="0.01" min="0.00" required>
@@ -361,146 +399,174 @@
                         </select>
 
                         <h3>Blade</h3>
-                        <label for="daggerBladeMaterial">Material</label>
-                        <select name="bladeMaterial" id="daggerBladeMaterial">
-                            <option value="1">High-Carbon Steel</option>
-                            <option value="2">Tool Steel</option>
-                            <option value="3">PM Stainless</option>
-                            <option value="4">Titanium Alloy</option>
-                            <option value="5">Tungsten Carbide</option>
-                            <option value="6">Maraging Steel</option>
-                            <option value="7">Bronze Alloy</option>
-                            <option value="8">Dark Steel</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="daggerBladeMaterial">Material</label>
+                                <select name="bladeMaterial" id="daggerBladeMaterial">
+                                    <option value="1">High-Carbon Steel</option>
+                                    <option value="2">Tool Steel</option>
+                                    <option value="3">PM Stainless</option>
+                                    <option value="4">Titanium Alloy</option>
+                                    <option value="5">Tungsten Carbide</option>
+                                    <option value="6">Maraging Steel</option>
+                                    <option value="7">Bronze Alloy</option>
+                                    <option value="8">Dark Steel</option>
+                                </select>
+                            </div>
 
-                        <label for="daggerBladeEdge">Edge Style</label>
-                        <select name="bladeEdge" id="daggerBladeEdge">
-                            <option value="1">Single Edge</option>
-                            <option value="2">Double Edge</option>
-                            <option value="3">False Edge</option>
-                            <option value="4">Blunt</option>
-                            <option value="5">Plain</option>
-                            <option value="6">Serrated</option>
-                            <option value="7">Hybrid</option>
-                            <option value="8">Flat Grind</option>
-                            <option value="9">Hollow</option>
-                            <option value="10">Convex</option>
-                            <option value="11">Chisel</option>
-                            <option value="12">Scandi</option>
-                            <option value="13">Saber</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="daggerBladeEdge">Edge Style</label>
+                                <select name="bladeEdge" id="daggerBladeEdge">
+                                    <option value="1">Single Edge</option>
+                                    <option value="2">Double Edge</option>
+                                    <option value="3">False Edge</option>
+                                    <option value="4">Blunt</option>
+                                    <option value="5">Plain</option>
+                                    <option value="6">Serrated</option>
+                                    <option value="7">Hybrid</option>
+                                    <option value="8">Flat Grind</option>
+                                    <option value="9">Hollow</option>
+                                    <option value="10">Convex</option>
+                                    <option value="11">Chisel</option>
+                                    <option value="12">Scandi</option>
+                                    <option value="13">Saber</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Hilt</h3>
-                        <label for="daggerHiltMaterial">Material</label>
-                        <select name="hiltMaterial" id="daggerHiltMaterial">
-                            <option value="1">Hickory</option>
-                            <option value="2">Ash</option>
-                            <option value="3">Ironwood</option>
-                            <option value="4">Purpleheart</option>
-                            <option value="5">Beech</option>
-                            <option value="6">Birch</option>
-                            <option value="7">Maple</option>
-                            <option value="8">Poplar</option>
-                            <option value="9">Black Walnut</option>
-                            <option value="10">Hornbeam</option>
-                            <option value="11">Lignum Vitae</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="daggerHiltMaterial">Material</label>
+                                <select name="hiltMaterial" id="daggerHiltMaterial">
+                                    <option value="1">Hickory</option>
+                                    <option value="2">Ash</option>
+                                    <option value="3">Ironwood</option>
+                                    <option value="4">Purpleheart</option>
+                                    <option value="5">Beech</option>
+                                    <option value="6">Birch</option>
+                                    <option value="7">Maple</option>
+                                    <option value="8">Poplar</option>
+                                    <option value="9">Black Walnut</option>
+                                    <option value="10">Hornbeam</option>
+                                    <option value="11">Lignum Vitae</option>
+                                </select>
+                            </div>
 
-                        <label for="daggerGrip">Grip Style</label>
-                        <select name="grip" id="daggerGrip">
-                            <option value="1">Straight</option>
-                            <option value="2">Waisted</option>
-                            <option value="3">Curved</option>
-                            <option value="4">Flared</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Cord-wrapped</option>
-                            <option value="7">Leather</option>
-                            <option value="8">Wire</option>
-                            <option value="9">Wood</option>
-                            <option value="10">Bone</option>
-                            <option value="11">Segmented</option>
-                            <option value="12">Integral</option>
-                            <option value="13">Capped</option>
-                            <option value="14">Ornate</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="daggerGrip">Grip Style</label>
+                                <select name="grip" id="daggerGrip">
+                                    <option value="1">Straight</option>
+                                    <option value="2">Waisted</option>
+                                    <option value="3">Curved</option>
+                                    <option value="4">Flared</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Cord-wrapped</option>
+                                    <option value="7">Leather</option>
+                                    <option value="8">Wire</option>
+                                    <option value="9">Wood</option>
+                                    <option value="10">Bone</option>
+                                    <option value="11">Segmented</option>
+                                    <option value="12">Integral</option>
+                                    <option value="13">Capped</option>
+                                    <option value="14">Ornate</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Pommel</h3>
-                        <label for="daggerPommel">Type</label>
-                        <select name="pommel" id="daggerPommel">
-                            <option value="1">Sphere</option>
-                            <option value="2">Disc</option>
-                            <option value="3">Wheel</option>
-                            <option value="4">Spike</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Ring</option>
-                            <option value="7">Hook</option>
-                            <option value="8">Knob</option>
-                            <option value="9">Gem</option>
-                            <option value="10">Cage</option>
-                            <option value="11">Counterweight</option>
-                            <option value="12">Flat</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="daggerPommel">Type</label>
+                                <select name="pommel" id="daggerPommel">
+                                    <option value="1">Sphere</option>
+                                    <option value="2">Disc</option>
+                                    <option value="3">Wheel</option>
+                                    <option value="4">Spike</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Ring</option>
+                                    <option value="7">Hook</option>
+                                    <option value="8">Knob</option>
+                                    <option value="9">Gem</option>
+                                    <option value="10">Cage</option>
+                                    <option value="11">Counterweight</option>
+                                    <option value="12">Flat</option>
+                                </select>
+                            </div>
 
-                        <label for="daggerPommelMaterial">Material</label>
-                        <select name="pommelMaterial" id="daggerPommelMaterial">
-                            <option value="1">High-Carbon Steel</option>
-                            <option value="2">Tool Steel</option>
-                            <option value="3">PM Stainless</option>
-                            <option value="4">Titanium Alloy</option>
-                            <option value="5">Tungsten Carbide</option>
-                            <option value="6">Maraging Steel</option>
-                            <option value="7">Bronze Alloy</option>
-                            <option value="8">Dark Steel</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="daggerPommelMaterial">Material</label>
+                                <select name="pommelMaterial" id="daggerPommelMaterial">
+                                    <option value="1">High-Carbon Steel</option>
+                                    <option value="2">Tool Steel</option>
+                                    <option value="3">PM Stainless</option>
+                                    <option value="4">Titanium Alloy</option>
+                                    <option value="5">Tungsten Carbide</option>
+                                    <option value="6">Maraging Steel</option>
+                                    <option value="7">Bronze Alloy</option>
+                                    <option value="8">Dark Steel</option>
+                                </select>
+                            </div>
 
-                        <label for="daggerPommelGem">Gem</label>
-                        <select name="pommelGem" id="daggerPommelGem">
-                            <option value="">None</option>
-                            <option value="1">Garnet</option>
-                            <option value="2">Sapphire</option>
-                            <option value="3">Ruby</option>
-                            <option value="4">Jade</option>
-                            <option value="5">Quartz</option>
-                            <option value="6">Topaz</option>
-                            <option value="7">Pearl</option>
-                            <option value="8">Onyx</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="daggerPommelGem">Gem</label>
+                                <select name="pommelGem" id="daggerPommelGem">
+                                    <option value="">None</option>
+                                    <option value="1">Garnet</option>
+                                    <option value="2">Sapphire</option>
+                                    <option value="3">Ruby</option>
+                                    <option value="4">Jade</option>
+                                    <option value="5">Quartz</option>
+                                    <option value="6">Topaz</option>
+                                    <option value="7">Pearl</option>
+                                    <option value="8">Onyx</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Sheath</h3>
-                        <label for="daggerSheathType">Type</label>
-                        <select name="sheathType" id="daggerSheathType">
-                            <option value="1">Minimal</option>
-                            <option value="2">Ornate</option>
-                            <option value="3">Jeweled</option>
-                            <option value="4">Wrapped</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="daggerSheathType">Type</label>
+                                <select name="sheathType" id="daggerSheathType">
+                                    <option value="1">Minimal</option>
+                                    <option value="2">Ornate</option>
+                                    <option value="3">Jeweled</option>
+                                    <option value="4">Wrapped</option>
+                                </select>
+                            </div>
 
-                        <label for="daggerSheathMaterial">Material</label>
-                        <select name="sheathMaterial" id="daggerSheathMaterial">
-                            <option value="1">Leather</option>
-                            <option value="2">Wooden</option>
-                            <option value="3">Metal</option>
-                            <option value="4">Laquered</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="daggerSheathMaterial">Material</label>
+                                <select name="sheathMaterial" id="daggerSheathMaterial">
+                                    <option value="1">Leather</option>
+                                    <option value="2">Wooden</option>
+                                    <option value="3">Metal</option>
+                                    <option value="4">Laquered</option>
+                                </select>
+                            </div>
 
-                        <label for="daggerSheathColor">Color</label>
-                        <select name="sheathColor" id="daggerSheathColor">
-                            <option value="1">Black</option>
-                            <option value="2">Dark Brown</option>
-                            <option value="3">Chestnut</option>
-                            <option value="4">Mahogany</option>
-                            <option value="5">Deep Indigo</option>
-                            <option value="6">Crimson</option>
-                            <option value="7">Dark Green</option>
-                            <option value="8">Forest Green</option>
-                            <option value="9">Navy</option>
-                            <option value="10">Steel Gray</option>
-                            <option value="11">Charcoal</option>
-                            <option value="12">Natural</option>
-                            <option value="13">Bone White</option>
-                            <option value="14">Midnight Blue</option>
-                            <option value="15">Oxblood</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="daggerSheathColor">Color</label>
+                                <select name="sheathColor" id="daggerSheathColor">
+                                    <option value="1">Black</option>
+                                    <option value="2">Dark Brown</option>
+                                    <option value="3">Chestnut</option>
+                                    <option value="4">Mahogany</option>
+                                    <option value="5">Deep Indigo</option>
+                                    <option value="6">Crimson</option>
+                                    <option value="7">Dark Green</option>
+                                    <option value="8">Forest Green</option>
+                                    <option value="9">Navy</option>
+                                    <option value="10">Steel Gray</option>
+                                    <option value="11">Charcoal</option>
+                                    <option value="12">Natural</option>
+                                    <option value="13">Bone White</option>
+                                    <option value="14">Midnight Blue</option>
+                                    <option value="15">Oxblood</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Other</h3>
                         <label for="daggerEngravings">Engravings</label>
@@ -509,11 +575,17 @@
                         <label for="daggerInscriptions">Inscriptions</label>
                         <input type="text" name="inscriptions" id="daggerInscriptions" maxlength="255">
 
-                        <label for="daggerBladeLength">Blade Length (cm)</label>
-                        <input type="number" id="daggerBladeLength" name="bladeLength" step="0.01" min="0.00" required>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="daggerBladeLength">Blade Length (cm)</label>
+                                <input type="number" id="daggerBladeLength" name="bladeLength" step="0.01" min="0.00" required>
+                            </div>
 
-                        <label for="daggerWeight">Weight (kg)</label>
-                        <input type="number" id="daggerWeight" name="weight" step="0.01" min="0.00" required>
+                            <div class="formItem">
+                                <label for="daggerWeight">Weight (kg)</label>
+                                <input type="number" id="daggerWeight" name="weight" step="0.01" min="0.00" required>
+                            </div>
+                        </div>
                         
                         <label for="daggerPrice">Price</label>
                         <input type="number" id="daggerPrice" name="price" step="0.01" min="0.00" required>
@@ -534,86 +606,106 @@
                         </select>
 
                         <h3>Head</h3>
-                        <label for="bluntHandHeadMaterial">Head Material</label>
-                        <select name="headMaterial" id="bluntHandHeadMaterial">
-                            <option value="1">High-Carbon Steel</option>
-                            <option value="2">Tool Steel</option>
-                            <option value="3">PM Stainless</option>
-                            <option value="4">Titanium Alloy</option>
-                            <option value="5">Tungsten Carbide</option>
-                            <option value="6">Maraging Steel</option>
-                            <option value="7">Bronze Alloy</option>
-                            <option value="8">Dark Steel</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="bluntHandHeadMaterial">Head Material</label>
+                                <select name="headMaterial" id="bluntHandHeadMaterial">
+                                    <option value="1">High-Carbon Steel</option>
+                                    <option value="2">Tool Steel</option>
+                                    <option value="3">PM Stainless</option>
+                                    <option value="4">Titanium Alloy</option>
+                                    <option value="5">Tungsten Carbide</option>
+                                    <option value="6">Maraging Steel</option>
+                                    <option value="7">Bronze Alloy</option>
+                                    <option value="8">Dark Steel</option>
+                                </select>
+                            </div>
 
-                        <label for="bluntHandpikesNum">Number of Spikes</label>
-                        <input type="number" name="spikesNum" id="bluntHandpikesNum" min="0" max="12">
+                            <div class="formItem">
+                                <label for="bluntHandpikesNum">Number of Spikes</label>
+                                <input type="number" name="spikesNum" id="bluntHandpikesNum" min="0" max="12">
+                            </div>
 
-                        <label for="bluntHandChainLength">Chain Length</label>
-                        <input type="number" id="bluntHandChainLength" name="chainLength" step="0.01" min="0.00">
+                            <div class="formItem">
+                                <label for="bluntHandChainLength">Chain Length (cm)</label>
+                                <input type="number" id="bluntHandChainLength" name="chainLength" step="0.01" min="0.00">
+                            </div>
+                        </div>
 
                         <h3>Shaft</h3>
-                        <label for="bluntHandhaftMaterial">Material</label>
-                        <select name="shaftMaterial" id="bluntHandhaftMaterial">
-                            <option value="1">Hickory</option>
-                            <option value="2">Ash</option>
-                            <option value="3">Ironwood</option>
-                            <option value="4">Purpleheart</option>
-                            <option value="5">Beech</option>
-                            <option value="6">Birch</option>
-                            <option value="7">Maple</option>
-                            <option value="8">Poplar</option>
-                            <option value="9">Black Walnut</option>
-                            <option value="10">Hornbeam</option>
-                            <option value="11">Lignum Vitae</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="bluntHandhaftMaterial">Material</label>
+                                <select name="shaftMaterial" id="bluntHandhaftMaterial">
+                                    <option value="1">Hickory</option>
+                                    <option value="2">Ash</option>
+                                    <option value="3">Ironwood</option>
+                                    <option value="4">Purpleheart</option>
+                                    <option value="5">Beech</option>
+                                    <option value="6">Birch</option>
+                                    <option value="7">Maple</option>
+                                    <option value="8">Poplar</option>
+                                    <option value="9">Black Walnut</option>
+                                    <option value="10">Hornbeam</option>
+                                    <option value="11">Lignum Vitae</option>
+                                </select>
+                            </div>
 
-                        <label for="bluntHandGrip">Grip Style</label>
-                        <select name="grip" id="bluntHandGrip">
-                            <option value="1">Straight</option>
-                            <option value="2">Waisted</option>
-                            <option value="3">Curved</option>
-                            <option value="4">Flared</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Cord-wrapped</option>
-                            <option value="7">Leather</option>
-                            <option value="8">Wire</option>
-                            <option value="9">Wood</option>
-                            <option value="10">Bone</option>
-                            <option value="11">Segmented</option>
-                            <option value="12">Integral</option>
-                            <option value="13">Capped</option>
-                            <option value="14">Ornate</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="bluntHandGrip">Grip Style</label>
+                                <select name="grip" id="bluntHandGrip">
+                                    <option value="1">Straight</option>
+                                    <option value="2">Waisted</option>
+                                    <option value="3">Curved</option>
+                                    <option value="4">Flared</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Cord-wrapped</option>
+                                    <option value="7">Leather</option>
+                                    <option value="8">Wire</option>
+                                    <option value="9">Wood</option>
+                                    <option value="10">Bone</option>
+                                    <option value="11">Segmented</option>
+                                    <option value="12">Integral</option>
+                                    <option value="13">Capped</option>
+                                    <option value="14">Ornate</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Pommel</h3>
-                        <label for="bluntHandPommel">Type</label>
-                        <select name="pommel" id="bluntHandPommel">
-                            <option value="1">Sphere</option>
-                            <option value="2">Disc</option>
-                            <option value="3">Wheel</option>
-                            <option value="4">Spike</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Ring</option>
-                            <option value="7">Hook</option>
-                            <option value="8">Knob</option>
-                            <option value="9">Gem</option>
-                            <option value="10">Cage</option>
-                            <option value="11">Counterweight</option>
-                            <option value="12">Flat</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="bluntHandPommel">Type</label>
+                                <select name="pommel" id="bluntHandPommel">
+                                    <option value="1">Sphere</option>
+                                    <option value="2">Disc</option>
+                                    <option value="3">Wheel</option>
+                                    <option value="4">Spike</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Ring</option>
+                                    <option value="7">Hook</option>
+                                    <option value="8">Knob</option>
+                                    <option value="9">Gem</option>
+                                    <option value="10">Cage</option>
+                                    <option value="11">Counterweight</option>
+                                    <option value="12">Flat</option>
+                                </select>
+                            </div>
 
-                        <label for="bluntHandPommelMaterial">Material</label>
-                        <select name="pommelMaterial" id="bluntHandPommelMaterial">
-                            <option value="1">High-Carbon Steel</option>
-                            <option value="2">Tool Steel</option>
-                            <option value="3">PM Stainless</option>
-                            <option value="4">Titanium Alloy</option>
-                            <option value="5">Tungsten Carbide</option>
-                            <option value="6">Maraging Steel</option>
-                            <option value="7">Bronze Alloy</option>
-                            <option value="8">Dark Steel</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="bluntHandPommelMaterial">Material</label>
+                                <select name="pommelMaterial" id="bluntHandPommelMaterial">
+                                    <option value="1">High-Carbon Steel</option>
+                                    <option value="2">Tool Steel</option>
+                                    <option value="3">PM Stainless</option>
+                                    <option value="4">Titanium Alloy</option>
+                                    <option value="5">Tungsten Carbide</option>
+                                    <option value="6">Maraging Steel</option>
+                                    <option value="7">Bronze Alloy</option>
+                                    <option value="8">Dark Steel</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Other</h3>
                         <label for="bluntHandEngravings">Engravings</label>
@@ -622,11 +714,17 @@
                         <label for="bluntHandInscriptions">Inscriptions</label>
                         <input type="text" name="inscriptions" id="bluntHandInscriptions" maxlength="255">
 
-                        <label for="bluntHandLength">Total Length (cm)</label>
-                        <input type="number" id="bluntHandLength" name="totalLength" step="0.01" min="0.00" required>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="bluntHandLength">Total Length (cm)</label>
+                                <input type="number" id="bluntHandLength" name="totalLength" step="0.01" min="0.00" required>
+                            </div>
 
-                        <label for="bluntHandWeight">Weight (kg)</label>
-                        <input type="number" id="bluntHandWeight" name="weight" step="0.01" min="0.00" required>
+                            <div class="formItem">
+                                <label for="bluntHandWeight">Weight (kg)</label>
+                                <input type="number" id="bluntHandWeight" name="weight" step="0.01" min="0.00" required>
+                            </div>
+                        </div>
                         
                         <label for="bluntHandPrice">Price</label>
                         <input type="number" id="bluntHandPrice" name="price" step="0.01" min="0.00" required>
@@ -660,70 +758,84 @@
                         </select>
                         
                         <h3>Shaft</h3>
-                        <label for="polearmShaftLength">Shaft Length</label>
-                        <input type="number" id="polearmShaftLength" name="shaftLength" step="0.01" min="0.00">
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="polearmShaftLength">Shaft Length (cm)</label>
+                                <input type="number" id="polearmShaftLength" name="shaftLength" step="0.01" min="0.00">
+                            </div>
 
-                        <label for="polearmShaftMaterial">Material</label>
-                        <select name="shaftMaterial" id="polearmShaftMaterial">
-                            <option value="1">Hickory</option>
-                            <option value="2">Ash</option>
-                            <option value="3">Ironwood</option>
-                            <option value="4">Purpleheart</option>
-                            <option value="5">Beech</option>
-                            <option value="6">Birch</option>
-                            <option value="7">Maple</option>
-                            <option value="8">Poplar</option>
-                            <option value="9">Black Walnut</option>
-                            <option value="10">Hornbeam</option>
-                            <option value="11">Lignum Vitae</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="polearmShaftMaterial">Material</label>
+                                <select name="shaftMaterial" id="polearmShaftMaterial">
+                                    <option value="1">Hickory</option>
+                                    <option value="2">Ash</option>
+                                    <option value="3">Ironwood</option>
+                                    <option value="4">Purpleheart</option>
+                                    <option value="5">Beech</option>
+                                    <option value="6">Birch</option>
+                                    <option value="7">Maple</option>
+                                    <option value="8">Poplar</option>
+                                    <option value="9">Black Walnut</option>
+                                    <option value="10">Hornbeam</option>
+                                    <option value="11">Lignum Vitae</option>
+                                </select>
+                            </div>
 
-                        <label for="polearmGrip">Grip Style</label>
-                        <select name="grip" id="polearmGrip">
-                            <option value="1">Straight</option>
-                            <option value="2">Waisted</option>
-                            <option value="3">Curved</option>
-                            <option value="4">Flared</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Cord-wrapped</option>
-                            <option value="7">Leather</option>
-                            <option value="8">Wire</option>
-                            <option value="9">Wood</option>
-                            <option value="10">Bone</option>
-                            <option value="11">Segmented</option>
-                            <option value="12">Integral</option>
-                            <option value="13">Capped</option>
-                            <option value="14">Ornate</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="polearmGrip">Grip Style</label>
+                                <select name="grip" id="polearmGrip">
+                                    <option value="1">Straight</option>
+                                    <option value="2">Waisted</option>
+                                    <option value="3">Curved</option>
+                                    <option value="4">Flared</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Cord-wrapped</option>
+                                    <option value="7">Leather</option>
+                                    <option value="8">Wire</option>
+                                    <option value="9">Wood</option>
+                                    <option value="10">Bone</option>
+                                    <option value="11">Segmented</option>
+                                    <option value="12">Integral</option>
+                                    <option value="13">Capped</option>
+                                    <option value="14">Ornate</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Butt Cap</h3>
-                        <label for="polearmButtCap">Type</label>
-                        <select name="buttCap" id="polearmButtCap">
-                            <option value="1">Sphere</option>
-                            <option value="2">Disc</option>
-                            <option value="3">Wheel</option>
-                            <option value="4">Spike</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Ring</option>
-                            <option value="7">Hook</option>
-                            <option value="8">Knob</option>
-                            <option value="9">Gem</option>
-                            <option value="10">Cage</option>
-                            <option value="11">Counterweight</option>
-                            <option value="12">Flat</option>
-                        </select>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="polearmButtCap">Type</label>
+                                <select name="buttCap" id="polearmButtCap">
+                                    <option value="1">Sphere</option>
+                                    <option value="2">Disc</option>
+                                    <option value="3">Wheel</option>
+                                    <option value="4">Spike</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Ring</option>
+                                    <option value="7">Hook</option>
+                                    <option value="8">Knob</option>
+                                    <option value="9">Gem</option>
+                                    <option value="10">Cage</option>
+                                    <option value="11">Counterweight</option>
+                                    <option value="12">Flat</option>
+                                </select>
+                            </div>
 
-                        <label for="polearmButtCapMaterial">Material</label>
-                        <select name="buttCapMaterial" id="polearmButtCapMaterial">
-                            <option value="1">High-Carbon Steel</option>
-                            <option value="2">Tool Steel</option>
-                            <option value="3">PM Stainless</option>
-                            <option value="4">Titanium Alloy</option>
-                            <option value="5">Tungsten Carbide</option>
-                            <option value="6">Maraging Steel</option>
-                            <option value="7">Bronze Alloy</option>
-                            <option value="8">Dark Steel</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="polearmButtCapMaterial">Material</label>
+                                <select name="buttCapMaterial" id="polearmButtCapMaterial">
+                                    <option value="1">High-Carbon Steel</option>
+                                    <option value="2">Tool Steel</option>
+                                    <option value="3">PM Stainless</option>
+                                    <option value="4">Titanium Alloy</option>
+                                    <option value="5">Tungsten Carbide</option>
+                                    <option value="6">Maraging Steel</option>
+                                    <option value="7">Bronze Alloy</option>
+                                    <option value="8">Dark Steel</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Other</h3>
                         <label for="polearmEngravings">Engravings</label>
@@ -732,11 +844,17 @@
                         <label for="polearmInscriptions">Inscriptions</label>
                         <input type="text" name="inscriptions" id="polearmInscriptions" maxlength="255">
 
-                        <label for="polearmLength">Total Length (cm)</label>
-                        <input type="number" id="polearmLength" name="totalLength" step="0.01" min="0.00" required>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="polearmLength">Total Length (cm)</label>
+                                <input type="number" id="polearmLength" name="totalLength" step="0.01" min="0.00" required>
+                            </div>
 
-                        <label for="polearmWeight">Weight (kg)</label>
-                        <input type="number" id="polearmWeight" name="weight" step="0.01" min="0.00" required>
+                            <div class="formItem">
+                                <label for="polearmWeight">Weight (kg)</label>
+                                <input type="number" id="polearmWeight" name="weight" step="0.01" min="0.00" required>
+                            </div>
+                        </div>
                         
                         <label for="polearmPrice">Price</label>
                         <input type="number" id="polearmPrice" name="price" step="0.01" min="0.00" required>
@@ -766,41 +884,49 @@
                         </select>
                         
                         <h3>Shaft</h3>
-                        <label for="rangedShaftLength">Shaft Length</label>
-                        <input type="number" id="rangedShaftLength" name="shaftLength" step="0.01" min="0.00">
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="rangedShaftLength">Shaft Length</label>
+                                <input type="number" id="rangedShaftLength" name="shaftLength" step="0.01" min="0.00">
+                            </div>
 
-                        <label for="rangedShaftMaterial">Material</label>
-                        <select name="shaftMaterial" id="rangedShaftMaterial">
-                            <option value="1">Hickory</option>
-                            <option value="2">Ash</option>
-                            <option value="3">Ironwood</option>
-                            <option value="4">Purpleheart</option>
-                            <option value="5">Beech</option>
-                            <option value="6">Birch</option>
-                            <option value="7">Maple</option>
-                            <option value="8">Poplar</option>
-                            <option value="9">Black Walnut</option>
-                            <option value="10">Hornbeam</option>
-                            <option value="11">Lignum Vitae</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="rangedShaftMaterial">Material</label>
+                                <select name="shaftMaterial" id="rangedShaftMaterial">
+                                    <option value="1">Hickory</option>
+                                    <option value="2">Ash</option>
+                                    <option value="3">Ironwood</option>
+                                    <option value="4">Purpleheart</option>
+                                    <option value="5">Beech</option>
+                                    <option value="6">Birch</option>
+                                    <option value="7">Maple</option>
+                                    <option value="8">Poplar</option>
+                                    <option value="9">Black Walnut</option>
+                                    <option value="10">Hornbeam</option>
+                                    <option value="11">Lignum Vitae</option>
+                                </select>
+                            </div>
 
-                        <label for="rangedGrip">Grip Style</label>
-                        <select name="grip" id="rangedGrip">
-                            <option value="1">Straight</option>
-                            <option value="2">Waisted</option>
-                            <option value="3">Curved</option>
-                            <option value="4">Flared</option>
-                            <option value="5">Faceted</option>
-                            <option value="6">Cord-wrapped</option>
-                            <option value="7">Leather</option>
-                            <option value="8">Wire</option>
-                            <option value="9">Wood</option>
-                            <option value="10">Bone</option>
-                            <option value="11">Segmented</option>
-                            <option value="12">Integral</option>
-                            <option value="13">Capped</option>
-                            <option value="14">Ornate</option>
-                        </select>
+                            <div class="formItem">
+                                <label for="rangedGrip">Grip Style</label>
+                                <select name="grip" id="rangedGrip">
+                                    <option value="1">Straight</option>
+                                    <option value="2">Waisted</option>
+                                    <option value="3">Curved</option>
+                                    <option value="4">Flared</option>
+                                    <option value="5">Faceted</option>
+                                    <option value="6">Cord-wrapped</option>
+                                    <option value="7">Leather</option>
+                                    <option value="8">Wire</option>
+                                    <option value="9">Wood</option>
+                                    <option value="10">Bone</option>
+                                    <option value="11">Segmented</option>
+                                    <option value="12">Integral</option>
+                                    <option value="13">Capped</option>
+                                    <option value="14">Ornate</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <h3>Other</h3>
                         <label for="rangedEngravings">Engravings</label>
@@ -809,11 +935,17 @@
                         <label for="rangedInscriptions">Inscriptions</label>
                         <input type="text" name="inscriptions" id="rangedInscriptions" maxlength="255">
 
-                        <label for="rangedLength">Total Length (cm)</label>
-                        <input type="number" id="rangedLength" name="totalLength" step="0.01" min="0.00" required>
+                        <div class="formSubsection">
+                            <div class="formItem">
+                                <label for="rangedLength">Total Length (cm)</label>
+                                <input type="number" id="rangedLength" name="totalLength" step="0.01" min="0.00" required>
+                            </div>
 
-                        <label for="rangedWeight">Weight (kg)</label>
-                        <input type="number" id="rangedWeight" name="weight" step="0.01" min="0.00" required>
+                            <div class="formItem">
+                                <label for="rangedWeight">Weight (kg)</label>
+                                <input type="number" id="rangedWeight" name="weight" step="0.01" min="0.00" required>
+                            </div>
+                        </div>
                         
                         <label for="rangedPrice">Price</label>
                         <input type="number" id="rangedPrice" name="price" step="0.01" min="0.00" required>
@@ -833,7 +965,10 @@
         </div>
 
         <div class="section" id="editProductForm">
+            <div class="topSection">
                 <h2>Edit Product</h2>
+                <button class="deleteButton">Delete Item</button>
+            </div>
                 <form id="editWeaponForm">
                     <div class="weaponSpecificForm" id="editSwordsForm">
                         <label for="editSwordName">Product Name:</label>
@@ -1646,7 +1781,7 @@
                         
                     <input id="fileUpload" type="file" name="image" accept="image/*">
 
-                    <input type="submit" value="Add Weapon" id="submitEdit">
+                    <input type="submit" value="Submit Edit" id="submitEdit">
                 </form>
 
                 <p id="formMessage"></p>

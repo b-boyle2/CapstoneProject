@@ -28,7 +28,7 @@ $inscriptions = $_POST['inscriptions'] ?? '';
 $length = isset($_POST['totalLength']) ? (float)$_POST['totalLength'] : 1;
 $weight = isset($_POST['weight']) ? (float)$_POST['weight'] : 1;
 $price = isset($_POST['price']) ? (float)$_POST['price'] : 1;
-$image = $_POST['image'] ?? '';
+$image = $_POST['image'] ?? '../Images/Placeholder.png';
 
 if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
     $imageTmp = $_FILES['image']['tmp_name'];
@@ -51,7 +51,7 @@ if (!in_array($table, $allowedTables)) {
 // SQL insert
 $sql = "
 INSERT INTO $table (
-    Name, Image, Subcategory_ID, HeadMaterial_ID, shaftLength,
+    Name, Image, Subcategory_ID, HeadMaterial_ID, ShaftLength,
     ShaftMaterial_ID, Grip_ID, ButtCap_ID, ButtCapMaterial_ID,
     Engravings, Inscriptions, Length_cm, Weight_kg, Price
 )

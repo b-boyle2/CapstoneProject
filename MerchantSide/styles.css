@@ -11,6 +11,7 @@
 :root{
     --mainDarkGray: #0E1010;
     --darkRed: #991B1E;
+    --lightRed: #cf4e50;
     --gray: #3C3F40;
     --gold: #926D41;
     --yellow: #D5B85A;
@@ -298,7 +299,7 @@ input[type="file"] {
 }
 
 form h3{
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 #submit, #submitEdit{
@@ -331,5 +332,26 @@ form h3{
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+.topSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.deleteButton{
+    all: unset;
+    background-color: var(--darkRed);
+    padding: 7px 13px;
+    color: white;
+    border-radius: 5px;
+    font-family: 'palatino-linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    font-size: 13pt;
+}
+
+.deleteButton:hover{
+    cursor: pointer;
+    background-color: var(--lightRed);
 }
 /* FORMS END */

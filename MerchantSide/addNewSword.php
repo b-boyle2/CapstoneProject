@@ -37,7 +37,7 @@ $inscriptions = $_POST['inscriptions'] ?? '';
 $bladeLength = isset($_POST['bladeLength']) ? (float)$_POST['bladeLength'] : 1;
 $weight = isset($_POST['weight']) ? (float)$_POST['weight'] : 1;
 $price = isset($_POST['price']) ? (float)$_POST['price'] : 1;
-$image = $_POST['image'] ?? '';
+$image = $_POST['image'] ?? '../Images/Placeholder.png';
 
 if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
     $imageTmp = $_FILES['image']['tmp_name'];
