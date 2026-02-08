@@ -210,10 +210,14 @@ td{
     vertical-align: middle;
 }
 
-.edit{
+.editButton{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.editButton:hover{
+    cursor: pointer;
 }
 
 .editIcon{
@@ -260,11 +264,11 @@ table{
 }
 
 /*  FORMS START */
-#productForm{
+#productForm, #editProductForm{
     display: none;
 }
 
-#addWeaponForm{
+#addWeaponForm, #editWeaponForm{
     display: flex;
     flex-direction: column;
     padding: 30px 30px 15px;
@@ -276,7 +280,7 @@ table{
     flex-direction: column;
 }
 
-input, #addWeaponForm select{
+input, #addWeaponForm select, #editWeaponForm select{
     font-size: 12pt;
     margin: 5px 0 15px;
     padding: 5px 10px;
@@ -297,21 +301,35 @@ form h3{
     margin-top: 5px;
 }
 
-.weaponSpecificForm{
-    display: none;
-    
-}
-
-#submit{
+#submit, #submitEdit{
     margin: 20px 0 0;
-    font-size: 15pt;
-    background-color: var(--yellow);
+    font-weight: 500;
+    font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
+    background-color: var(--gold);
+    color: white;
     border: none;
-    /*border: 1.5px solid var(--gold);*/
+    padding: 10px 0;
     box-shadow: 0 3px 7px 0 rgba(0,0,0,0.25);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#submit:hover {
+#submit:hover, #submitEdit:hover{
     cursor: pointer;
+    background-color: var(--yellow);
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.formSubsection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.formItem{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 /* FORMS END */

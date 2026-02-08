@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const weaponTypeSelection = document.querySelector("#weaponTypeSelection");
-    const tableName = weaponTypeSelection.value;
+    let tableName = weaponTypeSelection.value;
 
     const productsTableBody = document.querySelector(".listedItems tbody");
     const filters = document.getElementsByClassName("subcategoryFilter");
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res=> res.json())
             .then(data => {
                 allWeapons = data;
-                displayWeapons(allWeapons);
+                displayWeapons(allWeapons, tableName);
             })
         .catch(err => console.error(err));
 
@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         showFilter(tableName);
-
     }
 
     function filterBySubcategory(subcategoryID) {
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         displayWeapons(filtered);
     }
     
-    function displayWeapons(data) {
+    function displayWeapons(data, tableName) {
         //clears previous results
         if (productsTableBody) {
             productsTableBody.innerHTML = '';
@@ -45,8 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
         
         data.forEach(weapon => {
             const row = document.createElement("tr");
+            row.dataset.weaponID = weapon.ID;
+            row.dataset.weaponType = tableName;
 
             const iconCell = document.createElement("td");
+            iconCell.classList.add("editButton");
             const editIcon = document.createElement("img");
             editIcon.classList.add("editIcon");
             editIcon.src = "Images/pencilIcon.svg";
@@ -135,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadWeapons(tableName);
 
     weaponTypeSelection.addEventListener("change", () => {
-    const tableName = weaponTypeSelection.value;
+    tableName = weaponTypeSelection.value;
     loadWeapons(tableName);
     })
 
@@ -145,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const weaponTypeSelect = document.getElementById("weaponTypeSelect");
 
     // map weapon types to which divs should be visible
-    const weaponFormDivs = {
+    const addWeaponFormDivs = {
         swords: document.getElementById("swordsForm"),
         daggers: document.getElementById("daggersForm"),
         blunthandweapons: document.getElementById("bluntHandsForm"),
@@ -153,12 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
         ranged: document.getElementById("rangedForm")
     };
 
-    function updateWeaponForms() {
-        const selectedType = weaponTypeSelect.value;
-        //hide all weaponFormDivs first
-        Object.values(weaponFormDivs).forEach(div => div.style.display = "none");
-        //only show the relevant weaponFormDiv and disable all other entry forms
-        Object.entries(weaponFormDivs).forEach(([key, div]) => {
+    function updateWeaponForms(divCollection, selectedType) {
+        //hide all addWeaponFormDivs first
+        Object.values(divCollection).forEach(div => div.style.display = "none");
+        //only show the relevant addWeaponFormDiv and disable all other entry forms
+        Object.entries(divCollection).forEach(([key, div]) => {
             if (key === selectedType) {
                 div.style.display = "flex";
                 div.querySelectorAll("input, select").forEach(el => el.disabled = false);
@@ -169,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    updateWeaponForms();
+    updateWeaponForms(addWeaponFormDivs, weaponTypeSelect.value);
 
     // show uploaded image name
     const imageUpload = document.querySelector(".customFileUpload")
@@ -183,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    weaponTypeSelect.addEventListener("change", updateWeaponForms);
+    weaponTypeSelect.addEventListener("change", () => updateWeaponForms(addWeaponFormDivs, weaponTypeSelect.value));
 
     form.addEventListener("submit", function(event){
         event.preventDefault(); // prevent page reload
@@ -222,12 +223,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const backButton = document.getElementById("backButton");
-    const addWeapon = document.getElementById("addWeaponButton");
+    const addWeaponButton = document.getElementById("addWeaponButton");
     const weaponList = document.getElementById("weaponList");
     const formSection = document.getElementById("productForm");
 
-    addWeapon.onclick = (e) => {
-        addWeapon.style.display = "none";
+    addWeaponButton.onclick = (e) => {
+        addWeaponButton.style.display = "none";
         weaponList.style.display = "none";
 
         formSection.style.display = "flex";
@@ -238,10 +239,118 @@ document.addEventListener("DOMContentLoaded", () => {
     backButton.onclick = (e) => {
         formSection.style.display = "none";
         backButton.style.display = "none";
+        editProductForm.style.display = "none";
 
-        addWeapon.style.display = "flex";
+        addWeaponButton.style.display = "flex";
         weaponList.style.display = "flex";
     }
 
+    //FOR EDITING A PRODUCT
+    const editProductForm = document.getElementById("editProductForm");
+    
+    const editWeaponFormDivs = {
+        swords: document.getElementById("editSwordsForm"),
+        daggers: document.getElementById("editDaggersForm"),
+        blunthandweapons: document.getElementById("editBluntHandsForm"),
+        polearms: document.getElementById("editPolearmsForm"),
+        ranged: document.getElementById("editRangedForm")
+    };
+
+    weaponList.addEventListener("click", (e) => {
+        const editButton = e.target.closest(".editButton");
+        if (!editButton) return;
+
+        const row = editButton.closest("tr");
+        const weaponID = row.dataset.weaponID;
+        const weaponType = row.dataset.weaponType;
+
+        const weaponIdData = new FormData();
+        weaponIdData.append("weaponID", weaponID);
+        weaponIdData.append("table", tableName);
+
+        updateWeaponForms(editWeaponFormDivs, tableName);
+
+        console.log("ID num: ", weaponID);
+        console.log("Table: ",  tableName);
+
+        for (let pair of weaponIdData.entries()) {
+    console.log(pair[0], pair[1]);
+}
+
+        fetch("GetSingleProductData.php", {
+            method: "POST",
+            body: weaponIdData
+        })
+        .then(res => res.json())
+        .then(data => {
+            const weapon = data;
+
+            if (!weapon) {
+                console.error("No weapon data returned");
+                return;
+            }
+
+            let activeSection;
+            if (tableName === "swords") {
+                activeSection = editProductForm.querySelector("#editSwordsForm");
+            } 
+            else if (tableName === "daggers") {
+                activeSection = editProductForm.querySelector("#editDaggersForm");
+            } 
+            else if (tableName === "blunthandweapons") {
+                 activeSection = editProductForm.querySelector("#editBluntHandsForm");
+            }
+            else if (tableName === "polearms") {
+                activeSection = editProductForm.querySelector("#editPolearmsForm");
+            }
+            else if (tableName === "ranged") {
+                activeSection = editProductForm.querySelector("#editRangedForm");
+            }
+
+            Object.entries(weapon).forEach(([key, value]) => {
+                const input = activeSection.querySelector(`[name='${key}']`);
+                if (input) {
+                    input.value = value ?? ''; // default to empty string if null
+                }
+            });
+
+            const uploadedImg = document.getElementById("editFormImg");
+            uploadedImg.textContent = weapon.Image;
+
+            //ensures no blank entry if no new image is uploaded
+            let existingImageInput = editProductForm.querySelector("[name='existingImage']");
+
+            if (!existingImageInput) {
+                existingImageInput = document.createElement("input");
+                existingImageInput.type = "hidden";
+                existingImageInput.name = "existingImage";
+                editProductForm.appendChild(existingImageInput);
+            }
+            existingImageInput.value = weapon.Image;
+        })
+
+        addWeaponButton.style.display = "none";
+        weaponList.style.display = "none";
+
+        backButton.style.display = "flex";
+        editProductForm.style.display = "flex";
+    })
+    
+    /*editProductForm.addEventListener("submit", function(event){
+        event.preventDefault(); // prevent page reload
+        
+        const formData = new FormData(form);
+        
+        
+        fetch(tableToAddTo, {
+            method: "POST",
+            body: formData
+        })
+            .then(res => res.json()) // only if PHP returns JSON
+            .then(data => console.log(data))
+        .then(res => res.text())
+        .then(text => console.log(text))
+        .catch(err => console.error(err));
+    });*/
 
 })
