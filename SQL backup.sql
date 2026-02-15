@@ -36,185 +36,193 @@ INSERT INTO Subcategories (Name, WeaponType) VALUES
 CREATE TABLE MetalMaterials (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO MetalMaterials (Name) VALUES
-('High-Carbon Steel'),
-('Tool Steel'),
-('PM Stainless'),
-('Titanium Alloy'),
-('Tungsten Carbide'),
-('Maraging Steel'),
-('Bronze Alloy'),
-('Dark Steel');
+('High-Carbon Steel', '../Images/CustomizationOptions/Materials/highCarbonSteel.png', 0.00),
+('Tool Steel', '../Images/CustomizationOptions/Materials/toolSteel.png', 25.00),
+('PM Stainless', '../Images/CustomizationOptions/Materials/pmStainlessSteel.png', 60.00),
+('Titanium Alloy', '../Images/CustomizationOptions/Materials/titaniumAlloy.png', 85.00),
+('Tungsten Carbide', '../Images/CustomizationOptions/Materials/tungstenCarbide.png', 110.00),
+('Maraging Steel', '../Images/CustomizationOptions/Materials/maragingSteel.png', 75.00),
+('Bronze Alloy', '../Images/CustomizationOptions/Materials/bronzeAlloy.png', 15.00),
+('Dark Steel', '../Images/CustomizationOptions/Materials/darkSteel.png', 50.00);
 
 CREATE TABLE BladeShapes (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO BladeShapes (Name) VALUES
-('Clip'),
-('Drop'),
-('Tanto'),
-('Fuller'),
-('Leaf'),
-('Scimitar'),
-('Falchion'),
-('Bowie'),
-('Wharncliffe'),
-('Recurve'),
-('Kukri'),
-('Estoc');
+('Clip', '../Images/CustomizationOptions/BladeShapes/clip.png', 25.00),
+('Drop', '../Images/CustomizationOptions/BladeShapes/drop.png', 10.00),
+('Tanto', '../Images/CustomizationOptions/BladeShapes/tanto.png', 30.00),
+('Fuller', '../Images/CustomizationOptions/BladeShapes/fuller.png', 45.00),
+('Leaf', '../Images/CustomizationOptions/BladeShapes/leaf.png', 40.00),
+('Scimitar', '../Images/CustomizationOptions/BladeShapes/scimitar.png', 55.00),
+('Falchion', '../Images/CustomizationOptions/BladeShapes/falcion.png', 40.00),
+('Bowie', '../Images/CustomizationOptions/BladeShapes/bowie.png', 35.00),
+('Wharncliffe', '../Images/CustomizationOptions/BladeShapes/wharncliffe.png', 25.00),
+('Recurve', '../Images/CustomizationOptions/BladeShapes/recurve.png', 50.00),
+('Kukri', '../Images/CustomizationOptions/BladeShapes/kukri.png', 60.00),
+('Estoc', '../Images/CustomizationOptions/BladeShapes/estoc.png', 70.00);
 
 CREATE TABLE BladeEdges (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO BladeEdges (Name) VALUES
-('Single Edge'),
-('Double Edge'),
-('False Edge'),
-('Blunt'),
-('Plain'),
-('Serrated'),
-('Hybrid'),
-('Flat Grind'),
-('Hollow'),
-('Convex'),
-('Chisel'),
-('Scandi'),
-('Saber');
+('Single Edge', '../Images/CustomizationOptions/BladeEdges/single.png', 0.00),
+('Double Edge', '../Images/CustomizationOptions/BladeEdges/double.png', 25.00),
+('False Edge', '../Images/CustomizationOptions/BladeEdges/false.png', 15.00),
+('Blunt', '../Images/CustomizationOptions/BladeEdges/blunt/png', 5.00),
+('Plain', '../Images/CustomizationOptions/BladeEdges/plain.png', 0.00),
+('Serrated', '../Images/CustomizationOptions/BladeEdges/serrated.png', 40.00),
+('Hybrid', '../Images/CustomizationOptions/BladeEdges/hybrid.png', 45.00),
+('Flat Grind', '../Images/CustomizationOptions/BladeEdges/flat.png', 15.00),
+('Hollow', '../Images/CustomizationOptions/BladeEdges/hollow.png', 30.00),
+('Convex', '../Images/CustomizationOptions/BladeEdges/convex.png', 40.00),
+('Chisel', '../Images/CustomizationOptions/BladeEdges/chisel.png', 20.00),
+('Scandi', '../Images/CustomizationOptions/BladeEdges/scandi.png', 25.00),
+('Saber', '../Images/CustomizationOptions/BladeEdges/saber.png', 25.00);
 
 CREATE TABLE WoodMaterials (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO WoodMaterials (Name) VALUES
-('Hickory'),
-('Ash'),
-('Ironwood'),
-('Purpleheart'),
-('Beech'),
-('Birch'),
-('Maple'),
-('Poplar'),
-('Black Walnut'),
-('Hornbeam'),
-('Lignum Vitae');
+('Hickory', '../Images/CustomizationOptions/Materials/hickory.png', 10.00),
+('Ash', '../Images/CustomizationOptions/Materials/ash.png', 6.00),
+('Ironwood', '../Images/CustomizationOptions/Materials/ironwood.png', 22.00),
+('Purpleheart', '../Images/CustomizationOptions/Materials/purpleheart.png', 18.00),
+('Beech', '../Images/CustomizationOptions/Materials/beech.png', 4.00),
+('Birch', '../Images/CustomizationOptions/Materials/birch.png', 2.00),
+('Maple', '../Images/CustomizationOptions/Materials/maple.png', 8.00),
+('Poplar', '../Images/CustomizationOptions/Materials/poplar.png', 0.00),
+('Black Walnut', '../Images/CustomizationOptions/Materials/blackWalnut.png', 15.00),
+('Hornbeam', '../Images/CustomizationOptions/Materials/hornbeam.png', 12.00),
+('Lignum Vitae', '../Images/CustomizationOptions/Materials/lignumVitae.png', 25.00);
 
 CREATE TABLE GripStyles (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40),
-    UNIQUE(Name)
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO GripStyles (Name) VALUES
-('Straight'),
-('Waisted'),
-('Curved'),
-('Flared'),
-('Faceted'),
-('Cord-wrapped'),
-('Leather'),
-('Wire'),
-('Wood'),
-('Bone'),
-('Segmented'),
-('Integral'),
-('Capped'),
-('Ornate');
+('Straight', '../Images/CustomizationOptions/GripStyles/straight.png', 0.00),
+('Waisted', '../Images/CustomizationOptions/GripStyles/waisted.png', 6.00),
+('Curved', '../Images/CustomizationOptions/GripStyles/curved.png', 8.00),
+('Flared', '../Images/CustomizationOptions/GripStyles/flared.png', 10.00),
+('Faceted', '../Images/CustomizationOptions/GripStyles/faceted.png', 22.00),
+('Cord-wrapped', '../Images/CustomizationOptions/GripStyles/cordWrapped.png', 12.00),
+('Leather', '../Images/CustomizationOptions/GripStyles/leather.png', 15.00),
+('Wire', '../Images/CustomizationOptions/GripStyles/wire.png', 18.00),
+('Wood', '../Images/CustomizationOptions/GripStyles/wood.png', 0.00),
+('Bone', '../Images/CustomizationOptions/GripStyles/bone.png', 14.00),
+('Segmented', '../Images/CustomizationOptions/GripStyles/segmented.png', 20.00),
+('Integral', '../Images/CustomizationOptions/GripStyles/integral.png', 0.00),
+('Capped', '../Images/CustomizationOptions/GripStyles/capped.png', 10.00),
+('Ornate', '../Images/CustomizationOptions/GripStyles/ornate.png', 30.00);
 
 CREATE TABLE PommelTypes (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
-INSERT INTO PommelTypes (Name) VALUES
-('Sphere'),
-('Disc'),
-('Wheel'),
-('Spike'),
-('Faceted'),
-('Ring'),
-('Hook'),
-('Knob'),
-('Gem'),
-('Cage'),
-('Counterweight'),
-('Flat');
-
-CREATE TABLE PommelAccents (
-    ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
-);
-
-INSERT INTO PommelAccents (Name) VALUES
-('Brass'),
-('Bronze'),
-('Steel'),
-('None');
+INSERT INTO PommelTypes (Name, Image, PriceModifier) VALUES
+('Sphere', '../Images/CustomizationOptions/PommelTypes/sphere.png', 6.00),
+('Disc', '../Images/CustomizationOptions/PommelTypes/disc.png', 5.00),
+('Wheel', '../Images/CustomizationOptions/PommelTypes/wheel.png', 8.00),
+('Spike', '../Images/CustomizationOptions/PommelTypes/spike.png', 12.00),
+('Faceted', '../Images/CustomizationOptions/PommelTypes/faceted.png', 18.00),
+('Ring', '../Images/CustomizationOptions/PommelTypes/ring.png', 14.00),
+('Hook', '../Images/CustomizationOptions/PommelTypes/hook.png', 15.00),
+('Knob', '../Images/CustomizationOptions/PommelTypes/knob.png', 8.00),
+('Gem', '../Images/CustomizationOptions/PommelTypes/jeweled.png', 15.00),
+('Cage', '../Images/CustomizationOptions/PommelTypes/cage.png', 22.00),
+('Counterweight', '../Images/CustomizationOptions/PommelTypes/counterweight.png', 10.00),
+('Flat', '../Images/CustomizationOptions/PommelTypes/flat.png', 0.00);
 
 CREATE TABLE PommelGems (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO PommelGems (Name) VALUES
-('Garnet'),
-('Sapphire'),
-('Ruby'),
-('Jade'),
-('Quartz'),
-('Topaz'),
-('Pearl'),
-('Onyx');
+('Garnet', '../Images/CustomizationOptions/PommelGems/garnet.png', 35.00),
+('Sapphire', '../Images/CustomizationOptions/PommelGems/sapphire.png', 70.00),
+('Ruby', '../Images/CustomizationOptions/PommelGems/ruby.png', 75.00),
+('Jade', '../Images/CustomizationOptions/PommelGems/jade.png', 20.00),
+('Rose Quartz', '../Images/CustomizationOptions/PommelGems/roseQuartz.png', 10.00),
+('Topaz', '../Images/CustomizationOptions/PommelGems/topaz.png', 45.00),
+('Pearl', '../Images/CustomizationOptions/PommelGems/pearl.png', 30.00),
+('Onyx', '../Images/CustomizationOptions/PommelGems/onyx.png', 25.00);
 
 CREATE TABLE SheathMaterials (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO SheathMaterials (Name) VALUES
-('Leather'),
-('Wooden'),
-('Metal'),
-('Laquered');
+('Leather', '../Images/CustomizationOptions/SheathMaterials/leather.png', 0.00),
+('Wooden', '../Images/CustomizationOptions/SheathMaterials/wooden.png', 10.00),
+('Metal', '../Images/CustomizationOptions/SheathMaterials/metal.png', 30.00),
+('Laquered', '../Images/CustomizationOptions/SheathMaterials/lacquered.png', 18.00);
 
 CREATE TABLE SheathColors (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO SheathColors (Name) VALUES
-('Black'),
-('Dark Brown'),
-('Chestnut'),
-('Mahogany'),
-('Deep Indigo'),
-('Crimson'),
-('Dark Green'),
-('Forest Green'),
-('Navy'),
-('Steel Gray'),
-('Charcoal'),
-('Natural'),
-('Bone White'),
-('Midnight Blue'),
-('Oxblood');
+('Black', '../Images/CustomizationOptions/SheathColors/black.png', 2.00),
+('Dark Brown', '../Images/CustomizationOptions/SheathColors/darkBrown.png', 0.00),
+('Chestnut', '../Images/CustomizationOptions/SheathColors/chestnut.png', 2.00),
+('Mahogany', '../Images/CustomizationOptions/SheathColors/mahogany.png', 5.00),
+('Deep Indigo', '../Images/CustomizationOptions/SheathColors/deepIndigo.png', 6.00),
+('Crimson', '../Images/CustomizationOptions/SheathColors/crimson.png', 6.00),
+('Dark Green', '../Images/CustomizationOptions/SheathColors/darkGreen.png', 4.00),
+('Forest Green', '../Images/CustomizationOptions/SheathColors/forestGreen.png', 4.00),
+('Navy', '../Images/CustomizationOptions/SheathColors/navy.png', 4.00),
+('Steel Gray', '../Images/CustomizationOptions/SheathColors/steelGray.png', 4.00),
+('Charcoal', '../Images/CustomizationOptions/SheathColors/charcoal.png', 2.00),
+('Natural', '../Images/CustomizationOptions/SheathColors/natural.png', 0.00),
+('Bone White', '../Images/CustomizationOptions/SheathColors/boneWhite.png', 7.00),
+('Midnight Blue', '../Images/CustomizationOptions/SheathColors/midnightBlue.png', 6.00),
+('Oxblood', '../Images/CustomizationOptions/SheathColors/oxblood.png', 7.00);
 
 CREATE TABLE SheathTypes (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL
+    Image VARCHAR(255) NOT NULL,
+    PriceModifier(10,2) NOT NULL
 );
 
 INSERT INTO SheathTypes (Name) VALUES
-('Minimal'),
-('Ornate'),
-('Jeweled'),
-('Wrapped');
+('Minimal', '../Images/CustomizationOptions/SheathTypes/minimal.png', 0.00),
+('Ornate', '../Images/CustomizationOptions/SheathTypes/ornate.png', 35.00),
+('Jeweled', '../Images/CustomizationOptions/SheathTypes/jeweled.png', 60.00),
+('Wrapped', '../Images/CustomizationOptions/SheathTypes/wrapped.png', 15.00);
 
 -- ========================================
 -- Swords Table

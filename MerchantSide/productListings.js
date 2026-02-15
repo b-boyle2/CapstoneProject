@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 allWeapons = data;
                 displayWeapons(allWeapons, tableName);
             })
+           /*.then(res => res.text())
+            .then(data => {
+            console.log(data);        // logs raw PHP output
+            document.body.innerHTML = data; // optional: display it in page
+            })*/
         .catch(err => console.error(err));
 
         for (const filter of filters) {

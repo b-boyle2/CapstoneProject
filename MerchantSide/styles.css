@@ -225,12 +225,12 @@ td{
     width: 17px;
 }
 
-#weaponTypeSelection, #weaponTypeSelection:focus{
+.typeSelection, .typeSelection:focus{
     border: none;
     font-size: 24px;
 }
 
-#weaponTypeSelection option{
+.typeSelection option{
     font-size: 15px;
     border: none;
 }
@@ -265,11 +265,11 @@ table{
 }
 
 /*  FORMS START */
-#productForm, #editProductForm{
+.addForm, .editForm{
     display: none;
 }
 
-#addWeaponForm, #editWeaponForm{
+.addMainForm, .editMainForm{
     display: flex;
     flex-direction: column;
     padding: 30px 30px 15px;
@@ -281,7 +281,7 @@ table{
     flex-direction: column;
 }
 
-input, #addWeaponForm select, #editWeaponForm select{
+input, .addMainForm select, .editMainForm select{
     font-size: 12pt;
     margin: 5px 0 15px;
     padding: 5px 10px;
@@ -302,7 +302,7 @@ form h3{
     margin-top: 10px;
 }
 
-#submit, #submitEdit{
+.submitButton{
     margin: 20px 0 0;
     font-weight: 500;
     font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
@@ -314,7 +314,7 @@ form h3{
     transition: background-color 0.3s, color 0.3s;
 }
 
-#submit:hover, #submitEdit:hover{
+.submitButton:hover{
     cursor: pointer;
     background-color: var(--yellow);
     color: black;

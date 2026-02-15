@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 
-$conn = new mysqli("localhost", "root", "", "ironveil_forge");
+$conn = new mysqli("127.0.0.1", "root", "", "ironveil_forge");
 if ($conn->connect_error) {
     echo json_encode(["error" => "DB connection failed"]);
     exit;

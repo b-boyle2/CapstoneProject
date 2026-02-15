@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 
-$conn = new mysqli("localhost", "root", "", "ironveil_forge");
+$conn = new mysqli("127.0.0.1", "root", "", "ironveil_forge");
 if ($conn->connect_error) {
     echo json_encode(["error" => "DB connection failed"]);
     exit;
@@ -14,10 +14,17 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $table = $_POST['table'] ?? '';
-$id = isset($_POST['weaponID']) ? (int)$_POST['weaponID'] : 0;
+if(isset($_POST['weaponID'])) {
+   $id = isset($_POST['weaponID']) ? (int)$_POST['weaponID'] : 0; 
+}
+else {
+    $id = isset($_POST['optionID']) ? (int)$_POST['optionID'] : 0; 
+}
+
 
 // Validate table name
-$allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged'];
+$allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged', 'bladeedges', 'bladeshapes', 'gripstyles', 'metalmaterials',
+    'pommelgems', 'pommeltypes', 'sheathcolors', 'sheathmaterials','sheathtypes', 'woodmaterials'];
 if (!in_array($table, $allowedTables)) {
     echo json_encode(["error" => "Invalid Table"]);
     exit;
