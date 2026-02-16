@@ -1,28 +1,37 @@
 <?php
-header("Content-Type: application/json");
+header('Content-Type: application/json');
 
-//database connection
-$conn = new mysqli("127.0.0.1", "root", "", "ironveil_forge");
-
-if ($conn->connect_error) {
-    die(json_encode(["error" => "DB connection failed"]));
+// Connect to your database
+$mysqli = new mysqli("localhost", "root", "", "ironveil_forge");
+if ($mysqli->connect_errno) {
+    echo json_encode(["error" => "Failed to connect to MySQL: " . $mysqli->connect_error]);
+    exit;
 }
+// Get the query params from the URL
+$weaponType = isset($_GET['weaponType']) ? $_GET['weaponType'] : '';
+$id = isset($_GET['weaponID']) ? intval($_GET['weaponID']) : 0;
 
-$table = $_POST['table'] ?? '';
-$id = $_POST['weaponID'] ?? null;
+// Basic validation
+if (!$weaponType || !$id) {
+    echo json_encode(["error" => "Invalid weapon selected."]);
+    exit;
+}
 
 //validate table name to prevent SQL injection
 $allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged'];
-    if (!in_array($table, $allowedTables)) {
+    if (!in_array($weaponType, $allowedTables)) {
         die(json_encode(["error" => "Invalid Table"]));
     }
 
-//query only what's needed
-if ($table == "swords"){
+// Query the correct table dynamically (using prepared statements)
+if ($weaponType == "swords"){
     $sql = "
         SELECT
             w.Name, 
-            w.Image, 
+            w.Image,
+            w.Image2,
+            w.Image3,
+            w.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS BladeMaterial_ID,
@@ -53,8 +62,9 @@ if ($table == "swords"){
             w.Inscriptions,
             w.BladeLength_cm,
             w.Weight_kg,
-            w.Price 
-        FROM $table w
+            w.Price,
+            w.Description
+        FROM $weaponType w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.BladeMaterial_ID = bm.ID
         LEFT JOIN BladeShapes bs ON w.BladeShape_ID = bs.ID
@@ -70,7 +80,7 @@ if ($table == "swords"){
         LEFT JOIN SheathTypes st ON w.SheathType_ID = st.ID
         WHERE w.ID = ?";
 }
-if($table == "daggers"){
+if($weaponType == "daggers"){
     $sql = "
         SELECT
             w.Name, 
@@ -101,8 +111,9 @@ if($table == "daggers"){
             w.Inscriptions,
             w.BladeLength_cm,
             w.Weight_kg,
-            w.Price 
-        FROM $table w
+            w.Price,
+            w.Description
+        FROM $weaponType w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.BladeMaterial_ID = bm.ID
         LEFT JOIN BladeEdges be ON w.BladeEdge_ID = be.ID
@@ -116,7 +127,7 @@ if($table == "daggers"){
         LEFT JOIN SheathTypes st ON w.SheathType_ID = st.ID
         WHERE w.ID = ?";
 }
-if($table == "blunthandweapons") {
+if($weaponType == "blunthandweapons") {
     $sql = "
         SELECT
             w.Name, 
@@ -139,8 +150,9 @@ if($table == "blunthandweapons") {
             w.Inscriptions,
             w.Length_cm,
             w.Weight_kg,
-            w.Price 
-        FROM $table w
+            w.Price,
+            w.Description
+        FROM $weaponType w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
         LEFT JOIN WoodMaterials wm ON w.ShaftMaterial_ID = wm.ID
@@ -149,7 +161,7 @@ if($table == "blunthandweapons") {
         LEFT JOIN PommelTypes p ON w.Pommel_ID = p.ID
         WHERE w.ID = ?";
 }
-if($table == "polearms") {
+if($weaponType == "polearms") {
     $sql = "
         SELECT
             w.Name, 
@@ -171,8 +183,9 @@ if($table == "polearms") {
             w.Inscriptions,
             w.Length_cm,
             w.Weight_kg,
-            w.Price 
-        FROM $table w
+            w.Price,
+            w.Description
+        FROM $weaponType w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
         LEFT JOIN WoodMaterials wm ON w.ShaftMaterial_ID = wm.ID
@@ -181,7 +194,7 @@ if($table == "polearms") {
         LEFT JOIN PommelTypes p ON w.ButtCap_ID = p.ID
         WHERE w.ID = ?";
 }
-if($table == "ranged") {
+if($weaponType == "ranged") {
     $sql = "
         SELECT
             w.Name, 
@@ -199,8 +212,9 @@ if($table == "ranged") {
             w.Inscriptions,
             w.Length_cm,
             w.Weight_kg,
-            w.Price 
-        FROM $table w
+            w.Price,
+            w.Description
+        FROM $weaponType w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
         LEFT JOIN WoodMaterials wm ON w.ShaftMaterial_ID = wm.ID
@@ -208,33 +222,25 @@ if($table == "ranged") {
         WHERE w.ID = ?";
 }
 
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id);
-$stmt->execute();
-
-if (!$stmt->execute()) {
-    error_log("Query failed: " . $stmt->error);
-} else {
-    error_log("Query executed successfully for ID $id in table $table");
-}
-
-$result = $stmt->get_result();
-$weapon = $result->fetch_assoc();
-
-error_log("DEBUG: Raw row from daggers query: " . json_encode($weapon));
-
-if (!$weapon) {
-    error_log("No rows returned for ID $id in table $table");
-} else {
-    error_log("Weapon data: " . print_r($weapon, true));
-}
-
-if (!$weapon) {
-    error_log("DEBUG: Query returned no row for table $table, ID $id");
-    echo json_encode(["error" => "No row found"]);
+$stmt = $mysqli->prepare($sql);
+if (!$stmt) {
+    echo json_encode(["error" => "Failed to prepare query."]);
     exit;
 }
 
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
 
+$weapon = $result->fetch_assoc();
+if (!$weapon) {
+    echo json_encode(["error" => "Weapon not found."]);
+    exit;
+}
+
+// Return weapon data as JSON
 echo json_encode($weapon);
-$conn->close();
+
+$stmt->close();
+$mysqli->close();
+?>

@@ -13,6 +13,7 @@
     --darkRed: #991B1E;
     --gray: #3C3F40;
     --gold: #926D41;
+    --yellow: #D5B85A;
 }
 
 *{
@@ -84,6 +85,7 @@ a:hover {
     height: 517px;
 }
 
+
 .bgImg{
     display: block;
     width: 100%;
@@ -101,8 +103,21 @@ a:hover {
     top: 0;
 }
 
+.noBanner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--mainDarkGray);
+}
+
+.noBanner .navigation{
+    position: relative;
+}
+
 .topSection{
-    padding: 20px 30px;
+    padding: 20px 30px 10px;
     display: flex;
     justify-content: right;
     width: auto;
@@ -227,9 +242,13 @@ h4{
 }
 
 .cart{
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+}
+
+.cart:hover{
+    cursor: pointer;
 }
 
 .cartIcon{
@@ -285,7 +304,7 @@ h4{
 }
 
 .button2{
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .button2#signUp{
@@ -443,13 +462,18 @@ p{
 
 
 /* WEAPON LISTINGS START */
-.availableWeapons{
+.availableWeapons, .similarItemListing{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
 }
 
-.weaponItemListing{
+.similarItemListing{
+    gap: 50px;
+}
+
+.availableWeapons a, .similarItemListing a{
     position: relative;
     background-color: var(--gray);
     display: flex;
@@ -461,7 +485,7 @@ p{
     text-align: center;
 }
 
-.weaponItemListing .imgContainer{
+.weaponItemListing .imgContainer, .similarItemListing .imgContainer{
     position: relative;
 }
 
@@ -470,7 +494,7 @@ p{
     background-size: cover;
 }
 
-.weaponItemListing .listingContent{
+.weaponItemListing .listingContent, .similarItemListing .listingContent{
     width: 100%;
     padding: 1% 0;
 }
@@ -615,3 +639,128 @@ footer .bgImg{
     margin: 0;
 }
 /* FOOTER END */
+
+/*FOCUS PRODUCT PAGE START*/
+.focusItem{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 95px;
+}
+
+#slideshowContainer{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.focusImgContainer{
+    position: relative;
+}
+.focusImg{
+    width: 100%;
+}
+
+.focusItem h4{
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'palatino-linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+}
+
+.focusData{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    width: 55%;
+    justify-content: space-between;
+}
+
+.focusData p{
+    margin: 0;
+    font-size: 12pt;
+    line-height: 150%;
+}
+
+.topInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+img.divider{
+    align-self: center;
+    width: 85%;
+    margin: 25px;
+}
+
+.buttons{
+    margin-top: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.buttons .button2{
+    width: 185px;
+}
+
+.imgSlide{
+    display: none;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 23px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dotsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--gold);
+}
+
+/* Fading animation */
+.focusImg {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}

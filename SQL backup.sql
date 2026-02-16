@@ -35,12 +35,12 @@ INSERT INTO Subcategories (Name, WeaponType) VALUES
 
 CREATE TABLE MetalMaterials (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO MetalMaterials (Name) VALUES
+INSERT INTO MetalMaterials (Name, Image, PriceModifier) VALUES
 ('High-Carbon Steel', '../Images/CustomizationOptions/Materials/highCarbonSteel.png', 0.00),
 ('Tool Steel', '../Images/CustomizationOptions/Materials/toolSteel.png', 25.00),
 ('PM Stainless', '../Images/CustomizationOptions/Materials/pmStainlessSteel.png', 60.00),
@@ -52,12 +52,12 @@ INSERT INTO MetalMaterials (Name) VALUES
 
 CREATE TABLE BladeShapes (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO BladeShapes (Name) VALUES
+INSERT INTO BladeShapes (Name, Image, PriceModifier) VALUES
 ('Clip', '../Images/CustomizationOptions/BladeShapes/clip.png', 25.00),
 ('Drop', '../Images/CustomizationOptions/BladeShapes/drop.png', 10.00),
 ('Tanto', '../Images/CustomizationOptions/BladeShapes/tanto.png', 30.00),
@@ -73,12 +73,12 @@ INSERT INTO BladeShapes (Name) VALUES
 
 CREATE TABLE BladeEdges (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO BladeEdges (Name) VALUES
+INSERT INTO BladeEdges (Name, Image, PriceModifier) VALUES
 ('Single Edge', '../Images/CustomizationOptions/BladeEdges/single.png', 0.00),
 ('Double Edge', '../Images/CustomizationOptions/BladeEdges/double.png', 25.00),
 ('False Edge', '../Images/CustomizationOptions/BladeEdges/false.png', 15.00),
@@ -95,12 +95,12 @@ INSERT INTO BladeEdges (Name) VALUES
 
 CREATE TABLE WoodMaterials (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO WoodMaterials (Name) VALUES
+INSERT INTO WoodMaterials (Name, Image, PriceModifier) VALUES
 ('Hickory', '../Images/CustomizationOptions/Materials/hickory.png', 10.00),
 ('Ash', '../Images/CustomizationOptions/Materials/ash.png', 6.00),
 ('Ironwood', '../Images/CustomizationOptions/Materials/ironwood.png', 22.00),
@@ -115,12 +115,12 @@ INSERT INTO WoodMaterials (Name) VALUES
 
 CREATE TABLE GripStyles (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40),
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO GripStyles (Name) VALUES
+INSERT INTO GripStyles (Name, Image, PriceModifier) VALUES
 ('Straight', '../Images/CustomizationOptions/GripStyles/straight.png', 0.00),
 ('Waisted', '../Images/CustomizationOptions/GripStyles/waisted.png', 6.00),
 ('Curved', '../Images/CustomizationOptions/GripStyles/curved.png', 8.00),
@@ -140,7 +140,7 @@ CREATE TABLE PommelTypes (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
 INSERT INTO PommelTypes (Name, Image, PriceModifier) VALUES
@@ -159,12 +159,12 @@ INSERT INTO PommelTypes (Name, Image, PriceModifier) VALUES
 
 CREATE TABLE PommelGems (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO PommelGems (Name) VALUES
+INSERT INTO PommelGems (Name, Image, PriceModifier) VALUES
 ('Garnet', '../Images/CustomizationOptions/PommelGems/garnet.png', 35.00),
 ('Sapphire', '../Images/CustomizationOptions/PommelGems/sapphire.png', 70.00),
 ('Ruby', '../Images/CustomizationOptions/PommelGems/ruby.png', 75.00),
@@ -176,12 +176,12 @@ INSERT INTO PommelGems (Name) VALUES
 
 CREATE TABLE SheathMaterials (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO SheathMaterials (Name) VALUES
+INSERT INTO SheathMaterials (Name, Image, PriceModifier) VALUES
 ('Leather', '../Images/CustomizationOptions/SheathMaterials/leather.png', 0.00),
 ('Wooden', '../Images/CustomizationOptions/SheathMaterials/wooden.png', 10.00),
 ('Metal', '../Images/CustomizationOptions/SheathMaterials/metal.png', 30.00),
@@ -189,12 +189,12 @@ INSERT INTO SheathMaterials (Name) VALUES
 
 CREATE TABLE SheathColors (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO SheathColors (Name) VALUES
+INSERT INTO SheathColors (Name, Image, PriceModifier) VALUES
 ('Black', '../Images/CustomizationOptions/SheathColors/black.png', 2.00),
 ('Dark Brown', '../Images/CustomizationOptions/SheathColors/darkBrown.png', 0.00),
 ('Chestnut', '../Images/CustomizationOptions/SheathColors/chestnut.png', 2.00),
@@ -213,12 +213,12 @@ INSERT INTO SheathColors (Name) VALUES
 
 CREATE TABLE SheathTypes (
     ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(40) NOT NULL
+    Name VARCHAR(40) NOT NULL,
     Image VARCHAR(255) NOT NULL,
-    PriceModifier(10,2) NOT NULL
+    PriceModifier DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO SheathTypes (Name) VALUES
+INSERT INTO SheathTypes (Name, Image, PriceModifier) VALUES
 ('Minimal', '../Images/CustomizationOptions/SheathTypes/minimal.png', 0.00),
 ('Ornate', '../Images/CustomizationOptions/SheathTypes/ornate.png', 35.00),
 ('Jeweled', '../Images/CustomizationOptions/SheathTypes/jeweled.png', 60.00),
@@ -258,7 +258,7 @@ CREATE TABLE Swords (
     FOREIGN KEY (Grip_ID) REFERENCES GripStyles(ID),
     FOREIGN KEY (Pommel_ID) REFERENCES PommelTypes(ID),
     FOREIGN KEY (PommelMaterial_ID) REFERENCES MetalMaterials(ID),
-    FOREIGN KEY (PommelAccent_ID) REFERENCES PommelAccents(ID),
+    FOREIGN KEY (PommelAccent_ID) REFERENCES MetalMaterials(ID),
     FOREIGN KEY (PommelGem_ID) REFERENCES PommelGems(ID),
     FOREIGN KEY (SheathMaterial_ID) REFERENCES SheathMaterials(ID),
     FOREIGN KEY (SheathColor_ID) REFERENCES SheathColors(ID),

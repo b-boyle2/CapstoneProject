@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
         availableWeaponsDiv.innerHTML = '';
         
         data.forEach(weapon => {
+            const weaponLink = document.createElement("a");
+            weaponLink.href = `singleProduct.php?weaponType=${tableName}&id=${weapon.ID}`;
+            
             const weaponItemListing = document.createElement("div");
             weaponItemListing.classList.add("weaponItemListing")
             const imgContainer = document.createElement('div');
@@ -61,7 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
             weaponItemListing.appendChild(imgContainer);
             weaponItemListing.appendChild(listingContent);
             weaponItemListing.appendChild(hoverImgContainer);
-            availableWeaponsDiv.appendChild(weaponItemListing);
+            weaponLink.appendChild(weaponItemListing);
+
+            availableWeaponsDiv.appendChild(weaponLink);
         })
     }
 

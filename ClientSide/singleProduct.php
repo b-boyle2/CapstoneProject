@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Swords</title>
+    <title>Product</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
@@ -11,9 +11,7 @@
 
 <body>
     <div class=container>
-        <header class="bannerImg">
-            <img src="../Images/SwordBannerImage.jpg" class="bgImg" alt="Hero" id="heroImg">
-
+        <header class="noBanner">
             <div class="siteTitle">
                 <a href="index.php"><h2>Ironveil Forge</h2></a>
             </div>
@@ -71,31 +69,61 @@
                     </div>
                 </div>
             </div>
-            <h1 class=title>Swords</h1>
         </header>
-        
-        <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
     </div>
        
-    <section class="content">   
-        <div class="filterSelect">
-            
-            <div class="subcategoryFilter">
-                <span class="selected">All</span>
-                <div class="filterCarrot"></div>
-                <div class="options">
-                    <div data-value="">All</div>
-                    <div data-value="1">Arming Swords</div>
-                    <div data-value="2">Broadswords</div>
-                    <div data-value="3">Longswords</div>
-                    <div data-value="4">Falchions</div>
+    <section class="content">
+        <div class="focusItem">
+            <div id="slideshowContainer">
+                <div class="focusImgContainer">
+                    <!-- JS will populate slides here -->
+                    <a class="prev">❮</a>
+                    <a class="next">❯</a>
                 </div>
+                <div class="dotsContainer">
+                    <!-- JS will populate dots here -->
+                </div>
+                
+            </div>
+
+            
+            <div class="focusData">
+                <div>
+                    <div class="topInfo">
+                        <!-- NAME & PRICE HERE -->
+                    </div>
+
+                    <div class="focusDescription">
+                        <!--DESCRIPTION HERE -->
+                    </div>
+
+                    <img src="../Images/FocusProductDivider.svg" alt="" class="divider">
+
+                    <h4>Product Details</h4>
+
+                    <div class="focusDetails">
+                        <!-- ITEM DETAILS HERE -->
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="button2">Add to Cart</button>
+                    <button class="button2">Customize</button>
+                </div>
+                
+            </div>
+        </div> 
+        
+        <div class="similarItems">
+            <div class="topInfo">
+                <h3>Similar Products</h3>
+            </div>
+
+            <div class="similarItemListing">
+                <!-- SIMILAR ITEM LISTINGS HERE -->
             </div>
         </div>
-
-        <div class="availableWeapons" data-table="swords">
-            <!-- WEAPON LISTINGS APPEAR HERE -->
-        </div>
+        
     </section>
 
     <section>
@@ -172,5 +200,9 @@
     </section>
 
     <script src='main.js'></script>
-    <script src='premadeItemListings.js'></script>
+    <script src='singleItem.js'>
+        window.onload = function() {
+            magnify("focusImg", 2);
+        };
+    </script>    
 </body>
