@@ -177,25 +177,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateWeaponForms(addWeaponFormDivs, weaponTypeSelect.value);
 
-    // show uploaded image name
-    const imageUpload = document.querySelector(".customFileUpload")
-    const uploadedImg = document.getElementById("fileUpload");
-    uploadedImg.addEventListener("change", function(event) {
-        if (uploadedImg.files.length > 0) {
-            imageUpload.textContent = uploadedImg.files[0].name;
-        } 
-        else {
-            imageUpload.textContent = "Upload Image";
-        }
-    })
+    document.querySelectorAll("#editWeaponForm input[type='file']").forEach(input => {
+        const label = document.querySelector(`label[for='${input.id}']`);
+        if (!label) return;
+
+        label.textContent = input.dataset.placeholder || "Upload Image";
+
+        input.addEventListener("change", function () {
+            label.textContent = this.files.length
+                ? this.files[0].name
+                : (input.dataset.placeholder || "Upload Image");
+        });
+    });
 
     weaponTypeSelect.addEventListener("change", () => updateWeaponForms(addWeaponFormDivs, weaponTypeSelect.value));
 
     form.addEventListener("submit", function(event){
         event.preventDefault(); // prevent page reload
+        document.querySelectorAll(".weaponSpecificForm").forEach(form => {
+            const isVisible = form.offsetParent !== null; // visible check
+
+            form.querySelectorAll("input, select, textarea").forEach(el => {
+                el.disabled = !isVisible;
+            });
+        });
         
         const formData = new FormData(form);
-        
         const weaponType = formData.get('weaponTypeSelect');
 
         let tableToAddTo = '';
@@ -290,10 +297,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("ID num: ", weaponID);
         console.log("Table: ",  tableName);
 
-        for (let pair of weaponIdData.entries()) {
-            console.log(pair[0], pair[1]);
-        }
-
         fetch("GetSingleProductData.php", {
             method: "POST",
             body: weaponIdData
@@ -324,18 +327,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 activeSection = editProductForm.querySelector("#editRangedForm");
             }
 
-            
-
             Object.entries(weapon).forEach(([key, value]) => {
                 const input = activeSection.querySelector(`[name='${key}']`);
                 if (input) {
                     input.value = value ?? ''; // default to empty string if null
+                    
                 }
             });
             originalWeaponName = weapon.Name;
 
             const uploadedImg = document.getElementById("editFormImg");
             uploadedImg.textContent = weapon.Image;
+
+            if (weapon.Image2){
+                const uploadedImg2 = document.getElementById("editFormImg2");
+                uploadedImg2.textContent = weapon.Image2;
+            }
+
+            if (weapon.Image3){
+                const uploadedImg3 = document.getElementById("editFormImg3");
+                uploadedImg3.textContent = weapon.Image3;
+            }
+
+            if (weapon.Image4){
+                const uploadedImg4 = document.getElementById("editFormImg4");
+                uploadedImg4.textContent = weapon.Image4;
+            }
 
             //ensures no blank entry if no new image is uploaded
             let existingImageInput = editProductForm.querySelector("[name='existingImage']");
@@ -348,6 +365,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             existingImageInput.value = weapon.Image;
         })
+        /*.then(res => res.text())
+        .then(data => {
+            console.log(data);        // logs raw PHP output
+            document.body.innerHTML = data; // optional: display it in page
+        })*/
 
         addWeaponButton.style.display = "none";
         weaponList.style.display = "none";
@@ -358,11 +380,22 @@ document.addEventListener("DOMContentLoaded", () => {
     
     editProductForm.addEventListener("submit", function(event){
         event.preventDefault(); // prevent page reload
+        document.querySelectorAll(".weaponSpecificForm").forEach(form => {
+            const isVisible = form.offsetParent !== null; // visible check
+
+            form.querySelectorAll("input, select, textarea").forEach(el => {
+                el.disabled = !isVisible;
+            });
+        });
         
+        document.querySelectorAll("input[type='file']").forEach(input => {
+            console.log(input.id, "disabled:", input.disabled, "files:", input.files.length);
+        });
+
         let formData = new FormData(editForm);
         formData.append("weaponID", weaponID);
         formData.append("table", tableName);
-        
+
         fetch("editProduct.php", {
             method: "POST",
             body: formData
@@ -375,6 +408,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("Update failed:", data.error);
             }
         })
+        /*.then(res => res.text())
+        .then(data => {
+            console.log(data);        // logs raw PHP output
+            document.body.innerHTML = data; // optional: display it in page
+        })*/
         .catch(err => console.error(err));
     });
 

@@ -1,4 +1,5 @@
 <?php
+
 header("Content-Type: application/json");
 
 $conn = new mysqli("127.0.0.1", "root", "", "ironveil_forge");
@@ -12,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(["error" => "Invalid request method"]);
     exit;
 }
+
+
 
 // Read form values
 $table = $_POST['weaponTypeSelect'] ?? '';
@@ -37,7 +40,11 @@ $inscriptions = $_POST['inscriptions'] ?? '';
 $bladeLength = isset($_POST['bladeLength']) ? (float)$_POST['bladeLength'] : 1;
 $weight = isset($_POST['weight']) ? (float)$_POST['weight'] : 1;
 $price = isset($_POST['price']) ? (float)$_POST['price'] : 1;
-$image = $_POST['image'] ?? '../Images/Placeholder.png';
+$description = $_POST['Description'] ?? '';
+$image = $_FILES['image'] ?? '../Images/Placeholder.png';
+$image2 = $_FILES['image2'] ?? 'null';
+$image3 = $_FILES['image3'] ?? 'null';
+$image4 = $_FILES['image4'] ?? 'null';
 
 if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
     $imageTmp = $_FILES['image']['tmp_name'];
@@ -60,21 +67,23 @@ if (!in_array($table, $allowedTables)) {
 // SQL insert
 $sql = "
 INSERT INTO $table (
-    Name, Image, Subcategory_ID, BladeMaterial_ID, BladeShape_ID, BladeEdge_ID,
+    Name, Image, Image2, Image3, Image4, Subcategory_ID, BladeMaterial_ID, BladeShape_ID, BladeEdge_ID,
     HiltMaterial_ID, Grip_ID, Pommel_ID, PommelMaterial_ID, PommelAccent_ID, PommelGem_ID,
-    SheathMaterial_ID, SheathColor_ID, SheathType_ID,
-    Engravings, Inscriptions, BladeLength_cm, Weight_kg, Price
+    SheathMaterial_ID, SheathColor_ID, SheathType_ID,Engravings, Inscriptions, BladeLength_cm, Weight_kg, Price, Description
 )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ";
 
 $stmt = $conn->prepare($sql);
 
 // Bind parameters
 $stmt->bind_param(
-    "ssiiiiiiiiiiiiissddd",
+    "sssssiiiiiiiiiiiiissddds",
     $name,
     $image,
+    $image2,
+    $image3,
+    $image4,
     $subcategory,
     $bladeMaterial,
     $bladeShape,
@@ -92,7 +101,8 @@ $stmt->bind_param(
     $inscriptions,
     $bladeLength,
     $weight,
-    $price
+    $price,
+    $description
 );
 
 // execute

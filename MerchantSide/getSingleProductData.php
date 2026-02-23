@@ -22,7 +22,10 @@ if ($table == "swords"){
     $sql = "
         SELECT
             w.Name, 
-            w.Image, 
+            w.Image,
+            w.Image2,
+            w.Image3,
+            w.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS BladeMaterial_ID,
@@ -53,7 +56,8 @@ if ($table == "swords"){
             w.Inscriptions,
             w.BladeLength_cm,
             w.Weight_kg,
-            w.Price 
+            w.Price,
+            w.Description
         FROM $table w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.BladeMaterial_ID = bm.ID
@@ -74,7 +78,10 @@ if($table == "daggers"){
     $sql = "
         SELECT
             w.Name, 
-            w.Image, 
+            w.Image,
+            w.Image2,
+            w.Image3,
+            w.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS BladeMaterial_ID,
@@ -101,7 +108,8 @@ if($table == "daggers"){
             w.Inscriptions,
             w.BladeLength_cm,
             w.Weight_kg,
-            w.Price 
+            w.Price,
+            w.Description
         FROM $table w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.BladeMaterial_ID = bm.ID
@@ -120,7 +128,10 @@ if($table == "blunthandweapons") {
     $sql = "
         SELECT
             w.Name, 
-            w.Image, 
+            w.Image,
+            w.Image2,
+            w.Image3,
+            w.Image4, 
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS HeadMaterial_ID,
@@ -139,7 +150,8 @@ if($table == "blunthandweapons") {
             w.Inscriptions,
             w.Length_cm,
             w.Weight_kg,
-            w.Price 
+            w.Price,
+            w.Description
         FROM $table w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
@@ -153,7 +165,10 @@ if($table == "polearms") {
     $sql = "
         SELECT
             w.Name, 
-            w.Image, 
+            w.Image,
+            w.Image2,
+            w.Image3,
+            w.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS HeadMaterial_ID,
@@ -171,7 +186,8 @@ if($table == "polearms") {
             w.Inscriptions,
             w.Length_cm,
             w.Weight_kg,
-            w.Price 
+            w.Price,
+            w.Description
         FROM $table w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
@@ -185,7 +201,10 @@ if($table == "ranged") {
     $sql = "
         SELECT
             w.Name, 
-            w.Image, 
+            w.Image,
+            w.Image2,
+            w.Image3,
+            w.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS HeadMaterial_ID,
@@ -199,7 +218,8 @@ if($table == "ranged") {
             w.Inscriptions,
             w.Length_cm,
             w.Weight_kg,
-            w.Price 
+            w.Price,
+            w.Description
         FROM $table w
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
@@ -221,6 +241,13 @@ if (!$stmt->execute()) {
 $result = $stmt->get_result();
 $weapon = $result->fetch_assoc();
 
+// Assign variables for form, with fallbacks
+// provide defaults for images directly
+$weapon['Image']  = $weapon['Image']  ?: '../Images/Placeholder.png';
+$weapon['Image2'] = $weapon['Image2'] ?: null;
+$weapon['Image3'] = $weapon['Image3'] ?: null;
+$weapon['Image4'] = $weapon['Image4'] ?: null;
+
 error_log("DEBUG: Raw row from daggers query: " . json_encode($weapon));
 
 if (!$weapon) {
@@ -237,4 +264,5 @@ if (!$weapon) {
 
 
 echo json_encode($weapon);
+
 $conn->close();

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Cart</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
@@ -10,10 +10,8 @@
 </head>
 
 <body>
-    <div class=container id=indexContainer>
-        <header class="bannerImg" id="index">
-            <img src="../Images/HomeBannerImage.png" class="bgImg" alt="Hero" id="heroImg">
-
+    <div class=container>
+        <header class="noBanner">
             <a href="index.php">
                 <div class="siteTitle">
                     <h2>Ironveil Forge</h2>
@@ -41,7 +39,7 @@
                         </ul>
                     </div>
 
-<!-- ADJUST CUSTOMIZE LINKS TO GO TO CUSTOMIZATION PAGE -->
+                    <!-- ADJUST CUSTOMIZE LINKS TO GO TO CUSTOMIZATION PAGE -->
                     <div class="dropdown">
                         <button class="navLink" onclick="location.href='customize.php'"aria-haspopup="true" aria-expanded="false">Customize</button>
                         <ul class="dropdownContent">
@@ -74,41 +72,46 @@
                 </div>
             </div>
         </header>
-
-        <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
-
-        <div class="indexCard" id="aboutSection">
-            <div class=indexCardImg> <img src="../Images/progressImage.png" id="progressImg" alt="A hammer hitting a sword blade causing a lot of sparks"> </div>
-            <div class="textBlurb">
-                <h3>Where History <br> Meets Legend</h3>
-                <p>
-                    Step into a world where history and legend meet. Ironveil Forge creates weapons that bring stories to life, from display-ready masterpieces 
-                    to battle-ready blades. Every weapon is crafted to reflect the skill, artistry, and imagination of its maker.
-                </p>
-                <button class=button1 onclick="location.href ='about.php'">Learn More</button>
-            </div>
-        </div>
     </div>
-
+       
     <section class="content">
-        <div class="indexCard" id="customizeWeapon">
-            <div id="indexCardContent">
-                <h1>Craft<br>Your<br>Ideal Weapon</h1>
-                <h3>Create a one-of-a-kind weapon with expert craftsmanship and personal flair.</h3>
-                <button class="button2">Customize Your Own Weapon</button>
-            </div>
-            <div class=indexCardImg>
-                <img src="../Images/customizableWeapons.png" alt="A dagger decorated with intricate carvings down the handle and middle of the blade rests on a wooden display in front of a red banner.">
-            </div>
-        </div>
+        <h2>Cart</h2>
+        
+        <div class="cartContainer">
+            <div class="cartItem">
+                <div class="imgContainer">
+                    <img src="../Images/ArmingSwords/duskwardDefender.png" alt="">
+                </div>
+                <div class="details">
+                    <div class="topSection">
+                        <h3 class="name">
+                            Duskward Defender
+                        </h3>
+                        <h3 class="price">
+                            $580
+                        </h3>
+                    </div>
 
-        <div class="indexCard" id="premadeWeapon">
-            <img src="../Images/ReadyMadeWeapons.png" class="bgImg" alt="A newly crafted dagger rests on an anvil">
+                    <div class="description">
+                        A steady and understated arming sword, the Duskward Defender is forged from dark steel with a clipped, single-edged blade built for disciplined precision. Its walnut hilt and simple disc pommel favor balance over ornament, while the minimal black leather sheath keeps its presence discreet. Reliable and unadorned, it is a weapon made for vigilance rather than vanity.
+                    </div>
 
-            <div id="indexCardContent2">
-                <h1>Crafted & Ready</h1>
-                <h3>Discover weapons forged to perfection and ready to claim</h3>
-                <button class="button2">Shop Now</button>
+                    <div class="buttonContainer">
+                        <div class="stepperInput">
+                            <input type="range" min="0" max="100" value="1">
+                            <div class="input">
+                                <button class="minusButton">-</button>
+                                <div class="range">
+                                    <div class="list"></div>
+                                </div>
+                                <button class="plusButton">+</button>
+                            </div>
+                        </div>
+
+                        <div  class="deleteButton"><img src="../Images/IconDelete.svg" alt=""></div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -186,8 +189,6 @@
         </footer>
     </section>
 
-    <script src="main.js"></script>
-
+    <script src='main.js'></script>
+    <script src='adjustCart.js'></script>
 </body>
-
-</html>

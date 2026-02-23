@@ -200,9 +200,5 @@
     </section>
 
     <script src='main.js'></script>
-    <script src='singleItem.js'>
-        window.onload = function() {
-            magnify("focusImg", 2);
-        };
-    </script>    
+    <script src='singleItem.js'></script>    
 </body>

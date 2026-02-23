@@ -1,0 +1,115 @@
+.cartContainer{
+    display: flex;
+    flex-direction: column;
+}
+.cartItem{
+    background-color: var(--mainDarkGray);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.cartItem .imgContainer{
+    width: 20%;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.cartItem .details{
+    width: 80%;
+    padding: 0 0 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartItem .topSection{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.cartItem h3{
+    margin: 0;
+}
+
+.cartItem .description{
+    font-size: 1.1em;
+    line-height: 1.4em;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: auto;
+    align-items: center;
+}
+
+.cartItem .deleteButton {
+    filter:invert(1);
+    width: 20px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+.deleteButton img{
+    display: block;
+}
+
+
+.stepperInput {
+    width: 100px;
+    height: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 9px 20px 5px rgba(0, 0, 0, 0.5);
+    background-color: var(--gold);
+    overflow: hidden;
+} 
+
+.stepperInput input{
+    display: none;
+}
+
+/*to avoid later confusion, below is class=input*/
+.stepperInput .input{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.stepperInput .input button {
+    width: 25px;
+    height: 100%;
+    border-radius:  10px;
+    background-color: var(--gold);
+    color: white;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    border: none;
+    font-size: 15px;
+}
+
+.stepperInput .input button:active{
+    background: var(--yellow);
+    color: black;
+}
+
+.stepperInput .input .range {
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+}
+
+.stepperInput .input .range .list span{
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 13pt;
+    line-height: 40px;
+    color: white;
+}

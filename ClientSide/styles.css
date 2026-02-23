@@ -1,3 +1,5 @@
+@import url("cartStyles.css");
+
 @font-face {
     font-family: medievalSharp;
     src: url('../Fonts/MedievalSharp/MedievalSharp-Regular.woff2') format('woff2');

@@ -281,7 +281,7 @@ table{
     flex-direction: column;
 }
 
-input, .addMainForm select, .editMainForm select{
+input, .addMainForm select, .editMainForm select, textarea{
     font-size: 12pt;
     margin: 5px 0 15px;
     padding: 5px 10px;
@@ -296,6 +296,7 @@ input[type="file"] {
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
+  margin: 5 px;
 }
 
 form h3{
@@ -338,6 +339,12 @@ form h3{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.description{
+    min-height: 100px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .deleteButton{

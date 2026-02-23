@@ -365,6 +365,9 @@
 
                             <label for="swordPrice">Price</label>
                             <input type="number" id="swordPrice" name="price" step="0.01" min="0.00" required>
+
+                            <label for="addSwordDescription">Product Description:</label>
+                            <textarea name="Description" class="description" id="addSwordDescription"></textarea>
                         </div>
                         <div class="weaponSpecificForm" id="daggersForm">
                             <label for="daggerName">Product Name:</label>
@@ -556,6 +559,9 @@
 
                             <label for="daggerPrice">Price</label>
                             <input type="number" id="daggerPrice" name="price" step="0.01" min="0.00" required>
+
+                            <label for="addDaggerDescription">Product Description:</label>
+                            <textarea name="Description" class="description" id="addDaggerDescription"></textarea>
                         </div>
                         <div class="weaponSpecificForm" id="bluntHandsForm">
                             <label for="bluntHandName">Product Name:</label>
@@ -681,6 +687,9 @@
 
                             <label for="bluntHandPrice">Price</label>
                             <input type="number" id="bluntHandPrice" name="price" step="0.01" min="0.00" required>
+
+                            <label for="addBluntHandDescription">Product Description:</label>
+                            <textarea name="Description" class="description" id="addBluntHandDescription"></textarea>
                         </div>
                         <div class="weaponSpecificForm" id="polearmsForm">
                             <label for="polearmName">Product Name:</label>
@@ -800,6 +809,9 @@
 
                             <label for="polearmPrice">Price</label>
                             <input type="number" id="polearmPrice" name="price" step="0.01" min="0.00" required>
+
+                            <label for="addPolearmDescription">Product Description:</label>
+                            <textarea name="Description" class="description" id="addPolearmDescription"></textarea>
                         </div>
                         <div class="weaponSpecificForm" id="rangedForm">
                             <label for="rangedName">Product Name:</label>
@@ -882,25 +894,44 @@
 
                             <label for="rangedPrice">Price</label>
                             <input type="number" id="rangedPrice" name="price" step="0.01" min="0.00" required>
+
+                            <label for="addRangedDescription">Product Description:</label>
+                            <textarea name="Description" class="description" id="addRangedDescription"></textarea>
                         </div>
+
                         <label for="fileUpload" class="customFileUpload">
                             Upload Image
                         </label>
-
                         <input id="fileUpload" type="file" name="image" accept="image/*">
+
+                        <label for="fileUpload2" class="customFileUpload">
+                            Upload Image
+                        </label>
+                        <input id="fileUpload2" type="file" name="image2" accept="image/*">
+
+                        <label for="fileUpload3" class="customFileUpload">
+                            Upload Image
+                        </label>
+                        <input id="fileUpload3" type="file" name="image3" accept="image/*">
+
+                        <label for="fileUpload4" class="customFileUpload">
+                            Upload Image
+                        </label>
+                        <input id="fileUpload4" type="file" name="image4" accept="image/*">
+
                         <input type="submit" value="Add Weapon" id="submit" class="submitButton">
                     </form>
                     <p id="formMessage"></p>
                 </div>
             </div>
 
-            <div id="editProductForm" class="editForm">
+            <div id="editProductForm" class="editForm" >
                 <div class="section">
                     <div class="topSection">
                         <h2>Edit Product</h2>
                         <button class="deleteButton">Delete Item</button>
                     </div>
-                        <form id="editWeaponForm" class="editMainForm">
+                    <form id="editWeaponForm" class="editMainForm" method="POST" action="editProduct.php" enctype="multipart/form-data">
                             <div class="weaponSpecificForm" id="editSwordsForm">
                                 <label for="editSwordName">Product Name:</label>
                                 <input type="text" name="Name" id="editSwordName" maxlength="255" required>
@@ -1137,6 +1168,9 @@
 
                                 <label for="editSwordPrice">Price</label>
                                 <input type="number" id="editSwordPrice" name="Price" step="0.01" min="0.00" required>
+
+                                <label for="editSwordDescription">Product Description:</label>
+                                <textarea name="Description" class="description" id="editSwordDescription"></textarea>
                             </div>
 
                             <div class="weaponSpecificForm" id="editDaggersForm">
@@ -1344,6 +1378,9 @@
 
                                 <label for="editDaggerPrice">Price</label>
                                 <input type="number" id="editDaggerPrice" name="Price" step="0.01" min="0.00" required>
+
+                                <label for="editDaggerDescription">Product Description:</label>
+                                <textarea name="Description" class="description" id="editDaggerDescription"></textarea>
                             </div>
 
                         <div class="weaponSpecificForm" id="editBluntHandsForm">
@@ -1482,6 +1519,9 @@
 
                             <label for="editBluntHandPrice">Price</label>
                             <input type="number" id="editBluntHandPrice" name="Price" step="0.01" min="0.00" required>
+
+                            <label for="editBluntHandDescription">Product Description:</label>
+                            <textarea name="Description" class="description" id="editBluntHandDescription"></textarea>
                         </div>
 
                         <div class="weaponSpecificForm" id="editPolearmsForm">
@@ -1612,6 +1652,9 @@
 
                             <label for="editPolearmPrice">Price</label>
                             <input type="number" id="editPolearmPrice" name="Price" step="0.01" min="0.00" required>
+
+                            <label for="editPolearmDescription">Product Description:</label>
+                            <textarea name="Description" class="description" id="editPolearmDescription"></textarea>
                         </div>
 
                         <div class="weaponSpecificForm" id="editRangedForm">
@@ -1703,13 +1746,24 @@
 
                             <label for="editRangedPrice">Price</label>
                             <input type="number" id="editRangedPrice" name="Price" step="0.01" min="0.00" required>
+
+                            <label for="editRangedDescription">Product Description:</label>
+                            <textarea name="Description" class="description" id="editRangedDescription"></textarea>
                         </div>
 
-                        <label for="fileUpload" class="customFileUpload" id="editFormImg">
-                            Upload Image
-                        </label>
+                        <!-- Hidden inputs to keep current images -->
 
-                        <input id="fileUpload" type="file" name="image" accept="image/*">
+                        <label for="editFileUpload" class="customFileUpload" id="editFormImg"></label>
+                        <input id="editFileUpload" type="file" name="image" accept="image/*">
+
+                        <label for="editFileUpload2" class="customFileUpload" id="editFormImg2"><?= basename($weapon['Image2'] ?? '') ?: 'Upload Image' ?></label>
+                        <input id="editFileUpload2" type="file" name="image2" accept="image/*" data-placeholder="<?= basename($weapon['Image2'] ?? '') ?: 'Upload Image' ?>">
+
+                        <label for="editFileUpload3" class="customFileUpload" id="editFormImg3"><?= basename($weapon['Image3'] ?? '') ?: 'Upload Image' ?></label>
+                        <input id="editFileUpload3" type="file" name="image3" accept="image/*" data-placeholder="<?= basename($weapon['Image3'] ?? '') ?: 'Upload Image' ?>">
+
+                        <label for="editFileUpload4" class="customFileUpload" id="editFormImg4"><?= basename($weapon['Image4'] ?? '') ?: 'Upload Image' ?></label>
+                        <input id="editFileUpload4" type="file" name="image4" accept="image/*" data-placeholder="<?= basename($weapon['Image4'] ?? '') ?: 'Upload Image' ?>">
 
                         <input type="submit" value="Submit Edit" id="submitEdit" class="submitButton">
                     </form>
