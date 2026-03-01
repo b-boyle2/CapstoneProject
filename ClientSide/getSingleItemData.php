@@ -8,18 +8,32 @@ if ($mysqli->connect_errno) {
     exit;
 }
 // Get the query params from the URL
-$weaponType = isset($_GET['weaponType']) ? $_GET['weaponType'] : '';
-$id = isset($_GET['weaponID']) ? intval($_GET['weaponID']) : 0;
+$productId = isset($_GET['productID']) ? intval($_GET['productID']) : 0;
 
 // Basic validation
-if (!$weaponType || !$id) {
+if (!$productId) {
     echo json_encode(["error" => "Invalid weapon selected."]);
     exit;
 }
 
+//get WeaponType from productsTable
+$stmt = $mysqli->prepare("SELECT WeaponType FROM products WHERE ID = ?");
+$stmt->bind_param("i", $productId);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+if (!$row) {
+    echo json_encode(["error" => "Weapon not found."]);
+    exit;
+}
+
+$weaponType = $row['WeaponType'];
+
+
 //validate table name to prevent SQL injection
-$allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged'];
-    if (!in_array($weaponType, $allowedTables)) {
+$allowedWeaponTypes = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged'];
+    if (!in_array($weaponType, $allowedWeaponTypes)) {
         die(json_encode(["error" => "Invalid Table"]));
     }
 
@@ -27,11 +41,13 @@ $allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged']
 if ($weaponType == "swords"){
     $sql = "
         SELECT
-            w.Name, 
-            w.Image,
-            w.Image2,
-            w.Image3,
-            w.Image4,
+            p.ID,
+            p.Name, 
+            p.WeaponType,
+            p.Image,
+            p.Image2,
+            p.Image3,
+            p.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS BladeMaterial_ID,
@@ -44,8 +60,8 @@ if ($weaponType == "swords"){
             wm.name AS HiltMaterial,
             g.ID AS Grip_ID,
             g.name AS Grip,
-            p.ID AS Pommel_ID,
-            p.name AS Pommel,
+            po.ID AS Pommel_ID,
+            po.name AS Pommel,
             pm.ID AS PommelMaterial_ID,
             pm.name AS PommelMaterial,
             pa.ID AS PommelAccent_ID,
@@ -62,9 +78,10 @@ if ($weaponType == "swords"){
             w.Inscriptions,
             w.BladeLength_cm,
             w.Weight_kg,
-            w.Price,
-            w.Description
-        FROM $weaponType w
+            p.Price,
+            p.Description
+        FROM products p
+        JOIN $weaponType w ON w.ProductID = p.ID
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.BladeMaterial_ID = bm.ID
         LEFT JOIN BladeShapes bs ON w.BladeShape_ID = bs.ID
@@ -73,18 +90,23 @@ if ($weaponType == "swords"){
         LEFT JOIN GripStyles g ON w.Grip_ID = g.ID
         LEFT JOIN MetalMaterials pm ON w.PommelMaterial_ID = pm.ID
         LEFT JOIN MetalMaterials pa ON w.PommelAccent_ID = pa.ID
-        LEFT JOIN PommelTypes p ON w.Pommel_ID = p.ID
+        LEFT JOIN PommelTypes po ON w.Pommel_ID = po.ID
         LEFT JOIN PommelGems pg ON w.PommelGem_ID = pg.ID
         LEFT JOIN SheathMaterials sm ON w.SheathMaterial_ID = sm.ID
         LEFT JOIN SheathColors sc ON w.SheathColor_ID = sc.ID
         LEFT JOIN SheathTypes st ON w.SheathType_ID = st.ID
-        WHERE w.ID = ?";
+        WHERE p.ID = ?";
 }
 if($weaponType == "daggers"){
     $sql = "
         SELECT
-            w.Name, 
-            w.Image, 
+            p.ID,
+            p.Name, 
+            p.WeaponType,
+            p.Image,
+            p.Image2,
+            p.Image3,
+            p.Image4, 
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS BladeMaterial_ID,
@@ -95,8 +117,8 @@ if($weaponType == "daggers"){
             wm.name AS HiltMaterial,
             g.ID AS Grip_ID,
             g.name AS Grip,
-            p.ID AS Pommel_ID,
-            p.name AS Pommel,
+            po.ID AS Pommel_ID,
+            po.name AS Pommel,
             pm.ID AS PommelMaterial_ID,
             pm.name AS PommelMaterial,
             pg.ID AS PommelGem_ID,
@@ -111,27 +133,33 @@ if($weaponType == "daggers"){
             w.Inscriptions,
             w.BladeLength_cm,
             w.Weight_kg,
-            w.Price,
-            w.Description
-        FROM $weaponType w
+            p.Price,
+            p.Description
+        FROM products p
+        JOIN $weaponType w ON w.ProductID = p.ID
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.BladeMaterial_ID = bm.ID
         LEFT JOIN BladeEdges be ON w.BladeEdge_ID = be.ID
         LEFT JOIN WoodMaterials wm ON w.HiltMaterial_ID = wm.ID
         LEFT JOIN GripStyles g ON w.Grip_ID = g.ID
         LEFT JOIN MetalMaterials pm ON w.PommelMaterial_ID = pm.ID
-        LEFT JOIN PommelTypes p ON w.Pommel_ID = p.ID
+        LEFT JOIN PommelTypes po ON w.Pommel_ID = po.ID
         LEFT JOIN PommelGems pg ON w.PommelGem_ID = pg.ID
         LEFT JOIN SheathMaterials sm ON w.SheathMaterial_ID = sm.ID
         LEFT JOIN SheathColors sc ON w.SheathColor_ID = sc.ID
         LEFT JOIN SheathTypes st ON w.SheathType_ID = st.ID
-        WHERE w.ID = ?";
+        WHERE p.ID = ?";
 }
 if($weaponType == "blunthandweapons") {
     $sql = "
         SELECT
-            w.Name, 
-            w.Image, 
+            p.ID,
+            p.Name, 
+            p.WeaponType,
+            p.Image,
+            p.Image2,
+            p.Image3,
+            p.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS HeadMaterial_ID,
@@ -142,8 +170,8 @@ if($weaponType == "blunthandweapons") {
             wm.name AS ShaftMaterial,
             g.ID AS Grip_ID,
             g.name AS Grip,
-            p.ID AS Pommel_ID,
-            p.name AS Pommel,
+            po.ID AS Pommel_ID,
+            po.name AS Pommel,
             pm.ID AS PommelMaterial_ID,
             pm.name AS PommelMaterial,
             w.Engravings,
@@ -152,20 +180,26 @@ if($weaponType == "blunthandweapons") {
             w.Weight_kg,
             w.Price,
             w.Description
-        FROM $weaponType w
+        FROM products p
+        JOIN $weaponType w ON w.ProductID = p.ID
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
         LEFT JOIN WoodMaterials wm ON w.ShaftMaterial_ID = wm.ID
         LEFT JOIN GripStyles g ON w.Grip_ID = g.ID
         LEFT JOIN MetalMaterials pm ON w.PommelMaterial_ID = pm.ID
-        LEFT JOIN PommelTypes p ON w.Pommel_ID = p.ID
-        WHERE w.ID = ?";
+        LEFT JOIN PommelTypes po ON w.Pommel_ID = po.ID
+        WHERE p.ID = ?";
 }
 if($weaponType == "polearms") {
     $sql = "
         SELECT
-            w.Name, 
-            w.Image, 
+            p.ID,
+            p.Name, 
+            p.WeaponType,
+            p.Image,
+            p.Image2,
+            p.Image3,
+            p.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS HeadMaterial_ID,
@@ -175,30 +209,36 @@ if($weaponType == "polearms") {
             wm.name AS ShaftMaterial,
             g.ID AS Grip_ID,
             g.name AS Grip,
-            p.ID AS ButtCap_ID,
-            p.name AS ButtCap,
+            po.ID AS ButtCap_ID,
+            po.name AS ButtCap,
             pm.ID AS ButtCapMaterial_ID,
             pm.name AS ButtCapMaterial,
             w.Engravings,
             w.Inscriptions,
             w.Length_cm,
             w.Weight_kg,
-            w.Price,
-            w.Description
-        FROM $weaponType w
+            p.Price,
+            p.Description
+        FROM products p
+        JOIN $weaponType w ON w.ProductID = p.ID
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
         LEFT JOIN WoodMaterials wm ON w.ShaftMaterial_ID = wm.ID
         LEFT JOIN GripStyles g ON w.Grip_ID = g.ID
         LEFT JOIN MetalMaterials pm ON w.ButtCapMaterial_ID = pm.ID
-        LEFT JOIN PommelTypes p ON w.ButtCap_ID = p.ID
-        WHERE w.ID = ?";
+        LEFT JOIN PommelTypes po ON w.ButtCap_ID = po.ID
+        WHERE p.ID = ?";
 }
 if($weaponType == "ranged") {
     $sql = "
         SELECT
-            w.Name, 
-            w.Image, 
+            p.ID,
+            p.Name, 
+            p.WeaponType,
+            p.Image,
+            p.Image2,
+            p.Image3,
+            p.Image4,
             s.ID AS Subcategory_ID,
             s.name AS Subcategory,
             bm.ID AS HeadMaterial_ID,
@@ -212,14 +252,15 @@ if($weaponType == "ranged") {
             w.Inscriptions,
             w.Length_cm,
             w.Weight_kg,
-            w.Price,
-            w.Description
-        FROM $weaponType w
+            p.Price,
+            p.Description
+        FROM products p
+        JOIN $weaponType w ON w.ProductID = p.ID
         LEFT JOIN Subcategories s ON w.Subcategory_ID = s.ID
         LEFT JOIN MetalMaterials bm ON w.HeadMaterial_ID = bm.ID
         LEFT JOIN WoodMaterials wm ON w.ShaftMaterial_ID = wm.ID
         LEFT JOIN GripStyles g ON w.Grip_ID = g.ID
-        WHERE w.ID = ?";
+        WHERE p.ID = ?";
 }
 
 $stmt = $mysqli->prepare($sql);
@@ -228,7 +269,7 @@ if (!$stmt) {
     exit;
 }
 
-$stmt->bind_param("i", $id);
+$stmt->bind_param("i", $productId);
 $stmt->execute();
 $result = $stmt->get_result();
 

@@ -11,13 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextArrow = slideshowContainer.querySelector(".next");
 
     const urlParams = new URLSearchParams(window.location.search);
-    const type = urlParams.get('weaponType');
-    const weaponID = urlParams.get('id');
+    const weaponID = urlParams.get('productId');
 
     let slideIndex = 1;
 
     function loadItemData() {
-        fetch(`getSingleItemData.php?weaponType=${type}&weaponID=${weaponID}`)
+        fetch(`getSingleItemData.php?productID=${weaponID}`)
             .then(res => res.json())
             .then(data => {
                 if (data.error) return console.error(data.error);
@@ -58,14 +57,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 nextArrow.addEventListener("click", () => plusSlides(1));
 
                 displayItemData(data);
-                fetch(`getSimilarWeapons.php?weaponType=${type}&weaponID=${weaponID}&subcategory=${data.Subcategory_ID}`)
+                fetch(`getSimilarWeapons.php?&productID=${weaponID}&weaponType=${data.WeaponType}&subcategory=${data.Subcategory_ID}`)
                     .then(res => res.json())
                     .then(similarData => {
-                        if (!similarData.error) displaySimilarWeapons(similarData);
+                        if (!similarData.error) {
+                            displaySimilarWeapons(similarData);
+                        }
                     });
 
                 showSlides(slideIndex); // show first slide
             })
+            /*.then(res => res.text())
+            .then(data => {
+                console.log(data);        // logs raw PHP output
+                document.body.innerHTML = data; // optional: display it in page
+            })*/
+            
             .catch(err => console.error(err));
     }
 
@@ -117,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         similarItemsListings.innerHTML = '';
         data.forEach(weapon => {
             const weaponLink = document.createElement("a");
-            weaponLink.href = `singleProduct.php?weaponType=${type}&id=${weapon.ID}`;
+            weaponLink.href = `singleProduct.php?productId=${weapon.ID}`;
 
             const weaponItemListing = document.createElement("div");
             weaponItemListing.classList.add("weaponItemListing");
@@ -158,4 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     loadItemData();
+
+    
 });

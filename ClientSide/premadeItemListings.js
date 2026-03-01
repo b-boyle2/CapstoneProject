@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 allWeapons = data;
                 displayWeapons(allWeapons);
             })
+            /*.then(res => res.text())
+            .then(data => {
+                console.log(data);        // logs raw PHP output
+                document.body.innerHTML = data; // optional: display it in page
+            })*/
         .catch(err => console.error(err));
     }
 
@@ -31,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         data.forEach(weapon => {
             const weaponLink = document.createElement("a");
-            weaponLink.href = `singleProduct.php?weaponType=${tableName}&id=${weapon.ID}`;
+            weaponLink.href = `singleProduct.php?productId=${weapon.ID}`;
             
             const weaponItemListing = document.createElement("div");
             weaponItemListing.classList.add("weaponItemListing")

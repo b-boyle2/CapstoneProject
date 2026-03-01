@@ -13,7 +13,6 @@ $id = isset($_GET['weaponID']) ? intval($_GET['weaponID']) : 0;
 $subcategory = isset($_GET['subcategory']) ? intval($_GET['subcategory']) : 0;
 
 //validate table name to prevent SQL injection
-
 $allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged'];
     if (!in_array($table, $allowedTables)) {
         die(json_encode(["error" => "Invalid Table"]));
@@ -22,14 +21,16 @@ $allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged']
 //query only what's needed
 $sql = 
     "SELECT 
-        ID, 
-        Name, 
-        Image, 
-        Subcategory_ID, 
-        Price 
-        FROM $table
-        WHERE Subcategory_ID = $subcategory AND ID != $id
-        LIMIT 5";
+        p.ID, 
+        p.Name, 
+        p.Image, 
+        w.Subcategory_ID, 
+        p.Price 
+        FROM products p
+        JOIN $table w ON w.ProductID = p.ID
+        WHERE Subcategory_ID = $subcategory AND ProductID != $id
+        LIMIT 5
+    ";
 $result = $conn->query($sql);
 
 $weapons = [];

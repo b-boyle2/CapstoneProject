@@ -1,88 +1,103 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cartItemList = document.querySelector(".cartContainer")
     
+    function loadWeapons() {
+        fetch(`getCartItems.php`)
+            .then(res=> res.json())
+            .then(data => {
+                displayWeapons(data);
+            })
+           /*.then(res => res.text())
+            .then(data => {
+            console.log(data);        // logs raw PHP output
+            document.body.innerHTML = data; // optional: display it in page
+            })*/
+        .catch(err => console.error(err));
+    }
+    
+    function displayCartItem(data) {
+        data.array.forEach(weapon => {
+            const cartItem = document.createElement("div");
+            cartItem.classList.add("cartItem");
 
-    function displayCartItem() {
-        const cartItem = document.createElement("div");
-        cartItem.classList.add("cartItem");
+            const imgContainer = document.createElement("div");
+            imgContainer.classList.add("imgContainer");
+            const img = document.createElement("img");
+            img.src = weapon.Image;
+            imgContainer.appendChild(img);
 
-        const imgContainer = document.createElement("div");
-        imgContainer.classList.add("imgContainer");
-        const img = document.createElement("img");
-        img.src = "../Images/ArmingSwords/duskwardDefender.png";
-        imgContainer.appendChild(img);
+            const details = document.createElement("div");
+            details.classList.add("details");
+            const topSection = document.createElement("div");
+            topSection.classList.add("topSection");
 
-        const details = document.createElement("div");
-        details.classList.add("details");
-        const topSection = document.createElement("div");
-        topSection.classList.add("topSection");
+            const itemName = document.createElement("h3");
+            itemName.classList.add("name");
+            itemName.innerHTML = weapon.Name;
+            const price = document.createElement("h3");
+            price.classList.add("price");
+            price.innerHTML = `$${weapon.PriceAtAdd}`;
+            topSection.appendChild(itemName);
+            topSection.appendChild(price);
 
-        const itemName = document.createElement("h3");
-        itemName.classList.add("name");
-        itemName.innerHTML = "Duskward Defender";
-        const price = document.createElement("h3");
-        price.classList.add("price");
-        price.innerHTML = "$580";
-        topSection.appendChild(itemName);
-        topSection.appendChild(price);
+            const description = document.createElement("div");
+            description.classList.add("description");
+            description.innerHTML = weapon.Description;
 
-        const description = document.createElement("div");
-        description.classList.add("description");
-        description.innerHTML = "A steady and understated arming sword, the Duskward Defender is forged from dark steel with a clipped, single-edged blade built for disciplined precision. Its walnut hilt and simple disc pommel favor balance over ornament, while the minimal black leather sheath keeps its presence discreet. Reliable and unadorned, it is a weapon made for vigilance rather than vanity.";
+            const buttonContainer = document.createElement("div");
+            buttonContainer.classList.add("buttonContainer");
 
-        const buttonContainer = document.createElement("div");
-        buttonContainer.classList.add("buttonContainer");
+            const stepperInputTest = document.createElement("div");
+            stepperInputTest.classList.add("stepperInput");
+            
+            const inputRange = document.createElement("input");
+            inputRange.dataset.type = "range";
+            inputRange.dataset.min = "0";
+            inputRange.dataset.max = "100";
+            inputRange.dataset.value = "1";
 
-        const stepperInputTest = document.createElement("div");
-        stepperInputTest.classList.add("stepperInput");
-        
-        const inputRange = document.createElement("input");
-        inputRange.dataset.type = "range";
-        inputRange.dataset.min = "0";
-        inputRange.dataset.max = "100";
-        inputRange.dataset.value = "1";
+            const input = document.createElement("div");
+            input.classList.add("input");
 
-        const input = document.createElement("div");
-        input.classList.add("input");
+            const minusButton = document.createElement("button");
+            minusButton.classList.add("minusButton");
+            minusButton.innerHTML = "-";
 
-        const minusButton = document.createElement("button");
-        minusButton.classList.add("minusButton");
-        minusButton.innerHTML = "-";
+            const range = document.createElement("div");
+            range.classList.add("range");
+            const list = document.createElement("div");
+            list.classList.add("list");
+            range.appendChild(list);
 
-        const range = document.createElement("div");
-        range.classList.add("range");
-        const list = document.createElement("div");
-        list.classList.add("list");
-        range.appendChild(list);
+            const plusButton = document.createElement("button");
+            plusButton.classList.add("plusButton");
+            plusButton.innerHTML = "+";
 
-        const plusButton = document.createElement("button");
-        plusButton.classList.add("plusButton");
-        plusButton.innerHTML = "+";
+            input.appendChild(minusButton);
+            input.appendChild(range);
+            input.appendChild(plusButton);
 
-        input.appendChild(minusButton);
-        input.appendChild(range);
-        input.appendChild(plusButton);
+            stepperInputTest.appendChild(inputRange);
+            stepperInputTest.appendChild(input);
 
-        stepperInputTest.appendChild(inputRange);
-        stepperInputTest.appendChild(input);
+            const deleteButton = document.createElement("button");
+            deleteButton.classList.add("deleteButton");
+            const deleteIcon = document.createElement("img");
+            deleteIcon.src= "../Images/IconDelete.svg";
+            deleteButton.appendChild(deleteIcon);
 
-        const deleteButton = document.createElement("button");
-        deleteButton.classList.add("deleteButton");
-        const deleteIcon = document.createElement("img");
-        deleteIcon.src= "../Images/IconDelete.svg";
-        deleteButton.appendChild(deleteIcon);
+            buttonContainer.appendChild(stepperInputTest);
+            buttonContainer.appendChild(deleteButton);
 
-        buttonContainer.appendChild(stepperInputTest);
-        buttonContainer.appendChild(deleteButton);
+            details.appendChild(topSection);
+            details.appendChild(description);
+            details.appendChild(buttonContainer);
 
-        details.appendChild(topSection);
-        details.appendChild(description);
-        details.appendChild(buttonContainer);
+            cartItem.appendChild(imgContainer);
+            cartItem.appendChild(details);
 
-        cartItem.appendChild(imgContainer);
-        cartItem.appendChild(details);
-
-        cartItemList.appendChild(cartItem);
+            cartItemList.appendChild(cartItem);
+        });
     }
 
     displayCartItem();

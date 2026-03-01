@@ -8,17 +8,26 @@ if ($conn->connect_error) {
     die(json_encode(["error" => "DB connection failed"]));
 }
 
-$table = $_GET['table'];
+$weaponType = $_GET['table'];
 
 //validate table name to prevent SQL injection
 
-$allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged'];
-    if (!in_array($table, $allowedTables)) {
+$allowedWeaponTypes = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged'];
+    if (!in_array($weaponType, $allowedWeaponTypes)) {
         die(json_encode(["error" => "Invalid Table"]));
     }
 
 //query only what's needed
-$sql = "SELECT ID, Name, Image, Subcategory_ID, Price FROM $table";
+$sql = "
+    SELECT 
+        p.ID, 
+        p.Name, 
+        p.Image,
+        w.Subcategory_ID,
+        p.Price 
+    FROM products p
+    JOIN $weaponType w ON p.ID = w.ProductID
+    ";
 $result = $conn->query($sql);
 
 $weapons = [];
