@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 }
 
 // POST check
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if ($_SERVER['REQUEST_METHOD'] !== 'DELETE') {
     echo json_encode(["error" => "Invalid request method"]);
     exit;
 }
@@ -22,10 +22,7 @@ if (!$productId) {
 }
 
 $sql = "
-    INSERT INTO cart (PriceAtAdd, ProductID, Quantity, AddedAt)
-    SELECT Price, $productId, 1, Now()
-    FROM products p
-    WHERE ID = $productId
+    DELETE FROM cart WHERE ProductID = $productId
 ";
 
 if ($conn->query($sql)) {

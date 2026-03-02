@@ -71,7 +71,7 @@ a:hover {
     position: absolute;
     left: 30px;
     top: 20px;
-    z-index: 2;
+    z-index: 13;
     pointer-events: all;
 }
 
@@ -260,45 +260,40 @@ h4{
 
 /* BUTTONS */
 .button1, .button2 {
-    display: flex;
+    display: inline-flex;
     position: relative;
     align-items: center;
     justify-content: center;
     width: fit-content;
-    padding: 7px 5px;
+    min-width: 80px;
+    padding: 7px 20px;
     margin: 0 20px;
     background-color: #926D41;
     color: white;
     border: none;
     justify-self: center;
     align-self: center;
+    /* Triangle clip-path */
+    clip-path: polygon(
+        22px 0,
+        calc(100% - 22px) 0,
+        100% 50%,
+        calc(100% - 22px) 100%,
+        22px 100%,
+        0 50%
+    );
+    overflow: visible;
+}
+
+.button1 span, .button2 span{
+    display: inline-block;
+    padding: 0 20px;       /* horizontal space inside rectangle */
+    white-space: nowrap;
 }
 
 .button1:hover, .button2:hover{
     background-color: var(--darkRed);
     cursor: pointer;
-}
-
-.button1::before,
-.button1::after,
-.button2::before,
-.button2::after{
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 24px;
-  height: 100%;
-  background: inherit;
-}
-
-.button1::before, .button2::before {
-  left: -22px;
-  clip-path: polygon(90% 0, 100% 0, 100% 100%, 90% 100%, 15% 50%)
-}
-
-.button1::after, .button2::after {
-  right: -22px;
-  clip-path: polygon(10% 0, 0 0, 0 100%, 10% 100%, 75% 50%);
 }
 
 .button1{
@@ -312,6 +307,43 @@ h4{
 .button2#signUp{
     padding: 7px 10px;
 }
+
+button#addCartButton.active{
+    background-color: var(--gray);
+}
+
+/* Left triangle */
+.button2.active::before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 0;
+    width: 22px;
+    height: 100%;
+    background: inherit;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    z-index: 2;
+    border-left: 3px solid gold; /* the border on triangle */
+    border-top: 3px solid gold;
+    border-bottom: 3px solid gold;
+}
+
+/* Right triangle */
+.button2.active::after {
+    content: "";
+    position: absolute;
+    right: -22px;
+    top: 0;
+    width: 22px;
+    height: 100%;
+    background: inherit;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 2;
+    border-right: 3px solid gold; /* the border on triangle */
+    border-top: 3px solid gold;
+    border-bottom: 3px solid gold;
+}
+
 /* BUTTONS END */
 
 #aboutSection{
@@ -390,6 +422,7 @@ p{
     display: flex;
     flex-direction: column;
     position: absolute;
+    margin-bottom: 15px;
     bottom: 0;
     right: 0;
     padding: 57px 53px;

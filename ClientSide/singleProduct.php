@@ -21,7 +21,7 @@
                     <div class=accountCart>
 
                         <div class="cart"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></div>
-                        <button class="button2" id="signUp">Sign Up</button>
+                        <button class="button2" id="signUp"><span>Sign Up</span></button>
                     </div>
                 </div>
 
@@ -107,8 +107,8 @@
                 </div>
 
                 <div class="buttons">
-                    <button class="button2">Add to Cart</button>
-                    <button class="button2">Customize</button>
+                    <button class="button2" id="addCartButton"><span>Add to Cart</span></button>
+                    <button class="button2"><span>Customize</span></button>
                 </div>
                 
             </div>

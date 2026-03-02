@@ -14,16 +14,15 @@
         <header class="noBanner">
             <a href="index.php">
                 <div class="siteTitle">
-                    <h2>Ironveil Forge</h2>
+                    <a href="index.php"><h2>Ironveil Forge</h2></a>
                 </div>
             </a>
 
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
-
-                        <div class="cart"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></div>
-                        <button class="button2" id="signUp">Sign Up</button>
+                        <div class="cart"><a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a></div>
+                        <button class="button2" id="signUp"><span>Sign Up</span></button>
                     </div>
                 </div>
 
@@ -78,6 +77,7 @@
         <h2>Cart</h2>
         
         <div class="cartContainer">
+            <!--
             <div class="cartItem">
                 <div class="imgContainer">
                     <img src="../Images/ArmingSwords/duskwardDefender.png" alt="">
@@ -112,7 +112,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 

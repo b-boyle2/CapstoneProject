@@ -72,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
             weaponLink.appendChild(weaponItemListing);
 
             availableWeaponsDiv.appendChild(weaponLink);
+
+            console.log(JSON.stringify(weapon.Image)); // see what keys and values it actually has
         })
     }
 

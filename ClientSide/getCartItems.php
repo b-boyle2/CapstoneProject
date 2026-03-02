@@ -13,6 +13,7 @@ $userID = $_GET['userID'];
 //query only what's needed
 $stmt = $conn->prepare("
     SELECT
+        c.ProductID,
         w.Name, 
         w.Image, 
         c.Quantity,

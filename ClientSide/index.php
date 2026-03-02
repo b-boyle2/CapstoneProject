@@ -23,9 +23,8 @@
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
-
-                        <div class="cart"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></div>
-                        <button class="button2" id="signUp">Sign Up</button>
+                        <div class="cart"><a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a></div>
+                        <button class="button2" id="signUp"><span>Sign Up</span></button>
                     </div>
                 </div>
 
@@ -85,7 +84,7 @@
                     Step into a world where history and legend meet. Ironveil Forge creates weapons that bring stories to life, from display-ready masterpieces 
                     to battle-ready blades. Every weapon is crafted to reflect the skill, artistry, and imagination of its maker.
                 </p>
-                <button class=button1 onclick="location.href ='about.php'">Learn More</button>
+                <button class=button1 onclick="location.href ='about.php'"><span>Learn More</span></button>
             </div>
         </div>
     </div>
@@ -95,7 +94,7 @@
             <div id="indexCardContent">
                 <h1>Craft<br>Your<br>Ideal Weapon</h1>
                 <h3>Create a one-of-a-kind weapon with expert craftsmanship and personal flair.</h3>
-                <button class="button2">Customize Your Own Weapon</button>
+                <button class="button2"><span>Customize Your Own Weapon</span></button>
             </div>
             <div class=indexCardImg>
                 <img src="../Images/customizableWeapons.png" alt="A dagger decorated with intricate carvings down the handle and middle of the blade rests on a wooden display in front of a red banner.">
@@ -108,7 +107,7 @@
             <div id="indexCardContent2">
                 <h1>Crafted & Ready</h1>
                 <h3>Discover weapons forged to perfection and ready to claim</h3>
-                <button class="button2">Shop Now</button>
+                <button class="button2"><span>Shop Now</span></button>
             </div>
         </div>
     </section>

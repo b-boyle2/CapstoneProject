@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    //FOR TESTING PURPOSES
+    const userID = 'user123';
+
     const dataContainer = document.querySelector(".focusData");
     const headerInfo = dataContainer.querySelector(".topInfo");
     const descriptionContainer = dataContainer.querySelector(".focusDescription");
@@ -11,7 +14,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextArrow = slideshowContainer.querySelector(".next");
 
     const urlParams = new URLSearchParams(window.location.search);
-    const weaponID = urlParams.get('productId');
+    const weaponID = parseInt(urlParams.get('productId'));
+
+    const addToCartButton = document.getElementById("addCartButton");
+
+    fetch(`getCartItems.php?userID=${userID}`)
+        .then(res=> res.json())
+        .then(data => {
+            data.forEach(data => {
+                console.log(data.ProductID);
+                if (data.ProductID === weaponID){
+                    addToCartButton.classList.add("active");
+                    addToCartButton.firstElementChild.innerHTML = "Remove from Cart";
+                    return;
+                }
+            })
+        })
+        /*.then(res => res.text())
+        .then(data => {
+        console.log(data);        // logs raw PHP output
+        document.body.innerHTML = data; // optional: display it in page
+        })*/
+    .catch(err => console.error(err));
 
     let slideIndex = 1;
 
@@ -166,5 +190,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadItemData();
 
-    
+    addToCartButton.addEventListener("click", () => {
+        const isAdded = addToCartButton.classList.contains("active");
+        if (!isAdded) {
+            fetch(`addToCart.php?productID=${weaponID}`, {
+                method: 'POST'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) return console.error(data.error);
+            })
+            /*.then(res => res.text())
+            .then(data => {
+                console.log(data);        // logs raw PHP output
+                document.body.innerHTML = data; // optional: display it in page
+            })*/
+            console.log(`Started as: ${addToCartButton.dataset.isAdded}`);
+            addToCartButton.dataset.isAdded = "true";
+            addToCartButton.classList.add("active");
+            addToCartButton.firstElementChild.innerHTML = "Remove from Cart";
+
+            console.log(`Ended as: ${addToCartButton.dataset.isAdded}`);
+            console.log(`ClassList: ${addToCartButton.classList}`);
+        }
+        else if (isAdded) {
+            fetch(`removeFromCart.php?productID=${weaponID}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) return console.error(data.error);
+            })
+            /*.then(res => res.text())
+            .then(data => {
+                console.log(data);        // logs raw PHP output
+                document.body.innerHTML = data; // optional: display it in page
+            })*/
+
+            console.log(`Started as: ${addToCartButton.dataset.isAdded}`);
+            addToCartButton.dataset.isAdded = "false";
+            addToCartButton.classList.remove("active");
+            addToCartButton.firstElementChild.innerHTML = "Add to Cart";
+
+            console.log(`Ended as: ${addToCartButton.dataset.isAdded}`);
+            console.log(`ClassList: ${addToCartButton.classList}`);
+        }
+        
+
+    })
+
 });

@@ -36,5 +36,7 @@ while ($row = $result->fetch_assoc()) {
     $weapons[] = $row;
 }
 
+error_log(print_r($row, true));
+
 echo json_encode($weapons);
 $conn->close();
