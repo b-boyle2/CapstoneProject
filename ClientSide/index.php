@@ -23,7 +23,10 @@
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
-                        <div class="cart"><a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a></div>
+                        <div class="cart">
+                            <div id=cartItemCounter></div>
+                            <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
+                        </div>
                         <button class="button2" id="signUp"><span>Sign Up</span></button>
                     </div>
                 </div>
@@ -40,7 +43,7 @@
                         </ul>
                     </div>
 
-<!-- ADJUST CUSTOMIZE LINKS TO GO TO CUSTOMIZATION PAGE -->
+        <!-- ADJUST CUSTOMIZE LINKS TO GO TO CUSTOMIZATION PAGE -->
                     <div class="dropdown">
                         <button class="navLink" onclick="location.href='customize.php'"aria-haspopup="true" aria-expanded="false">Customize</button>
                         <ul class="dropdownContent">
@@ -185,7 +188,7 @@
         </footer>
     </section>
 
-    <script src="main.js"></script>
+    <script type='module' src="main.js"></script>
 
 </body>
 

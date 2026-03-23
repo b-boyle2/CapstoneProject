@@ -1,4 +1,5 @@
 @import url("cartStyles.css");
+@import url("formStyles.css");
 
 @font-face {
     font-family: medievalSharp;
@@ -241,12 +242,14 @@ h4{
 
 .accountCart{
     display: flex;
+    position: relative;
 }
 
 .cart{
     width: 35px;
     height: 35px;
     margin-right: 15px;
+    position: relative;
 }
 
 .cart:hover{
@@ -256,6 +259,24 @@ h4{
 .cartIcon{
     width: 100%;
     height: 100%;
+}
+
+#cartItemCounter {
+    padding: 3px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    right: -10px;
+    z-index: 2;
+    min-width: 17px;
+    width: fit-content;
+    height: 17px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
 }
 
 /* BUTTONS */
@@ -363,8 +384,10 @@ button#addCartButton.active{
 }
 
 .textBlurb{
+    display: flex;
+    flex-direction: column;
     padding: 50px 15px 20px 40px;
-    width:33%;
+    width: 33%;
 }
 
 p{

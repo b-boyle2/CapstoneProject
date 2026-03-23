@@ -19,8 +19,11 @@
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
-
-                        <div class="cart"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></div>
+                        
+                        <div class="cart">
+                            <div id=cartItemCounter></div>
+                            <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
+                        </div>
                         <button class="button2" id="signUp"><span>Sign Up</span></button>
                     </div>
                 </div>
@@ -199,6 +202,6 @@
         </footer>
     </section>
 
-    <script src='main.js'></script>
-    <script src='singleItem.js'></script>    
+    <script type='module' src='main.js'></script>
+    <script type='module' src='singleItem.js'></script>    
 </body>

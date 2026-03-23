@@ -12,7 +12,7 @@
 <body>
     
     <nav>
-        <div class="nav">
+        <div>
             <div>
                 <h1 class="siteTitle">Ironveil Forge</h1>
 
@@ -30,6 +30,11 @@
             <button class="navLink" onclick="location.href='inventory.php'"><img src="Images/clipboardIcon.svg" alt="" class="navIcon">Inventory</button>
         </div>
     </nav>
+    <div id='collapsedNavBar'>
+        <button class="collapseNav" id='openNav'>
+            <i class="chevron"></i>
+        </button>
+    </div>
 
     <div class="mainSection">
         <div class="header">
@@ -174,8 +179,7 @@
             </div>
         </div>
 
-        
-
-    <script src='customizationOptionListings.js'></script>
+        <script src='main.js'></script>
+        <script src='customizationOptionListings.js'></script>
 </body>
 </html>

@@ -1,7 +1,20 @@
+import { updateCartCounter } from "./main.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     //FOR TESTING PURPOSES
     const userID = 'user123';
-    const cartItemList = document.querySelector(".cartContainer")
+    const cartCounter = document.querySelector('#cartItemCounter');
+    const cartItemList = document.querySelector(".cartContainer");
+
+    const subtotalSection = document.querySelector('.rightSection');
+    const itemNumSpan = document.querySelector('#itemNum');
+    const subtotalSpan = document.querySelector('#subtotal');
+    const shippingSpan = document.querySelector('#shipping');
+    const totalSpan = document.querySelector('#total');
+
+    const shippingFee = 9.99;
+    let runningSubtotal = 0;
+    let cartQuantity = 0;
     
     function loadWeapons() {
         fetch(`getCartItems.php?userID=${userID}`)
@@ -18,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     function displayCartItems(data) {
+        //initialize subtotal breakdown upon initial display
+        runningSubtotal = 0;
+        cartQuantity = 0;
+
         data.forEach(weapon => {
             const cartItem = document.createElement("div");
             cartItem.classList.add("cartItem");
@@ -102,8 +119,16 @@ document.addEventListener("DOMContentLoaded", () => {
             cartItem.appendChild(imgContainer);
             cartItem.appendChild(details);
             cartItem.dataset.productID = weapon.ProductID;
+            cartItem.dataset.productPrice = weapon.PriceAtAdd;
+            cartItem.dataset.productQuantity = weapon.Quantity;
 
             cartItemList.appendChild(cartItem);
+
+            runningSubtotal += (parseFloat(weapon.Quantity) * parseFloat(weapon.PriceAtAdd));
+            cartQuantity += parseInt(weapon.Quantity);
+
+            
+            updateSubtotal();
         });
     }
 
@@ -115,6 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!stepper){
             return;
         }
+
+        let product = stepper.closest(".cartItem");
+
         const inputRange = stepper.querySelector("input");
         const list = stepper.querySelector(".list");
         let value = parseInt(inputRange.dataset.value);
@@ -123,18 +151,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (e.target.classList.contains("plusButton") && value < max) {
             value++;
+            runningSubtotal += parseFloat(product.dataset.productPrice);
+            cartQuantity += 1;
         }
+
         else if (e.target.classList.contains("minusButton") && value > min) {
             value--;
+            runningSubtotal -= parseFloat(product.dataset.productPrice);
+            cartQuantity -= 1;
         }
         else {
             return;
         }
+        product.dataset.productQuantity = value;
+        updateSubtotal();
 
         inputRange.dataset.value = value;
         list.style.marginTop = `-${(value - min)*40}px`;
 
-        product = stepper.closest(".cartItem");
         console.log(`ProductID: ${product.dataset.productID}`);
         console.log(`Value: ${inputRange.dataset.value}`);
         console.log(`UserID: ${userID}`);
@@ -149,6 +183,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(res => res.json())
         .then(data => {
             if (data.error) return console.error(data.error);
+
+            updateCartCounter(userID, cartCounter);
         })
         /*.then(res => res.text())
         .then(data => {
@@ -163,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!deleteButton) {
             return;
         }
-        product = deleteButton.closest(".cartItem");
+        let product = deleteButton.closest(".cartItem");
 
         fetch(`removeFromCart.php?productID=${product.dataset.productID}`, {
             method: 'DELETE'
@@ -172,7 +208,15 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             if (data.error) return console.error(data.error);
             if (product) {
+                runningSubtotal -= (parseFloat(product.dataset.productQuantity) * parseFloat(product.dataset.productPrice))
+                console.log(`Quanitity: ${product.dataset.productQuantity}`);
+                console.log(`Price: ${product.dataset.productPrice}`);
+                console.log(`ItemTotal: ${parseFloat(product.dataset.productQuantity) * parseFloat(product.dataset.productPrice)}`)
+                cartQuantity -= parseFloat(product.dataset.productQuantity);
+                updateSubtotal();
+                
                 product.remove();
+                updateCartCounter(userID, cartCounter);
             }
         })
         /*.then(res => res.text())
@@ -182,4 +226,17 @@ document.addEventListener("DOMContentLoaded", () => {
         })*/
     })
 
+
+    function updateSubtotal() {
+        if (cartQuantity == 1) {
+            itemNumSpan.innerHTML = `(1 item)`;
+        }
+        else {
+            itemNumSpan.innerHTML = `(${cartQuantity} items)`;
+        }
+
+        subtotalSpan.innerHTML = `$${runningSubtotal}`;
+        shippingSpan.innerHTML = `$${shippingFee}`;
+        totalSpan.innerHTML = `$${runningSubtotal + shippingFee}`
+    }
 })

@@ -1,6 +1,9 @@
+import { updateCartCounter } from "./main.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     //FOR TESTING PURPOSES
     const userID = 'user123';
+    const cartCounter = document.querySelector('#cartItemCounter');
 
     const dataContainer = document.querySelector(".focusData");
     const headerInfo = dataContainer.querySelector(".topInfo");
@@ -199,6 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(data => {
                 if (data.error) return console.error(data.error);
+                updateCartCounter(userID, cartCounter);
             })
             /*.then(res => res.text())
             .then(data => {
@@ -220,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(data => {
                 if (data.error) return console.error(data.error);
+                updateCartCounter(userID, cartCounter);
             })
             /*.then(res => res.text())
             .then(data => {

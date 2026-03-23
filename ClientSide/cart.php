@@ -21,7 +21,10 @@
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
-                        <div class="cart"><a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a></div>
+                        <div class="cart">
+                            <div id=cartItemCounter></div>
+                            <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
+                        </div>
                         <button class="button2" id="signUp"><span>Sign Up</span></button>
                     </div>
                 </div>
@@ -76,43 +79,71 @@
     <section class="content">
         <h2>Cart</h2>
         
-        <div class="cartContainer">
-            <!--
-            <div class="cartItem">
-                <div class="imgContainer">
-                    <img src="../Images/ArmingSwords/duskwardDefender.png" alt="">
-                </div>
-                <div class="details">
-                    <div class="topSection">
-                        <h3 class="name">
-                            Duskward Defender
-                        </h3>
-                        <h3 class="price">
-                            $580
-                        </h3>
+        <div id='mainSection'>
+            <div class="cartContainer">
+                <!--
+                <div class="cartItem">
+                    <div class="imgContainer">
+                        <img src="../Images/ArmingSwords/duskwardDefender.png" alt="">
                     </div>
-
-                    <div class="description">
-                        A steady and understated arming sword, the Duskward Defender is forged from dark steel with a clipped, single-edged blade built for disciplined precision. Its walnut hilt and simple disc pommel favor balance over ornament, while the minimal black leather sheath keeps its presence discreet. Reliable and unadorned, it is a weapon made for vigilance rather than vanity.
-                    </div>
-
-                    <div class="buttonContainer">
-                        <div class="stepperInput">
-                            <input type="range" min="0" max="100" value="1">
-                            <div class="input">
-                                <button class="minusButton">-</button>
-                                <div class="range">
-                                    <div class="list"></div>
-                                </div>
-                                <button class="plusButton">+</button>
-                            </div>
+                    <div class="details">
+                        <div class="topSection">
+                            <h3 class="name">
+                                Duskward Defender
+                            </h3>
+                            <h3 class="price">
+                                $580
+                            </h3>
                         </div>
 
-                        <div  class="deleteButton"><img src="../Images/IconDelete.svg" alt=""></div>
+                        <div class="description">
+                            A steady and understated arming sword, the Duskward Defender is forged from dark steel with a clipped, single-edged blade built for disciplined precision. Its walnut hilt and simple disc pommel favor balance over ornament, while the minimal black leather sheath keeps its presence discreet. Reliable and unadorned, it is a weapon made for vigilance rather than vanity.
+                        </div>
 
+                        <div class="buttonContainer">
+                            <div class="stepperInput">
+                                <input type="range" min="0" max="100" value="1">
+                                <div class="input">
+                                    <button class="minusButton">-</button>
+                                    <div class="range">
+                                        <div class="list"></div>
+                                    </div>
+                                    <button class="plusButton">+</button>
+                                </div>
+                            </div>
+
+                            <div  class="deleteButton"><img src="../Images/IconDelete.svg" alt=""></div>
+
+                        </div>
                     </div>
+                </div> -->
+            </div>
+            <div class='rightSection'>
+                <div id='subtotalBreakdown'>
+                    <div class='row'>
+                        <span><span><strong>Subtotal</strong></span> <span id=itemNum></span></span>
+                        <span id=subtotal>$0</span>
+                    </div>
+
+                    <div class='row' id='shippingRow'>
+                        <span class='label'>Shipping</span>
+                        <span id = 'shipping'>$9.99</span>
+                    </div>
+
+                    <div class='row'>
+                        <span>Taxes</span>
+                        <span>Calculated at checkout</span>
+                    </div>
+                    
                 </div>
-            </div> -->
+                <div><img src="../Images/CServiceDivider.svg"  class="linkDivider" alt=""></div>
+                <div id='estimatedTotal'>
+                    <span><strong>Estimated total</strong></span>
+                    <span id='total'>$0</span>
+                </div>
+                
+                <button class="button2"><a href="checkoutShipping.php"><span>Proceed to checkout</span></a></button>
+            </div>
         </div>
     </section>
 
@@ -189,6 +220,6 @@
         </footer>
     </section>
 
-    <script src='main.js'></script>
-    <script src='adjustCart.js'></script>
+    <script type='module' src='main.js'></script>
+    <script type='module' src='adjustCart.js'></script>
 </body>

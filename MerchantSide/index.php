@@ -14,12 +14,10 @@
     <nav>
         <div>
             <h1 class="siteTitle">Ironveil Forge</h1>
-            
             <button class="collapseNav">
                 <i class="chevron"></i>
             </button>
         </div>
-        
 
         <button class="navLink" onclick="location.href='index.php'" id="here"><img src="Images/homeIcon.svg" alt="" class="navIcon">Dashboard</button>
         <button class="navLink" onclick="location.href='analytics.php'"><img src="Images/chartIcon.svg" alt="" class="navIcon">Analytics</button>
@@ -28,6 +26,11 @@
         <button class="navLink" onclick="location.href='customizationOptions.php'"><img src="Images/customizationIcon.svg" alt="" class="navIcon">Customization Options</button>
         <button class="navLink" onclick="location.href='inventory.php'"><img src="Images/clipboardIcon.svg" alt="" class="navIcon">Inventory</button>
     </nav>
+    <div id='collapsedNavBar'>
+        <button class="collapseNav" id='openNav'>
+            <i class="chevron"></i>
+        </button>
+    </div>
 
     <div class="mainSection">
         <div class="header">
@@ -48,5 +51,7 @@
             </div>
         </div>
     </div>
+
+    <script src='main.js'></script>
 </body>
 </html>

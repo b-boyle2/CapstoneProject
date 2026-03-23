@@ -27,23 +27,30 @@
 body{
     display: flex;
     flex-direction: row;
+    background-color: #abb0b127;
 }
 
 .mainSection{
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: #abb0b127;
     padding: 0 25px 0 50px;
+    margin-top: 3px;
+    margin-left: 230px;
+    transition: 0.3s;
 }
 
-nav{
-    position: relative;
+nav, #collapsedNavBar{
+    position: fixed;
+    z-index: 7;
     display: flex;
     flex-direction: column;
     height: 100vh;
     box-shadow: 3px 0 7px 0 rgba(0,0,0,0.15);
-    width: fit-content;
+    min-width: 253px;
+    overflow: hidden;
+    transition: 0.3s;
+    background-color: white;
 }
 
 .navLink{
@@ -51,7 +58,7 @@ nav{
     padding: 15px 0px 15px 30px;
     border: none;
     background-color: white;
-    width: 230px;
+    width: 100%;
     font-size: 13pt;
     text-align: left;
     align-items: center;
@@ -86,6 +93,24 @@ nav{
     height: 20px;
 }
 
+.collapseNav:hover {
+    cursor: pointer;
+    transition: 0.3s;
+}
+#collapsedNavBar {
+    z-index: 6;
+    display: block;
+    min-width: 30px;
+    width: 30px;
+}
+#openNav {
+    z-index: 6;
+    transform: scaleX(-1);
+    top: 17px;
+    left: -1px;
+    display: none;
+}
+
 .chevron:after {
     content: ' ';
     display: inline-block;
@@ -107,6 +132,7 @@ h1.siteTitle{
     font-size: 1.5em;
     margin: 15px 0 20px 20px;
     font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
+    transition: 0.3s;
 }
 
 /* FILTERS START */

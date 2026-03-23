@@ -21,8 +21,10 @@
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
-
-                        <div class="cart"><a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a></div>
+                        <div class="cart">
+                            <div id=cartItemCounter></div>
+                            <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
+                        </div>
                         <button class="button2" id="signUp"><span>Sign Up</span></button>
                     </div>
                 </div>
@@ -171,6 +173,6 @@
         </footer>
     </section>
 
-    <script src='main.js'></script>
+    <script type='module' src='main.js'></script>
     <script src='premadeItemListings.js'></script>
 </body>
