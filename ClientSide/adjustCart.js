@@ -2,7 +2,7 @@ import { updateCartCounter } from "./main.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     //FOR TESTING PURPOSES
-    const userID = 'user123';
+    const userID = '1';
     const cartCounter = document.querySelector('#cartItemCounter');
     const cartItemList = document.querySelector(".cartContainer");
 

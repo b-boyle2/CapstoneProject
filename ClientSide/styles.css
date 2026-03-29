@@ -15,6 +15,7 @@
     --mainDarkGray: #0E1010;
     --darkRed: #991B1E;
     --gray: #3C3F40;
+    --lightGray: #8b8c8d;
     --gold: #926D41;
     --yellow: #D5B85A;
 }
@@ -28,7 +29,7 @@
 
 body{
     display: flex;
-    align-content: center;
+    justify-content: center;
     flex-direction: column;
     background-image: url(../Images/background.jpg);
     background-size: cover;
@@ -344,9 +345,9 @@ button#addCartButton.active{
     background: inherit;
     clip-path: polygon(100% 0, 0 50%, 100% 100%);
     z-index: 2;
-    border-left: 3px solid gold; /* the border on triangle */
-    border-top: 3px solid gold;
-    border-bottom: 3px solid gold;
+    border-left: 3px solid var(--gold); /* the border on triangle */
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
 }
 
 /* Right triangle */
@@ -360,9 +361,9 @@ button#addCartButton.active{
     background: inherit;
     clip-path: polygon(0 0, 100% 50%, 0 100%);
     z-index: 2;
-    border-right: 3px solid gold; /* the border on triangle */
-    border-top: 3px solid gold;
-    border-bottom: 3px solid gold;
+    border-right: 3px solid var(--gold); /* the border on triangle */
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
 }
 
 /* BUTTONS END */

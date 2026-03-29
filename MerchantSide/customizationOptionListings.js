@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadOptions(tableName);
     })
 
-    // For the addWeaponForm
+    // For the addOptionForm
     const form = document.getElementById("addOptionForm")
 
     const optionTypeSelect = document.getElementById("optionTypeSelect");

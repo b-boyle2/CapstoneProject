@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartCounter = document.querySelector('#cartItemCounter');
 
     //FOR TESTING PURPOSES
-    const userID = 'user123';
+    const userID = '1';
 
     navLinks.forEach(link => {
         const dropdown = link.nextElementSibling; // the <ul>

@@ -1,12 +1,13 @@
-.addForm, .editForm{
-    display: none;
-}
-
-.addMainForm, .editMainForm{
+.checkoutForm{
+    justify-self: center;
     display: flex;
     flex-direction: column;
-    padding: 30px 30px 15px;
+    margin-top: 30px;
+    padding: 30px 30px;
     font-size: 13pt;
+    background-color: var(--mainDarkGray);
+    width: 60%;
+    min-width: fit-content;
 }
 
 .weaponSpecificForm{
@@ -14,10 +15,23 @@
     flex-direction: column;
 }
 
-input, .addMainForm select, .editMainForm select, textarea{
+input, .addMainForm select, .checkoutForm select{
     font-size: 12pt;
     margin: 5px 0 15px;
     padding: 5px 10px;
+    background-color: var(--gray);
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+option:-webkit-autofill,
+option:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--gray) inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 9999s ease-in-out 0s;
 }
 
 input[type="file"] {
@@ -37,7 +51,10 @@ form h3{
 }
 
 .submitButton{
-    margin: 20px 0 0;
+    align-self: center;
+    width: 80%;
+    font-size: 13pt;
+    margin: 30px 0 0;
     font-weight: 500;
     font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
     background-color: var(--gold);
@@ -46,51 +63,68 @@ form h3{
     padding: 10px 0;
     box-shadow: 0 3px 7px 0 rgba(0,0,0,0.25);
     transition: background-color 0.3s, color 0.3s;
+    clip-path: polygon(
+        22px 0,
+        calc(100% - 22px) 0,
+        100% 50%,
+        calc(100% - 22px) 100%,
+        22px 100%,
+        0 50%
+    );
 }
 
 .submitButton:hover{
     cursor: pointer;
-    background-color: var(--yellow);
+    background-color: var(--darkRed);
     color: black;
     transition: background-color 0.3s, color 0.3s;
+}
+
+.submitButton label{
+    color: var(--gray);
 }
 
 .formSubsection{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 5%;
-}
-
-.formItem{
-    display: flex;
-    flex-direction: column;
     width: 100%;
 }
 
-.topSection{
+.formItem, .formItemSub{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.formItemSub{
+    width: 30%;
+}
+
+.formCheckbox{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-.description{
-    min-height: 100px;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.deleteButton{
-    all: unset;
-    background-color: var(--darkRed);
-    padding: 7px 13px;
-    color: white;
-    border-radius: 5px;
-    font-family: 'palatino-linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
-    font-size: 13pt;
-}
-
-.deleteButton:hover{
+input[type="checkbox"]:hover{
     cursor: pointer;
-    background-color: var(--lightRed);
+}
+
+.formCheckbox label{
+    color: var(--lightGray);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--darkRed);
+}
+
+input[type="checkbox"]:-webkit-autofill,
+input[type="checkbox"]:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--gray) inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 9999s ease-in-out 0s;
 }

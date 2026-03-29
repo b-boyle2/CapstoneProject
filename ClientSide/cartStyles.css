@@ -107,6 +107,7 @@
 
 .cartItem .deleteButton {
     filter:invert(1);
+    background-color: transparent;
     height: 60%;
     aspect-ratio: 1 / 1;
     cursor: pointer;
