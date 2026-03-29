@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const addToCartButton = document.getElementById("addCartButton");
 
-    fetch(`getCartItems.php?userID=${userID}`)
+    fetch(`src/getCartItems.php?userID=${userID}`)
         .then(res=> res.json())
         .then(data => {
             data.forEach(data => {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let slideIndex = 1;
 
     function loadItemData() {
-        fetch(`getSingleItemData.php?productID=${weaponID}`)
+        fetch(`src/getSingleItemData.php?productID=${weaponID}`)
             .then(res => res.json())
             .then(data => {
                 if (data.error) return console.error(data.error);
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 nextArrow.addEventListener("click", () => plusSlides(1));
 
                 displayItemData(data);
-                fetch(`getSimilarWeapons.php?&productID=${weaponID}&weaponType=${data.WeaponType}&subcategory=${data.Subcategory_ID}`)
+                fetch(`src/getSimilarWeapons.php?&productID=${weaponID}&weaponType=${data.WeaponType}&subcategory=${data.Subcategory_ID}`)
                     .then(res => res.json())
                     .then(similarData => {
                         if (!similarData.error) {
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         similarItemsListings.innerHTML = '';
         data.forEach(weapon => {
             const weaponLink = document.createElement("a");
-            weaponLink.href = `singleProduct.php?productId=${weapon.ID}`;
+            weaponLink.href = `src/singleProduct.php?productId=${weapon.ID}`;
 
             const weaponItemListing = document.createElement("div");
             weaponItemListing.classList.add("weaponItemListing");
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartButton.addEventListener("click", () => {
         const isAdded = addToCartButton.classList.contains("active");
         if (!isAdded) {
-            fetch(`addToCart.php?productID=${weaponID}`, {
+            fetch(`src/addToCart.php?productID=${weaponID}`, {
                 method: 'POST'
             })
             .then(res => res.json())
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(`ClassList: ${addToCartButton.classList}`);
         }
         else if (isAdded) {
-            fetch(`removeFromCart.php?productID=${weaponID}`, {
+            fetch(`src/removeFromCart.php?productID=${weaponID}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

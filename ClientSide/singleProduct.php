@@ -202,6 +202,6 @@
         </footer>
     </section>
 
-    <script type='module' src='main.js'></script>
-    <script type='module' src='singleItem.js'></script>    
+    <script type='module' src='src/main.js'></script>
+    <script type='module' src='src/singleItem.js'></script>    
 </body>

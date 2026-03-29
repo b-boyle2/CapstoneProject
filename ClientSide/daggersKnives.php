@@ -176,6 +176,6 @@
         </footer>
     </section>
 
-    <script type='module' src='main.js'></script>
-    <script src='premadeItemListings.js'></script>
+    <script type='module' src='src/main.js'></script>
+    <script src='src/premadeItemListings.js'></script>
 </body>

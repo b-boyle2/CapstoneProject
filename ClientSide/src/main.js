@@ -1,5 +1,5 @@
 function updateCartCounter(userID, cartCounter) {
-    fetch(`getCartItems.php?userID=${userID}`)
+    fetch(`src/getCartItems.php?userID=${userID}`)
         .then(res=> res.json())
         .then(data => {
             let cartTotal = 0;

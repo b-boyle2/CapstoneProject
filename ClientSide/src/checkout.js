@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let phpPath;
 
     if (page == 'paymentInfo'){
-        phpPath = 'savePaymentInfo.php';
+        phpPath = 'src/savePaymentInfo.php';
     }
     else if (page == 'shippingInfo'){
-        phpPath = 'saveShippingInfo.php';
+        phpPath = 'src/saveShippingInfo.php';
     }
 
     //masking stuff for form inputs

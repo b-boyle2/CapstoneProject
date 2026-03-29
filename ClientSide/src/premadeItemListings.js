@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tableName = availableWeaponsDiv.dataset.table;
 
     function loadWeapons(tableName) {
-        fetch(`getWeapons.php?table=${tableName}`)
+        fetch(`src/getWeapons.php?table=${tableName}`)
             .then(res=> res.json())
             .then(data => {
                 allWeapons = data;
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         data.forEach(weapon => {
             const weaponLink = document.createElement("a");
-            weaponLink.href = `singleProduct.php?productId=${weapon.ID}`;
+            weaponLink.href = `src/singleProduct.php?productId=${weapon.ID}`;
             
             const weaponItemListing = document.createElement("div");
             weaponItemListing.classList.add("weaponItemListing")

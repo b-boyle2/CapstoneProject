@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let cartQuantity = 0;
     
     function loadWeapons() {
-        fetch(`getCartItems.php?userID=${userID}`)
+        fetch(`src/getCartItems.php?userID=${userID}`)
             .then(res=> res.json())
             .then(data => {
                 displayCartItems(data);
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(`Value: ${inputRange.dataset.value}`);
         console.log(`UserID: ${userID}`);
 
-        fetch(`adjustCartItemQuantity.php`, {
+        fetch(`src/adjustCartItemQuantity.php`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         let product = deleteButton.closest(".cartItem");
 
-        fetch(`removeFromCart.php?productID=${product.dataset.productID}`, {
+        fetch(`src/removeFromCart.php?productID=${product.dataset.productID}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
