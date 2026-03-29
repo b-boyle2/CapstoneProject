@@ -127,7 +127,7 @@
                         <th>Name</th>
                         <th>Image</th>
                         <th>Subcategory</th>
-                        <th class="price">Price</th>
+                        <th class="alignRight">Price</th>
                     </thead>
                     <tbody>
                         <!-- PRODUCTS LISTED HERE -->

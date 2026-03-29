@@ -8,6 +8,8 @@ if ($conn->connect_error) {
     die(json_encode(["error" => "DB connection failed"]));
 }
 
+
+
 $userID = $_GET['userID'];
 
 //query only what's needed

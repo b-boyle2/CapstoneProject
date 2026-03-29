@@ -13,17 +13,33 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+$userId = isset($_GET['userID']) ? (int)($_GET['userID']) : 0;
 $productId = isset($_GET['productID']) ? intval($_GET['productID']) : 0;
 
+
 // Basic validation
+if (!$userId) {
+    echo json_encode([`error" => "Invalid user selected. User $userId`]);
+    exit;
+}
+
 if (!$productId) {
     echo json_encode(["error" => "Invalid weapon selected."]);
     exit;
 }
 
+$result = $conn->query("SELECT ID FROM users WHERE ID = 1");
+
+if ($result->num_rows === 0) {
+    die("User 1 NOT FOUND in this DB connection");
+} else {
+    error_log("User exists in this DB");
+}
+error_log("Debug message: FINAL UserID = " . $userId);
+
 $sql = "
-    INSERT INTO cart (PriceAtAdd, ProductID, Quantity, AddedAt)
-    SELECT Price, $productId, 1, Now()
+    INSERT INTO cart (UserID, PriceAtAdd, ProductID, Quantity, AddedAt)
+    SELECT $userId, Price, $productId, 1, Now()
     FROM products p
     WHERE ID = $productId
 ";

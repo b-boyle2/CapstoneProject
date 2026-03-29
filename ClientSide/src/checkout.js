@@ -47,25 +47,48 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault(); // prevent page reload
         console.log(`checkbox: ${checkBox.checked}`);
 
-        if(checkBox.checked) {
-            const formData = new FormData(form);  
-            formData.append("userID", userID);
+        let cartTotal = 0;
+        fetch(`src/getCartItems.php?userID=${userID}`)
+            .then(res=> res.json())
+            .then(data => {
+                data.forEach(item => {
+                    cartTotal += (parseFloat(item.Quantity) * parseFloat(item.PriceAtAdd));
+                });
+                console.log(`Cart Total: $${cartTotal}`);
 
-            fetch(`${phpPath}`, {
-                method: "POST",
-                body: formData
+                const formData = new FormData(form);  
+                formData.append("userID", userID);
+                formData.append("isChecked", checkBox.isChecked);
+                formData.append("cartTotal", cartTotal);
+
+
+                fetch(`${phpPath}`, {
+                    method: "POST",
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (page == 'shippingInfo') {
+                        window.location.href = 'checkoutPayment.php';
+                    }
+                    console.log('saved');
+                    if (page == 'paymentInfo'){
+                        console.log("Payment Process Complete");
+                    }
+                    else if (page == 'shippingInfo'){
+                        console.log("Payment Process Complete");
+                    }
+                })
+                /*.then(res => res.text())
+                .then(data => {
+                console.log(data);        // logs raw PHP output
+                document.body.innerHTML = data; // optional: display it in page
+                })*/
+                .catch(err => console.error(err));
+                
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log('saved');
-            })
-            /*.then(res => res.text())
-            .then(data => {
-            console.log(data);        // logs raw PHP output
-            document.body.innerHTML = data; // optional: display it in page
-            })*/
-            .catch(err => console.error(err));
-        }
+        .catch(err => console.error(err));
+        
         
     });
 })

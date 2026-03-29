@@ -104,7 +104,7 @@
                         <th class="edit"></th>
                         <th>Name</th>
                         <th>Image</th>
-                        <th class="price">Price Modifier</th>
+                        <th class="alignRight">Price Modifier</th>
                     </thead>
                     <tbody>
                         <!-- PRODUCTS LISTED HERE -->

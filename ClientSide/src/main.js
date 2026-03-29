@@ -21,8 +21,8 @@ function updateCartCounter(userID, cartCounter) {
         })
         /*.then(res => res.text())
         .then(data => {
-        console.log(data);        // logs raw PHP output
-        document.body.innerHTML = data; // optional: display it in page
+        console.log(data);
+        document.body.innerHTML = data;
         })*/
     .catch(err => console.error(err));
 }

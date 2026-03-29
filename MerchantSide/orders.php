@@ -39,7 +39,31 @@
 
         <div class="content">
             <div class="section">
-
+                <div>
+                    <h4>Active</h4> <!--orders with pending, processing, or shipped status -->
+                    <h4>History</h4> <!--orders with cancelled or delivered status --> 
+                </div>
+                <div class="ordersList">
+                    <table class="orderListItems">
+                    <thead>
+                        <th class="alignLeft">Order ID</th>
+                        <th class="alignLeft">Status</th>
+                        <th class="alignRight">Date</th>
+                        <th class="alignRight">Time</th>
+                        <th class="alignLeft">Customer</th>
+                        <th class="alignRight">Total</th>
+                    </thead>
+                    <tbody>
+                        <td class="alignLeft">1</td>
+                        <td class="alignLeft">pending</td>
+                        <td class="alignRight">3-29-2026</td>
+                        <td class="alignRight">11:57AM</td>
+                        <td class="alignLeft">Bridget Boyle</td>
+                        <td class="alignRight">1100</td>
+                        <!-- PRODUCTS LISTED HERE -->
+                    </tbody>
+                </table>
+                </div>
             </div>
         </div>
     </div>

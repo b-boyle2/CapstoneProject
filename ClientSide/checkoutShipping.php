@@ -515,5 +515,5 @@
 
     <script type='module' src='src/main.js'></script>
     <script src="https://unpkg.com/imask"></script>
-    <script type='module' src='.../checkout.js'></script>
+    <script type='module' src='src/checkout.js'></script>
 </body>

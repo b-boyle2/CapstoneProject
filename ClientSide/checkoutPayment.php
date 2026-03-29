@@ -125,7 +125,7 @@
                         <label for="saveAddress">Save my payment information so checkout is easy next time</label>
                     </div>
 
-                    <button  class="submitButton">Pay Now</button>
+                    <button  class="submitButton" id="submitOrder">Pay Now</button>
                 </form>
                 <p id="formMessage"></p>
             </div>
@@ -206,5 +206,5 @@
 
     <script type='module' src='src/main.js'></script>
     <script src="https://unpkg.com/imask"></script>
-    <script type='module' src='.../checkout.js'></script>
+    <script type='module' src='src/checkout.js'></script>
 </body>

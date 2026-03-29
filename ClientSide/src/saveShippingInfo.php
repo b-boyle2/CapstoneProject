@@ -24,6 +24,19 @@ $city = $_POST['City'];
 $state = isset($_POST['State']) ? $_POST['State'] : null;
 $zipCode = $_POST['ZIP'];
 
+session_start();
+$_SESSION['shipping'] = [
+    'name' => $name,
+    'streetAddress' => $streetAddress,
+    'aptAddress' => $aptAddress,
+    'city' => $city,
+    'state' => $state,
+    'country' => $country,
+    'zip' => $zipCode
+];
+
+
+
 $stmt = $conn->prepare("
     INSERT INTO shippingaddresses (UserID, Country, Name, PhoneNum, StreetAddress, AptAddress, City, State, ZIP)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)

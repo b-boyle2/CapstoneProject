@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         data.forEach(weapon => {
             const weaponLink = document.createElement("a");
-            weaponLink.href = `src/singleProduct.php?productId=${weapon.ID}`;
+            weaponLink.href = `singleProduct.php?productId=${weapon.ID}`;
             
             const weaponItemListing = document.createElement("div");
             weaponItemListing.classList.add("weaponItemListing")

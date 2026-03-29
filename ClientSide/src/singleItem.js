@@ -196,7 +196,8 @@ document.addEventListener("DOMContentLoaded", () => {
     addToCartButton.addEventListener("click", () => {
         const isAdded = addToCartButton.classList.contains("active");
         if (!isAdded) {
-            fetch(`src/addToCart.php?productID=${weaponID}`, {
+            console.log(userID);
+            fetch(`src/addToCart.php?productID=${weaponID}&userID=${userID}`, {
                 method: 'POST'
             })
             .then(res => res.json())
