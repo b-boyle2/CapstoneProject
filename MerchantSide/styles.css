@@ -228,6 +228,22 @@ h1.siteTitle{
     margin-bottom: 15px;
 }
 
+.subsections{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    justify-content: space-between;
+}
+
+.subsections h4{
+    padding: 0 7px;
+    text-align: center;
+}
+
+.activeSubsection{
+    border-bottom: 3px solid #991B1E;
+}
+
 .listedItems{
     width: 100%;
     text-align: left;

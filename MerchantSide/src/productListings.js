@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let allWeapons = [];
 
     function loadWeapons(tableName) {
-        fetch(`getProducts.php?table=${tableName}`)
+        fetch(`src/getProducts.php?table=${tableName}`)
             .then(res=> res.json())
             .then(data => {
                 allWeapons = data;
@@ -207,19 +207,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let tableToAddTo = '';
         if (weaponType == "swords") {
-            tableToAddTo = "addNewSword.php";
+            tableToAddTo = "src/addNewSword.php";
         }
         else if (weaponType=="daggers"){
-            tableToAddTo = "addNewDagger.php";
+            tableToAddTo = "src/addNewDagger.php";
         }
         else if (weaponType=="blunthandweapons"){
-            tableToAddTo = "addNewBluntHandWeapon.php";
+            tableToAddTo = "src/addNewBluntHandWeapon.php";
         }
         else if (weaponType=="polearms"){
-            tableToAddTo = "addNewPolearm.php";
+            tableToAddTo = "src/addNewPolearm.php";
         }
         else if (weaponType=="ranged"){
-            tableToAddTo = "addNewRanged.php";
+            tableToAddTo = "src/addNewRanged.php";
         }
         
         
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("ID num: ", weaponID);
         console.log("Table: ",  tableName);
 
-        fetch("GetSingleProductData.php", {
+        fetch("src/GetSingleProductData.php", {
             method: "POST",
             body: weaponIdData
         })
@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("weaponID", weaponID);
         formData.append("table", tableName);
 
-        fetch("editProduct.php", {
+        fetch("src/editProduct.php", {
             method: "POST",
             body: formData
         })
@@ -423,7 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
             weaponIdData.append("weaponID", weaponID);
             weaponIdData.append("table", tableName);
 
-            fetch("deleteProduct.php", {
+            fetch("src/deleteProduct.php", {
                 method: "POST",
                 body: weaponIdData
             })

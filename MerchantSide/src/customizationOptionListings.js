@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let allOptions = [];
 
     function loadOptions(tableName) {
-        fetch(`getCustomizationOptions.php?table=${tableName}`)
+        fetch(`src/getCustomizationOptions.php?table=${tableName}`)
             .then(res=> res.json())
             .then(data => {
                 allOptions = data;
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const optionType = formData.get('optionTypeSelect')    
         
-        fetch("addNewCustomizationOption.php", {
+        fetch("src/addNewCustomizationOption.php", {
             method: "POST",
             body: formData
         })
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         optionIDData.append("optionID", optionID);
         optionIDData.append("table", tableName);
 
-        fetch("GetSingleCustomizationOptionData.php", {
+        fetch("src/GetSingleCustomizationOptionData.php", {
             method: "POST",
             body: optionIDData
         })
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("optionID", optionID);
         formData.append("table", tableName);
 
-        fetch("editCustomizationOption.php", {
+        fetch("src/editCustomizationOption.php", {
             method: "POST",
             body: formData
         })
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
             optionIDData.append("optionID", optionID);
             optionIDData.append("table", tableName);
 
-            fetch("deleteProduct.php", {
+            fetch("src/deleteProduct.php", {
                 method: "POST",
                 body: optionIDData
             })

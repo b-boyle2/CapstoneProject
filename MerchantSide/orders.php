@@ -39,12 +39,12 @@
 
         <div class="content">
             <div class="section">
-                <div>
-                    <h4>Active</h4> <!--orders with pending, processing, or shipped status -->
-                    <h4>History</h4> <!--orders with cancelled or delivered status --> 
+                <div class='subsections'>
+                    <h4 class='activeSubsection' id="activeOrders">Active</h4> <!--orders with pending, processing, or shipped status -->
+                    <h4 id="previousOrders">History</h4> <!--orders with cancelled or delivered status --> 
                 </div>
                 <div class="ordersList">
-                    <table class="orderListItems">
+                    <table>
                     <thead>
                         <th class="alignLeft">Order ID</th>
                         <th class="alignLeft">Status</th>
@@ -53,7 +53,7 @@
                         <th class="alignLeft">Customer</th>
                         <th class="alignRight">Total</th>
                     </thead>
-                    <tbody>
+                    <tbody id="orderListItems">
                         <td class="alignLeft">1</td>
                         <td class="alignLeft">pending</td>
                         <td class="alignRight">3-29-2026</td>
@@ -68,6 +68,7 @@
         </div>
     </div>
 
-    <script src='main.js'></script>
+    <script src='src/main.js'></script>
+    <script src='src/orders.js'></script>
 </body>
 </html>

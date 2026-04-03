@@ -1778,7 +1778,7 @@
 
     </div>
 
-    <script src='main.js'></script>
-    <script src='productListings.js'></script>
+    <script src='src/main.js'></script>
+    <script src='src/productListings.js'></script>
 </body>
 </html>

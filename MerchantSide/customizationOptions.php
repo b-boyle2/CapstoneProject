@@ -179,7 +179,7 @@
             </div>
         </div>
 
-        <script src='main.js'></script>
-        <script src='customizationOptionListings.js'></script>
+        <script src='src/main.js'></script>
+        <script src='src/customizationOptionListings.js'></script>
 </body>
 </html>
