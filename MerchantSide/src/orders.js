@@ -89,5 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    ordersList.addEventListener("click", (e) => {
+        const row = e.target.closest("tr");
+        if (!row) return;
+        orderID = row.dataset.orderID;
+        window.location.href = `singleOrder.php?orderID=${orderID}`;
+    })
+
     loadOrders();
 })

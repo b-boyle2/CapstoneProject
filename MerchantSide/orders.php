@@ -45,24 +45,26 @@
                 </div>
                 <div class="ordersList">
                     <table>
-                    <thead>
-                        <th class="alignLeft">Order ID</th>
-                        <th class="alignLeft">Status</th>
-                        <th class="alignRight">Date</th>
-                        <th class="alignRight">Time</th>
-                        <th class="alignLeft">Customer</th>
-                        <th class="alignRight">Total</th>
-                    </thead>
-                    <tbody id="orderListItems">
-                        <td class="alignLeft">1</td>
-                        <td class="alignLeft">pending</td>
-                        <td class="alignRight">3-29-2026</td>
-                        <td class="alignRight">11:57AM</td>
-                        <td class="alignLeft">Bridget Boyle</td>
-                        <td class="alignRight">1100</td>
-                        <!-- PRODUCTS LISTED HERE -->
-                    </tbody>
-                </table>
+                        <thead>
+                            <tr>
+                                <th class="alignLeft">ID</th>
+                                <th class="alignLeft">Status</th>
+                                <th class="alignRight">Date</th>
+                                <th class="alignRight">Time</th>
+                                <th class="alignLeft">Customer</th>
+                                <th class="alignRight">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderListItems">
+                            <td class="alignLeft">1</td>
+                            <td class="alignLeft">pending</td>
+                            <td class="alignRight">3-29-2026</td>
+                            <td class="alignRight">11:57AM</td>
+                            <td class="alignLeft">Bridget Boyle</td>
+                            <td class="alignRight">1100</td>
+                            <!-- PRODUCTS LISTED HERE -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

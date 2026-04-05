@@ -31,6 +31,7 @@ try {
     $shippingCity = $shipping['city'];
     $shippingState = $shipping['state'];
     $shippingZipCode = $shipping['zip'];
+    $shippingPhoneNum = $shipping['phoneNum'];
     
     $userID = isset($_POST['userID']) ? intval($_POST['userID']) : 0;
     $checkboxChecked = $_POST['isChecked'];
@@ -72,12 +73,12 @@ try {
     $ordersStmt = $conn->prepare("
             INSERT INTO orders (
             UserID, TotalPrice, ShippingName, ShippingStreetAddress, 
-            ShippingAptAddress, ShippingCity, ShippingState, ShippingCountry, ShippingZIP)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ShippingAptAddress, ShippingCity, ShippingState, ShippingCountry, ShippingZIP, ShippingPhoneNum)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ");
     
     $ordersStmt->bind_param(
-        "idsssssss",
+        "idssssssss",
         $userID,
         $cartTotal,
         $shippingName,
@@ -86,7 +87,8 @@ try {
         $shippingCity,
         $shippingState,
         $shippingCountry,
-        $shippingZipCode
+        $shippingZipCode,
+        $shippingPhoneNum
     );
 
     if (!$ordersStmt->execute()) {

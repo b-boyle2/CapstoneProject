@@ -133,6 +133,7 @@ h1.siteTitle{
     margin: 15px 0 20px 20px;
     font-family: medievalSharp, 'Cormorant Garamond', Georgia, serif;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 /* FILTERS START */
@@ -212,6 +213,10 @@ h1.siteTitle{
 }
 /* FILTERS END */
 
+h3{
+    margin-bottom: 10px;
+}
+
 .section{
     background-color: white;
     flex-direction: column;
@@ -236,12 +241,64 @@ h1.siteTitle{
 }
 
 .subsections h4{
+    font-size: 1.15rem;
     padding: 0 7px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .activeSubsection{
     border-bottom: 3px solid #991B1E;
+}
+
+.orderItems{
+    border-collapse: collapse;
+    border-spacing: 30px 15px;
+}
+
+#orderListItems tr, .summary{
+ cursor: pointer;
+}
+
+.summary:hover{
+    background-color: #3c3f4024;
+}
+
+.details{
+    display: table-row;
+    border: none;
+}
+
+.details.open{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.details.open .detailCell {
+    max-height: 620px;
+}
+
+.detailCell {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+ul{
+    list-style-type: none;
+    margin-bottom: 7px;
+}
+
+ul li{
+    margin-left: 1em;
+}
+
+.details ul li::before{
+    content: "-";          /* Adds the hyphen */
+    display: inline-block; 
+    width: 1em;            /* Space between hyphen and text */
+    margin-left: -1em; 
 }
 
 .listedItems{
@@ -302,6 +359,12 @@ table{
 
 .otherButtons:hover{
     cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 #backButton{

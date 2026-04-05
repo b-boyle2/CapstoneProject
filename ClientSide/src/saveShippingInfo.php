@@ -32,7 +32,8 @@ $_SESSION['shipping'] = [
     'city' => $city,
     'state' => $state,
     'country' => $country,
-    'zip' => $zipCode
+    'zip' => $zipCode,
+    'phoneNum' => $phoneNumber
 ];
 
 
