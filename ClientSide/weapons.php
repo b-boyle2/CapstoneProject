@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Swords</title>
+    <title>Weapons</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
@@ -12,7 +12,7 @@
 <body>
     <div class=container>
         <header class="bannerImg">
-            <img src="../Images/SwordBannerImage.jpg" class="bgImg" alt="Hero" id="heroImg">
+            <img src="../Images/WeaponsBanner.png" class="bgImg" alt="Hero" id="heroImg">
 
             <div class="siteTitle">
                 <a href="index.php"><h2>Ironveil Forge</h2></a>
@@ -31,7 +31,7 @@
 
                 <div class="navBar">
                     <div class="dropdown">
-                        <button class="navLink" onclick="location.href='weapons.php'"aria-haspopup="true" aria-expanded="false">Weapons</button>
+                        <button class="navLink here" onclick="location.href='weapons.php'"aria-haspopup="true" aria-expanded="false">Weapons</button>
                         <ul class="dropdownContent">
                             <li><button class="navSubLink" onclick="location.href='swords.php'" role="menuitem">Swords</button></li>
                             <li><button class="navSubLink" onclick="location.href='daggersKnives.php'" role="menuitem">Daggers</button></li>
@@ -59,30 +59,66 @@
                     </div>
                 </div>
             </div>
-            <h1 class=title>Swords</h1>
+            <h1 class=title>Weapons</h1>
         </header>
         
         <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
     </div>
        
-    <section class="content">   
-        <div class="filterSelect">
-            
-            <div class="subcategoryFilter">
-                <span class="selected">All</span>
-                <div class="filterCarrot"></div>
-                <div class="options">
-                    <div data-value="">All</div>
-                    <div data-value="1">Arming Swords</div>
-                    <div data-value="2">Broadswords</div>
-                    <div data-value="3">Longswords</div>
-                    <div data-value="4">Falchions</div>
-                </div>
+    <section class="content">
+        <div class="subsection">
+            <div class="subsectionHead">
+                <h3>Swords</h3>
+                <button class=button3 onclick="location.href ='swords.php'"><span>View More ></span></button>
+            </div>
+        
+            <div class="availableWeapons" id="availableSwords" data-table="swords">
+                <!-- WEAPON LISTINGS APPEAR HERE -->
             </div>
         </div>
 
-        <div class="availableWeapons" data-table="swords">
-            <!-- WEAPON LISTINGS APPEAR HERE -->
+        <div class="subsection">
+            <div class="subsectionHead">
+                <h3>Daggers</h3>
+                <button class=button3 onclick="location.href ='daggers.php'"><span>View More ></span></button>
+            </div>
+        
+            <div class="availableWeapons" id="availableDaggers" data-table="daggers">
+                <!-- WEAPON LISTINGS APPEAR HERE -->
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsectionHead">
+                <h3>Blunt Hand Weapons</h3>
+                <button class=button3 onclick="location.href ='bluntHandWeapons.php'"><span>View More ></span></button>
+            </div>
+        
+            <div class="availableWeapons" id="availableBluntWeapons" data-table="blunthandweapons">
+                <!-- WEAPON LISTINGS APPEAR HERE -->
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsectionHead">
+                <h3>Polearms</h3>
+                <button class=button3 onclick="location.href ='polearms.php'"><span>View More ></span></button>
+            </div>
+        
+            <div class="availableWeapons" id="availablePolearms" data-table="polearms">
+                <!-- WEAPON LISTINGS APPEAR HERE -->
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="subsectionHead">
+                <h3>Ranged</h3>
+                <button class=button3 onclick="location.href ='ranged.php'"><span>View More ></span></button>
+            </div>
+        
+            <div class="availableWeapons" id="availableRanged" data-table="ranged">
+                <!-- WEAPON LISTINGS APPEAR HERE -->
+            </div>
         </div>
     </section>
 
@@ -158,5 +194,5 @@
     </section>
 
     <script type='module' src='src/main.js'></script>
-    <script src='src/premadeItemListings.js'></script>
+    <script src='src/weapons.js'></script>
 </body>

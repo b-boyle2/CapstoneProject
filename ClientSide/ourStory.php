@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Swords</title>
+    <title>Our Story</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
@@ -11,16 +11,15 @@
 
 <body>
     <div class=container>
-        <header class="bannerImg">
-            <img src="../Images/SwordBannerImage.jpg" class="bgImg" alt="Hero" id="heroImg">
-
+        <header class="noBanner">
             <div class="siteTitle">
-                <a href="index.php"><h2>Ironveil Forge</h2></a>
+                <a href="index.php"><h3>Ironveil Forge</h3></a>
             </div>
 
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
+                        
                         <div class="cart">
                             <div id=cartItemCounter></div>
                             <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
@@ -59,31 +58,48 @@
                     </div>
                 </div>
             </div>
-            <h1 class=title>Swords</h1>
         </header>
-        
-        <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
     </div>
        
-    <section class="content">   
-        <div class="filterSelect">
-            
-            <div class="subcategoryFilter">
-                <span class="selected">All</span>
-                <div class="filterCarrot"></div>
-                <div class="options">
-                    <div data-value="">All</div>
-                    <div data-value="1">Arming Swords</div>
-                    <div data-value="2">Broadswords</div>
-                    <div data-value="3">Longswords</div>
-                    <div data-value="4">Falchions</div>
-                </div>
-            </div>
-        </div>
+    <section class="textContent">
+        <h2>Our Story</h2>
+        <p>Ironveil Forge began with a straightforward goal: to create well-crafted medieval weapons that feel as deliberate and grounded 
+            as the originals that inspired them. What started as a small effort to study historical forms quickly grew into a focused 
+            pursuit of accuracy, balance, and material integrity.In the early stages, the work was centered on observation and refinement. 
+            Historical references—museum pieces, surviving examples, and documented designs—provided a foundation, but the goal was never 
+            simple replication. Instead, each design was treated as a study in structure: how weight is distributed, how proportions 
+            influence handling, and how materials contribute to both durability and feel. By focusing on these elements, the forge began 
+            developing pieces that reflected not just the appearance of historical weapons, but the reasoning behind them.
+        </p>
 
-        <div class="availableWeapons" data-table="swords">
-            <!-- WEAPON LISTINGS APPEAR HERE -->
-        </div>
+        <p>As that foundation strengthened, the forge expanded its scope. New weapon types were introduced, each bringing its own set of 
+            challenges. A mace requires a different balance than a sword. A polearm demands attention to reach and leverage. Even subtle 
+            variations—grip shape, pommel weight, shaft material—began to define how each piece performed and how it was perceived. This 
+            period of growth established a consistent approach: every addition to the collection had to meet the same standard of clarity 
+            and purpose as the earliest designs. At the same time, Ironveil Forge began to recognize the role of interpretation. While 
+            history provides structure, it does not limit creativity. Many designs are informed by historical precedent, but adjusted to 
+            suit modern collectors and enthusiasts who value both authenticity and individuality. This balance allows the forge to create 
+            pieces that feel rooted in tradition while still offering something distinct.
+        </p>
+
+        <p>The audience surrounding the forge grew alongside its work. Collectors, history enthusiasts, and fans of medieval design all 
+            brought different expectations, but shared a common interest in craftsmanship that felt intentional. Some are drawn to 
+            accuracy, others to visual presence, and others to the tactile qualities of a well-balanced piece. By maintaining a consistent 
+            design philosophy, Ironveil Forge has been able to meet these different perspectives without compromising its standards. Over 
+            time, this approach has shaped the identity of the forge. It is not defined by a single style or category, but by a method of 
+            thinking—one that values proportion, material, and purpose above excess. Every piece is the result of considered decisions, 
+            where each element contributes to the whole rather than competing for attention.
+        </p>
+
+        <p>Today, Ironveil Forge continues to build on that foundation. The collection has expanded, but the principles remain the same. 
+            Each new design is approached with the same focus on balance, structure, and intent that defined the earliest work. Whether a 
+            piece is simple or complex, it is held to the same standard: it should feel cohesive, purposeful, and grounded in its design. 
+            Ironveil Forge exists for those who appreciate more than surface detail—for those who look at a weapon and consider how it was 
+            made, why it was shaped the way it is, and what it was meant to do. By staying committed to that perspective, the forge 
+            continues to produce work that reflects both the legacy of medieval craftsmanship and the expectations of those who value 
+            it today.
+        </p>
+        
     </section>
 
     <section>
@@ -157,6 +173,5 @@
         </footer>
     </section>
 
-    <script type='module' src='src/main.js'></script>
-    <script src='src/premadeItemListings.js'></script>
+    <script type='module' src='src/main.js'></script>   
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Swords</title>
+    <title>FAQ</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
@@ -11,16 +11,15 @@
 
 <body>
     <div class=container>
-        <header class="bannerImg">
-            <img src="../Images/SwordBannerImage.jpg" class="bgImg" alt="Hero" id="heroImg">
-
+        <header class="noBanner">
             <div class="siteTitle">
-                <a href="index.php"><h2>Ironveil Forge</h2></a>
+                <a href="index.php"><h3>Ironveil Forge</h3></a>
             </div>
 
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
+                        
                         <div class="cart">
                             <div id=cartItemCounter></div>
                             <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
@@ -59,31 +58,79 @@
                     </div>
                 </div>
             </div>
-            <h1 class=title>Swords</h1>
         </header>
-        
-        <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
     </div>
        
-    <section class="content">   
-        <div class="filterSelect">
-            
-            <div class="subcategoryFilter">
-                <span class="selected">All</span>
-                <div class="filterCarrot"></div>
-                <div class="options">
-                    <div data-value="">All</div>
-                    <div data-value="1">Arming Swords</div>
-                    <div data-value="2">Broadswords</div>
-                    <div data-value="3">Longswords</div>
-                    <div data-value="4">Falchions</div>
-                </div>
-            </div>
-        </div>
+    <section class="textContent">
+        <h2>FAQ</h2>
+        <h3>What is Ironveil Forge?</h3>
+        <p>Ironveil Forge is a handcrafted weapon workshop specializing in historically inspired and custom-designed weapons. Each piece is built with a focus on material realism, structural detail, and aesthetic customization, allowing you to create or purchase weapons tailored to your exact specifications.
+        </p>
 
-        <div class="availableWeapons" data-table="swords">
-            <!-- WEAPON LISTINGS APPEAR HERE -->
+        <h3>Are your weapons functional or decorative?</h3>
+        <p>Most of our pieces are functional-grade replicas or buildable designs depending on the configuration. However, certain materials, edge types, and finishes may be optimized for display, collection, or safe handling. Each listing will specify its intended use.
+
+        <h3>Can I change my order after placing it?</h3>
+        <p>Orders can only be modified within a short processing window. Once forging or assembly begins, changes may not be possible.
+        </p>
+
+        <h3>What materials do you use?</h3>
+        <div>
+            <p style="text-indent:0">We work with a range of historically inpsired and modern materials, including:</p>
+            <ul>
+                <li>High-carbon steel</li>
+                <li>Tool steel</li>
+                <li>Titanium alloys</li>
+                <li>Bronze alloys</li>
+                <li>Hardwood grips such as hickory, ash, maple, and more exotic woods</li>
+            </ul>
         </div>
+        
+
+        <h3>Why do material choices affect price?</h3>
+        <p>Different materials vary in rarity, durability, difficulty to work, and finishing requirements. More complex or rare materials 
+            require additional processing, increasing cost.
+        </p>
+
+        <h3>What sheath options are available?</h3>
+        <div>
+            <p style="text-indent:0">Sheaths can be customized by:</p>
+            <ul>
+                <li>Type (minimal, ornate, jeweled, wrapped)</li>
+                <li>Material (leather, wood, metal, lacquered)</li>
+                <li>Color finishes (ranging from natural tones to deep dyes like crimson, navy, and oxblood)</li>
+            </ul>
+        </div>
+        
+
+        <h3>Do sheath choices affect function?</h3>
+        <p>Yes. Some sheath types prioritize protection and durability, while others emphasize aesthetics or ceremonial presentation.
+        </p>
+
+        <h3>How long does production take?</h3>
+        <p>Production times vary depending on complexity and material selection. Custom builds typically require longer processing than 
+            standard configurations.</p>
+
+        <h3>Do you ship internationally?</h3>
+        <p>Yes, we ship to supported regions internationally. Shipping availability may vary depending on local regulations.</p>
+
+        <h3>Is my order insured?</h3>
+        <p>Yes. All shipments include handling protection during transit. Additional coverage may be available depending on order type.</p>
+
+        <h3>What if my order arrives damaged?</h3>
+        <p>If your item arrives damaged, contact support immediately with photos of the issue. We will evaluate and resolve it through 
+            repair, replacement, or refund where applicable.</p>
+
+        <h3>Can I cancel my order?</h3>
+        <p>Orders may be canceled before production begins. Once crafting has started, cancellations may no longer be possible.</p>
+
+        <h3>Do I need an account to order?</h3>
+        <p>No, but having an account allows you to track orders, save configurations, and manage past purchases more easily.</p>
+
+        <h3>How do I contactt support?</h3>
+        <p>Support can be reached through the contact page on the website. Please include your order number and details of your inquiry for 
+            faster assistance.</p>
+        
     </section>
 
     <section>
@@ -157,6 +204,5 @@
         </footer>
     </section>
 
-    <script type='module' src='src/main.js'></script>
-    <script src='src/premadeItemListings.js'></script>
+    <script type='module' src='src/main.js'></script>   
 </body>

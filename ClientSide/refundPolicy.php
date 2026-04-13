@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Swords</title>
+    <title>Refund Policy</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
@@ -11,16 +11,15 @@
 
 <body>
     <div class=container>
-        <header class="bannerImg">
-            <img src="../Images/SwordBannerImage.jpg" class="bgImg" alt="Hero" id="heroImg">
-
+        <header class="noBanner">
             <div class="siteTitle">
-                <a href="index.php"><h2>Ironveil Forge</h2></a>
+                <a href="index.php"><h3>Ironveil Forge</h3></a>
             </div>
 
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
+                        
                         <div class="cart">
                             <div id=cartItemCounter></div>
                             <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
@@ -59,31 +58,101 @@
                     </div>
                 </div>
             </div>
-            <h1 class=title>Swords</h1>
         </header>
-        
-        <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
     </div>
        
-    <section class="content">   
-        <div class="filterSelect">
-            
-            <div class="subcategoryFilter">
-                <span class="selected">All</span>
-                <div class="filterCarrot"></div>
-                <div class="options">
-                    <div data-value="">All</div>
-                    <div data-value="1">Arming Swords</div>
-                    <div data-value="2">Broadswords</div>
-                    <div data-value="3">Longswords</div>
-                    <div data-value="4">Falchions</div>
-                </div>
-            </div>
+    <section class="textContent">
+        <h2>Refund and Return Policy</h2>
+        <div><p>At Ironveil Forge, refunds are handled with a focus on clarity and fairness. Once a return has been received and reviewed, we 
+            work to process eligible refunds as efficiently as possible.
+        </p></div>
+
+        <h3>Eligibility For Refunds</h3>
+        <div>
+            <p>Refunds are issued for items that have been: </p>
+            <ul>
+                <li>Returned in accordance with our Return Policy</li>
+                <li>Received and inspected by our team</li>
+                <li>Approved based on condition and eligibility</li>
+            </ul>
+            <p style="text-indent: 0">
+                Items must be in their original condition to qualify. Refunds may be reduced or denied if an item shows signs of use, damage, 
+                or alteration not related to shipping.
+            </p>
         </div>
 
-        <div class="availableWeapons" data-table="swords">
-            <!-- WEAPON LISTINGS APPEAR HERE -->
+        <h3>Refund Process</h3>
+        <div>
+            <p>Once your returned item has been received, it will be inspected to confirm its condition.
+            <br>After inspection:</p>
+            <ul>
+                <li>You will be notified of the approval or rejection of your refund</li>
+                <li>Approved refunds will be issued to the original payment method</li>
+            </ul>
+            <p style="text-indent: 0">
+                Processing times may vary depending on your payment provider, but most refunds are completed within a few business days after 
+                approval.
+            </p>
         </div>
+
+        <h3>Shipping Costs</h3>
+        <div>
+            <ul>
+                <li>Original shipping charges are non-refundable</li>
+                <li>If a refund is approved, only the cost of the item itself will be returned</li>
+            </ul>
+            <p style="text-indent: 0">Shipping costs are only refunded if the return is due to:</p>
+            <ul>
+                <li>A damaged item upon arrival</li>
+                <li>An incorrect item being sent</li>
+            </ul>
+        </div>
+
+        <h3>Damaged or Incorrect Orders</h3>
+        <div>
+            <p>If your order arrives damaged or incorrect, please contact us within 7 days of delivery.
+                <br>To help us resolve the issue quickly, include:</p>
+                <ul>
+                    <li>Your order number</li>
+                    <li>A brief description of the issue</li>
+                    <li>Clear photos of the item and packaging</li>
+                </ul>
+                <p>If confirmed, we will provide a full refund or replacement at no additional cost.</p>
+        </div>
+
+        <h3>Partial Refunds</h3>
+        <div>
+            <p>In certain situations, partial refunds may be issued. These may include:</p>
+            <ul>
+                <li>Items returned with minor signs of use</li>
+                <li>Items not returned in original packaging</li>
+                <li>Items with minor cosmetic damage not caused during shipping</li>
+            </ul>
+            <p style="text-indent: 0">Each case is reviewed individually to ensure a fair outcome.</p>
+            <ul>
+                <li>A damaged item upon arrival</li>
+                <li>An incorrect item being sent</li>
+            </ul>
+        </div>
+
+        <h3>Late or Missing Refunds</h3>
+        <div>
+            <p>If you have not received your refund:</p>
+            <ol>
+                <li>Check your bank or payment account again</li>
+                <li>Contact your payment provider, as processing times can vary</li>
+                <li>If the issue persists, contact us for further assistance</li>
+            </ol>
+        </div>
+
+        <h3>Cancellations</h3>
+        <p>Orders canceled within the allowed cancellation window (see Return Policy) will receive a full refund. If an order has already been processed or shipped, it must follow the standard return and refund process.
+        </p>
+
+        <h3>Contact</h3>
+        <p>If you have any questions regarding refunds or the status of your request, please contact us with your order number for faster support.
+        </p>
+        
     </section>
 
     <section>
@@ -157,6 +226,5 @@
         </footer>
     </section>
 
-    <script type='module' src='src/main.js'></script>
-    <script src='src/premadeItemListings.js'></script>
+    <script type='module' src='src/main.js'></script>   
 </body>

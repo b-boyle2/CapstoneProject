@@ -56,13 +56,17 @@
                             </tr>
                         </thead>
                         <tbody id="orderListItems">
+                            <!-- PRODUCTS LISTED HERE -->
+
+                            <!-- EXAMPLE
                             <td class="alignLeft">1</td>
                             <td class="alignLeft">pending</td>
                             <td class="alignRight">3-29-2026</td>
                             <td class="alignRight">11:57AM</td>
                             <td class="alignLeft">Bridget Boyle</td>
                             <td class="alignRight">1100</td>
-                            <!-- PRODUCTS LISTED HERE -->
+                            -->
+                            
                         </tbody>
                     </table>
                 </div>

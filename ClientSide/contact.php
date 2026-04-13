@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Swords</title>
+    <title>Contact</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
 
     <link rel="preload" href="../Fonts/MedievalSharp/MedievalSharp-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -11,16 +12,15 @@
 
 <body>
     <div class=container>
-        <header class="bannerImg">
-            <img src="../Images/SwordBannerImage.jpg" class="bgImg" alt="Hero" id="heroImg">
-
+        <header class="noBanner">
             <div class="siteTitle">
-                <a href="index.php"><h2>Ironveil Forge</h2></a>
+                <a href="index.php"><h3>Ironveil Forge</h3></a>
             </div>
 
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
+                        
                         <div class="cart">
                             <div id=cartItemCounter></div>
                             <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
@@ -59,31 +59,43 @@
                     </div>
                 </div>
             </div>
-            <h1 class=title>Swords</h1>
         </header>
-        
-        <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
     </div>
        
-    <section class="content">   
-        <div class="filterSelect">
-            
-            <div class="subcategoryFilter">
-                <span class="selected">All</span>
-                <div class="filterCarrot"></div>
-                <div class="options">
-                    <div data-value="">All</div>
-                    <div data-value="1">Arming Swords</div>
-                    <div data-value="2">Broadswords</div>
-                    <div data-value="3">Longswords</div>
-                    <div data-value="4">Falchions</div>
-                </div>
-            </div>
-        </div>
+    <section class="textContent">
+        <h2>Contact</h2>
+        <form action="">
+            <span class="formSubsection">
+                <span class="formItemSub2">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" name="FirstName" id="fName" maxlength="255" required>
+                </span>
 
-        <div class="availableWeapons" data-table="swords">
-            <!-- WEAPON LISTINGS APPEAR HERE -->
-        </div>
+                <span class="formItemSub2">
+                    <label for="LastName">Last Name</label>
+                    <input type="text" name="LastName" id="lName" maxlength="255" required>
+                </span>
+            </span>
+
+            <span class="formItem">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" maxlength="255" required>
+            </span>
+
+            <span class="formItem">
+                <textarea name="message" id="messageBox" maxlength="1500" placeholder="Please state your issue" required></textarea>
+            </span>
+
+                <label for="editedFileUpload" class="customFileUpload" id="editFormImg">
+                    Upload Image
+                </label>
+                <input id="editedFileUpload" type="file" name="image" accept="image/*">
+
+                <span class="formItem">
+                    <button  class="submitButton" id="submitOrder">Submit</button>
+                </span>
+        </form>
+        
     </section>
 
     <section>
@@ -158,5 +170,5 @@
     </section>
 
     <script type='module' src='src/main.js'></script>
-    <script src='src/premadeItemListings.js'></script>
+    <script src='src/contact.js'></script>  
 </body>

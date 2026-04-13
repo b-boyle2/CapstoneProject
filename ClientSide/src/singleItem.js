@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         similarItemsListings.innerHTML = '';
         data.forEach(weapon => {
             const weaponLink = document.createElement("a");
-            weaponLink.href = `src/singleProduct.php?productId=${weapon.ID}`;
+            weaponLink.href = `singleProduct.php?productId=${weapon.ID}`;
 
             const weaponItemListing = document.createElement("div");
             weaponItemListing.classList.add("weaponItemListing");
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="imgContainer">
                     <img src="${weapon.Image}" alt="${weapon.Name}">
                 </div>
-                <div class="listingContent">
+                <div class="smallListing">
                     <p>${weapon.Name}</p>
                     <p class="price">$${Math.trunc(weapon.Price)}</p>
                 </div>

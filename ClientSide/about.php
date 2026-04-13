@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Swords</title>
+    <title>About</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
@@ -11,16 +11,15 @@
 
 <body>
     <div class=container>
-        <header class="bannerImg">
-            <img src="../Images/SwordBannerImage.jpg" class="bgImg" alt="Hero" id="heroImg">
-
+        <header class="noBanner">
             <div class="siteTitle">
-                <a href="index.php"><h2>Ironveil Forge</h2></a>
+                <a href="index.php"><h3>Ironveil Forge</h3></a>
             </div>
 
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
+                        
                         <div class="cart">
                             <div id=cartItemCounter></div>
                             <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
@@ -59,31 +58,74 @@
                     </div>
                 </div>
             </div>
-            <h1 class=title>Swords</h1>
         </header>
-        
-        <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
     </div>
        
-    <section class="content">   
-        <div class="filterSelect">
-            
-            <div class="subcategoryFilter">
-                <span class="selected">All</span>
-                <div class="filterCarrot"></div>
-                <div class="options">
-                    <div data-value="">All</div>
-                    <div data-value="1">Arming Swords</div>
-                    <div data-value="2">Broadswords</div>
-                    <div data-value="3">Longswords</div>
-                    <div data-value="4">Falchions</div>
-                </div>
-            </div>
-        </div>
+    <section class="textContent">
+        <h2>About</h2>
+        <p>Ironveil Forge is built around the idea that a weapon is more than a tool, but is rather a deliberate composition of material, form, and 
+            purpose. Every piece reflects a balance between function and identity, where each choice, from blade geometry to grip structure, 
+            contributes to how the weapon performs and feels in use. Rather than approaching design as a purely visual exercise, the forge 
+            treats each weapon as a cohesive system, where individual components are considered in relation to the whole. This approach 
+            results in pieces that feel grounded and intentional. Subtle differences are not incidental; they are the result of specific 
+            decisions about weight distribution, handling, and durability. A change in material or proportion is never isolated, instead affecting 
+            the entire structure of the weapon. By maintaining this level of awareness throughout the design process, Ironveil Forge produces 
+            work that is consistent not only in appearance, but in how it functions as a complete object. At the same time, the forge 
+            recognizes that its audience brings a range of perspectives. Some approach these pieces as collectors, others as students of 
+            history, and others simply as enthusiasts drawn to the visual and tactile qualities of medieval design. Ironveil Forge exists 
+            at the intersection of these interests, creating weapons that are accessible in form while still retaining depth in their 
+            construction.
+        </p>
 
-        <div class="availableWeapons" data-table="swords">
-            <!-- WEAPON LISTINGS APPEAR HERE -->
-        </div>
+        <h3>Design Philosophy</h3>
+        <p>At its core, Ironveil Forge prioritizes clarity of design. Every component serves a role, and nothing is added without reason. 
+            This principle guides decisions at every level, from overall proportions down to the smallest structural detail. A heavier 
+            pommel alters balance and control. A different wood changes grip response and durability. A blade profile determines how force 
+            is delivered and managed. By focusing on these relationships, the forge avoids unnecessary complexity. Instead of layering 
+            decorative elements or exaggerated features, the design process centers on refinement, such as adjusting proportions, materials, and 
+            forms until each element supports the others. This results in weapons that feel cohesive, where no part exists in isolation and 
+            no detail feels out of place. This philosophy also allows for variation without inconsistency. Different weapon types require 
+            different approaches, but the underlying method remains the same. Whether designing a blade, a blunt weapon, or a polearm, the 
+            goal is always to create something that is structurally sound and internally consistent. In this way, each piece reflects a 
+            shared design language while still maintaining its own identity.
+        </p>
+
+        <h3>Craft and Consistency</h3>
+        <p>Consistency is what allows a weapon to feel reliable and well-resolved. At Ironveil Forge, this is achieved through careful 
+            attention to materials, proportions, and construction standards across the entire collection. Each piece is developed with the 
+            expectation that it will meet the same level of quality and coherence, regardless of its category or complexity. This does not 
+            mean that every weapon is identical in execution. Instead, consistency refers to the application of the same principles across 
+            different designs. Materials are selected with intention, proportions are measured against their function, and structural 
+            elements are evaluated in context. By applying this approach uniformly, the forge ensures that each piece feels like part of a 
+            larger, unified body of work. Over time, this commitment to consistency creates trust. Customers can expect that a piece from 
+            Ironveil Forge will reflect the same level of care and consideration as any other. Whether simple or detailed, each weapon is 
+            developed with the same attention to how it is built, how it feels, and how it holds together as a complete object.
+        </p>
+
+        <h3>Use and Purpose</h3>
+        <p>Weapons from Ironveil Forge are designed with practical application in mind, even when they are intended primarily for collection 
+            or display. Weight, length, and structure are considered in relation to how the weapon would realistically be handled, ensuring 
+            that each piece maintains a sense of authenticity in both form and proportion. Different designs emphasize different qualities. 
+            Some favor control and precision, with balanced proportions and refined handling characteristics. Others prioritize impact or 
+            reach, using weight and scale to create a more force-driven presence. These distinctions are not arbitrary, but are built into 
+            the structure of the weapon itself, influencing how it would perform if put to use. By maintaining this focus, Ironveil Forge 
+            ensures that each piece feels purposeful rather than purely decorative. Even for those who do not intend to handle the weapons 
+            beyond display, this sense of underlying function contributes to their authenticity. The result is a collection that resonates 
+            not only visually, but conceptually, reflecting an understanding of how these objects exist beyond their surface.
+        </p>
+
+        <h3>What Sets It Apart</h3>
+        <p>Ironveil Forge does not rely on excess to define its work. While details such as engravings, finishes, and material variations 
+            are present, they are always secondary to the structure of the weapon. Visual elements are used to reinforce the form rather 
+            than distract from it, ensuring that each piece remains grounded in its construction. This restraint allows the forge to 
+            maintain a clear identity. Instead of following trends or exaggerating features for impact, the focus remains on proportion, 
+            material, and cohesion. Each design is evaluated based on how well its elements work together, rather than how much can be 
+            added to it. As a result, the collection stands apart through consistency and intent. The weapons are not defined by a single 
+            aesthetic, but by a shared approach to design, one that values clarity over excess and structure over ornamentation. This creates 
+            pieces that feel considered, balanced, and enduring, appealing to those who appreciate both the visual and structural qualities 
+            of medieval weapon design.
+        </p>
+        
     </section>
 
     <section>
@@ -157,6 +199,5 @@
         </footer>
     </section>
 
-    <script type='module' src='src/main.js'></script>
-    <script src='src/premadeItemListings.js'></script>
+    <script type='module' src='src/main.js'></script>   
 </body>

@@ -45,7 +45,7 @@
 
             <div class="section">
                 <div class='sectionHeader'>
-                    <div id='orderNum'><h4>Order 235</h4></div>
+                    <div id='orderNum'><h4>Order #</h4></div>
 
                     <div class="filterSelect" id="statusDropdown">
                         <div class="subcategoryFilter" id="swords">

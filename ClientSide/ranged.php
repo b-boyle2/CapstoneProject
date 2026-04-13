@@ -41,25 +41,12 @@
                         </ul>
                     </div>
 
-                    <!-- ADJUST CUSTOMIZE LINKS TO GO TO CUSTOMIZATION PAGE -->
-                    <div class="dropdown">
-                        <button class="navLink" onclick="location.href='customize.php'"aria-haspopup="true" aria-expanded="false">Customize</button>
-                        <ul class="dropdownContent">
-                            <li><button class="navSubLink" onclick="location.href='swords.php'" role="menuitem">Swords</button></li>
-                            <li><button class="navSubLink" onclick="location.href='daggersKnives.php'" role="menuitem">Daggers</button></li>
-                            <li><button class="navSubLink" onclick="location.href='bluntHandWeapons.php'" role="menuitem">Blunt Hand</button></li>
-                            <li><button class="navSubLink" onclick="location.href='polearms.php'" role="menuitem">Polearms</button></li>
-                            <li><button class="navSubLink" onclick="location.href='ranged.php'" role="menuitem">Ranged</button></li>
-                        </ul>
-                    </div>
-
                     <div class="dropdown">
                         <button class="navLink" onclick="location.href='contact.php'"aria-haspopup="true" aria-expanded="false">Customer Service</button>
                         <ul class="dropdownContent">
                             <li><button class="navSubLink" onclick="location.href='faq.php'" role="menuitem">FAQ</button></li>
                             <li><button class="navSubLink" onclick="location.href='shippingReturns.php'" role="menuitem">Shipping & Returns</button></li>
                             <li><button class="navSubLink" onclick="location.href='refundPolicy.php'" role="menuitem">Refund Policy</button></li>
-                            <li><button class="navSubLink" onclick="location.href='trackOrder.php'" role="menuitem">Track Your Order</button></li>
                         </ul>
                     </div>
 
@@ -68,7 +55,6 @@
                         <ul class="dropdownContent">
                             <li><button class="navSubLink" onclick="location.href='forgingProcess.php'" role="menuitem">Forging Process</button></li>
                             <li><button class="navSubLink" onclick="location.href='ourStory.php'" role="menuitem">Our Story</button></li>
-                            <li><button class="navSubLink" onclick="location.href='meetTheTeam.php'" role="menuitem">Meet the Team</button></li>
                         </ul>
                     </div>
                 </div>
@@ -131,7 +117,6 @@
                             <div class="footerLinks">
                                 <ul>
                                     <li><a href="ourStory.php">Our Story</a></li>
-                                    <li><a href="meetTheTeam.php">Meet the Team</a></li>
                                     <li><a href="forgingProcess.php">How They're Made</a></li>
                                 </ul>
                             </div>
@@ -148,7 +133,6 @@
                                     <li><a href="faq.php">FAQ</a></li>
                                     <li><a href="shippingReturns.php">Shipping & Returns</a></li>
                                     <li><a href="refundPolicy.php">Refund Policy</a></li>
-                                    <li><a href="trackOrder.php">Track Your Order</a></li>
                                 </ul>
                             </div>
                         </div>

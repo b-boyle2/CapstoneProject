@@ -40,10 +40,10 @@ try {
     if ($checkboxChecked == true) {
         $paymentMethod = $_POST['Method'];
         $name = $_POST['CardName'];
-        $cardNumber = $_POST['CardNumber'];
+        $cardNumber = $_POST['CardNum'];
         $expiry = $_POST['Expiry'];
         $cvv = $_POST['CVV'];
-        $zipCode = $_POST['ZIPCode'];
+        $zipCode = $_POST['ZIP'];
     
         $paymentStmt = $conn->prepare("
             INSERT INTO paymentmethods (UserID, Method, CardName, CardNum, Expiry, CVV, ZIP)

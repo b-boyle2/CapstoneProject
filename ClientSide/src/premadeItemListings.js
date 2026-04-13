@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tableName = availableWeaponsDiv.dataset.table;
 
     function loadWeapons(tableName) {
-        fetch(`src/getWeapons.php?table=${tableName}`)
+        fetch(`src/getAllWeapons.php?table=${tableName}`)
             .then(res=> res.json())
             .then(data => {
                 allWeapons = data;
