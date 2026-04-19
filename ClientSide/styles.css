@@ -1,5 +1,6 @@
 @import url("cartStyles.css");
 @import url("formStyles.css");
+@import url("orderStyles.css");
 
 @font-face {
     font-family: medievalSharp;
@@ -33,6 +34,19 @@ body{
     flex-direction: column;
     background-image: url(../Images/background.jpg);
     background-size: cover;
+}
+
+.account{
+    background-image: url(../Images/ProfilePic.jpg);
+    background-size: cover;
+    clip-path: circle(50%);
+    width: 45px;
+    aspect-ratio: 1/1;
+    margin: 0 20px;
+}
+
+.account:hover{
+    cursor: pointer;
 }
 
 a{
@@ -89,6 +103,20 @@ a:hover {
 
 .siteTitle h2{
     text-shadow: 1px 1px black;
+}
+
+.siteTitle:hover {
+    background-image: url(../Images/NameHover.jpg);
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: all 0.5s;
+}
+
+.siteTitle h2:hover{
+    text-shadow: none;
 }
 
 #index{
@@ -266,6 +294,7 @@ h4{
 .accountCart{
     display: flex;
     position: relative;
+    align-items: center;
 }
 
 .cart{
@@ -605,6 +634,10 @@ p{
 
 .similarItemListing{
     gap: 50px;
+}
+
+.smallListing p{
+    margin: 0;
 }
 
 .subsection .availableWeapons{

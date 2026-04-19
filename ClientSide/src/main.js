@@ -27,6 +27,7 @@ function updateCartCounter(userID, cartCounter) {
     .catch(err => console.error(err));
 }
 document.addEventListener("DOMContentLoaded", () => {
+    const accountDiv = document.querySelector('.account');
 
     // FOR DROPDOWN ACCESSIBILITY WITH KEYBOARD CONTROL
     const navLinks = document.querySelectorAll('.navLink');
@@ -64,6 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     updateCartCounter(userID, cartCounter);
+
+    
+    accountDiv.addEventListener('click', () => {
+        window.location.href = 'orders.php';
+    })
 
     
 })

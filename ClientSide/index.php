@@ -27,7 +27,8 @@
                             <div id=cartItemCounter></div>
                             <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
                         </div>
-                        <button class="button2" id="signUp"><span>Sign Up</span></button>
+                        <div class='account'></div>
+                        <!--<button class="button2" id="signUp"><span>Sign Up</span></button>-->
                     </div>
                 </div>
 

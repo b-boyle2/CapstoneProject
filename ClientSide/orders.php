@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daggers</title>
+    <title>Orders</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/ynz6cyc.css">
@@ -11,17 +11,15 @@
 
 <body>
     <div class=container>
-        <header class="bannerImg">
-            <img src="../Images/SwordBannerImage.jpg" class="bgImg" alt="Hero" id="heroImg">
-
+        <header class="noBanner">
             <div class="siteTitle">
-                <a href="index.php"><h2>Ironveil Forge</h2></a>
+                <a href="index.php"><h3>Ironveil Forge</h3></a>
             </div>
 
             <div class="navigation">
                 <div class="topSection">
                     <div class=accountCart>
-
+                        
                         <div class="cart">
                             <div id=cartItemCounter></div>
                             <a href="cart.php"><img src="../Images/cartIcon.png" class="cartIcon" alt="cart"></a>
@@ -60,32 +58,74 @@
                     </div>
                 </div>
             </div>
-            <h1 class=title>Daggers</h1>
         </header>
-        
-        <img src="../Images/HeaderBorder.svg" class="bannerImgBorder" alt="">
     </div>
        
-    <section class="content">   
-        <div class="filterSelect">
-            
-            <div class="subcategoryFilter">
-                <span class="selected">All</span>
-                <div class="filterCarrot"></div>
-                <div class="options">
-                    <div data-value="">All</div>
-                    <div data-value="5">Anelace</div>
-                    <div data-value="6">Stiletto</div>
-                    <div data-value="7">Poignard</div>
-                    <div data-value="8">Rondel</div>
-                    <div data-value="9">Sica</div>
-                    <div data-value="10">Dagger</div>
+    <section class="content" id="ordersContainer">
+        <h2>Your Orders</h2>
+        
+        <div id='mainSection'>
+
+        
+            <div class="orderContainer">
+                <!--
+                <div class="singleOrder">
+                    <div class="orderHead">
+                        <table>
+                            <tr>
+                                <th>Order Placed</th>
+                                <th>Total</th>
+                                <th>Ship To</th>
+                            </tr>
+                            <tr>
+                                <td>March 29, 2026</td>
+                                <td>$26.25</td>
+                                <td>Lori Boyle</td>
+                            </tr>
+                        </table>
+
+                        <div>
+                            Order # 632
+                            <span class="status">Delivered</span>
+                        </div>
+                    </div>
+
+                    <div class="divider"><img src="../Images/FooterDivider.svg" id=footerDivider alt=""></div>
+
+                    <div class="orderSummary">
+                        <div class="itemList">
+                            <div class="orderItem">
+                                <div class="itemInfo">
+                                    <div class="imgContainer">
+                                        <img src="../Images/ArmingSwords/duskwardDefender.png" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="topSection">
+                                            <h3 class="name">
+                                                Duskward Defender
+                                            </h3>
+                                        </div>
+
+                                        <div class="description">
+                                            A steady and understated arming sword, the Duskward Defender is forged from dark steel with a clipped, single-edged blade built for disciplined precision. Its walnut hilt and simple disc pommel favor balance over ornament, while the minimal black leather sheath keeps its presence discreet. Reliable and unadorned, it is a weapon made for vigilance rather than vanity.
+                                        </div>
+
+                                        <button class="button2" id="buyAgainButton"><span>Buy Again</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttonContainer">
+                            <button class="button2"><span>Get Product Support</span></button>
+                            <div class="buttonBorder"><button class="button2 secondaryButton"><span>Return/Replace Items</span></button></div>
+                            <div class="buttonBorder"><button class="button2 secondaryButton"><span>Get Product Support</span></button></div>
+                            <div class="buttonBorder"><button class="button2 secondaryButton"><span>Write a Product Review</span></button></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="availableWeapons" data-table="daggers">
-            <!-- WEAPON LISTINGS APPEAR HERE -->
+            -->
         </div>
     </section>
 
@@ -161,5 +201,5 @@
     </section>
 
     <script type='module' src='src/main.js'></script>
-    <script src='src/premadeItemListings.js'></script>
+    <script src="src/orders.js"></script>
 </body>

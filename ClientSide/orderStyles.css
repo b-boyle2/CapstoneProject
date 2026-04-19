@@ -1,0 +1,174 @@
+.orderContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainSection {
+    display: flex;
+    flex-direction: row;
+}
+
+#ordersContainer{
+    width: 70%;
+}
+
+.singleOrder{
+    background-color: var(--mainDarkGray);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 20px 0;
+    border-radius: 12px;
+    min-width: 580px;
+    overflow: hidden;
+}
+
+.orderHead{
+    padding: 10px 0;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.orderHead table{
+    border-collapse: separate;
+    border-spacing: 30px 0;
+    text-align: left;
+    margin: 0 10px;
+}
+
+.orderHeadData{
+    font-size: 1.2em;
+}
+
+.orderHead div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    text-align: right;
+}
+
+.status{
+    font-size: 1.3em;
+}
+
+.singleOrder .divider{
+    padding: 0 20px;
+    
+}
+
+.orderItem{
+    display: flex;
+    flex-direction: row;
+    padding: 0 30px 30px;
+    align-self: flex-start;
+}
+
+.itemInfo{
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+}
+
+.orderItem .imgContainer{
+    width: 15%;
+    min-width: 130px;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    align-self: flex-start;
+}
+
+.orderItem .details{
+    width: 95%;
+    padding: 0 0 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.orderItem .topSection{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.orderItem h3{
+    margin: 0;
+}
+
+.orderItem .description{
+    font-size: 1em;
+    line-height: 1.3em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    margin-bottom: 7px;
+}
+
+#buyAgainButton{
+    margin: 0;
+    margin-top: 15px;
+    align-self: start;
+}
+
+.orderSummary{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.orderSummary .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    gap: 10px;
+    width: 230px;
+    padding: 0 30px 30px;
+    margin: 0;
+}
+
+.orderItem .buttonContainer .button2{
+    width: 100%;
+    margin: 5px;
+}
+
+.button2.secondaryButton{
+    background-color: var(--mainDarkGray);
+    overflow: visible;
+    margin: 0;
+}
+
+.button2.secondaryButton:hover{
+    background-color: var(--gold);
+}
+
+.buttonBorder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 3px;
+    background: var(--gold);
+    width: 100%;
+
+    clip-path: polygon(
+        24px 5%,
+        calc(100% - 24px) 5%,
+        100% 50%,
+        calc(100% - 24px) 95%,
+        24px 95%,
+        0 50%
+    );
+}
+
+.orderDetailsLink{
+    color: var(--gold)
+}
