@@ -23,11 +23,9 @@
 
 
             <button class="navLink" onclick="location.href='index.php'"><img src="Images/homeIcon.svg" alt="" class="navIcon">Dashboard</button>
-            <button class="navLink" onclick="location.href='analytics.php'"><img src="Images/chartIcon.svg" alt="" class="navIcon">Analytics</button>
             <button class="navLink" onclick="location.href='orders.php'"><img src="Images/cartIcon.svg" alt="" class="navIcon">Orders</button>
             <button class="navLink" onclick="location.href='products.php'"><img src="Images/swordIcon.svg" alt="" class="navIcon">Products</button>
             <button class="navLink" onclick="location.href='customizationOptions.php'" id="here"><img src="Images/customizationIcon.svg" alt="" class="navIcon">Customizations</button>
-            <button class="navLink" onclick="location.href='inventory.php'"><img src="Images/clipboardIcon.svg" alt="" class="navIcon">Inventory</button>
         </div>
     </nav>
     <div id='collapsedNavBar'>

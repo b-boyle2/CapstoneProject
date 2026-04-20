@@ -80,7 +80,7 @@
         <div class="subsection">
             <div class="subsectionHead">
                 <h3>Daggers</h3>
-                <button class=button3 onclick="location.href ='daggers.php'"><span>View More ></span></button>
+                <button class=button3 onclick="location.href ='daggersKnives.php'"><span>View More ></span></button>
             </div>
         
             <div class="availableWeapons" id="availableDaggers" data-table="daggers">

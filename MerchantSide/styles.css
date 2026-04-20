@@ -41,6 +41,10 @@ body{
     transition: 0.3s;
 }
 
+.content{
+    width:100%;
+}
+
 nav, #collapsedNavBar{
     position: fixed;
     z-index: 7;
@@ -63,6 +67,7 @@ nav, #collapsedNavBar{
     font-size: 13pt;
     text-align: left;
     align-items: center;
+    white-space: nowrap;
 }
 
 .navLink:hover{
@@ -218,14 +223,73 @@ h3{
     margin-bottom: 10px;
 }
 
+.sectionContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8%;
+}
+
+.section.kpi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.section.kpi span{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.iconContainer{
+    background-color: var(--gold);
+    aspect-ratio: 1/1;
+    border-radius: 4px;
+    max-width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconContainer img {
+    width: 70%;
+    object-fit: cover;
+    filter: invert(100%);
+}
+
+#revenue{
+    width: 100%;
+    min-width: 0;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+#revenueChart{
+    align-self: center;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.dashboardOrders.activeSubsection{
+    border: none;
+}
+
+#orderStatuses{
+    width: 42.5%;
+}
+
 .section{
+    display:flex;
     background-color: white;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     box-shadow: 3px 0 7px 0 rgba(0,0,0,0.15);
     border-radius: 8px;
     margin-top: 20px;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .sectionHeader{

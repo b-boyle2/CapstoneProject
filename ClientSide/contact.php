@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="dropdown">
-                        <button class="navLink" onclick="location.href='contact.php'"aria-haspopup="true" aria-expanded="false">Customer Service</button>
+                        <button class="navLink here" onclick="location.href='contact.php'"aria-haspopup="true" aria-expanded="false">Customer Service</button>
                         <ul class="dropdownContent">
                             <li><button class="navSubLink" onclick="location.href='faq.php'" role="menuitem">FAQ</button></li>
                             <li><button class="navSubLink" onclick="location.href='shippingReturns.php'" role="menuitem">Shipping & Returns</button></li>
@@ -64,15 +64,15 @@
        
     <section class="textContent">
         <h2>Contact</h2>
-        <form action="">
+        <form action="" id='contactForm'>
             <span class="formSubsection">
                 <span class="formItemSub2">
-                    <label for="FirstName">First Name</label>
+                    <label for="fName">First Name</label>
                     <input type="text" name="FirstName" id="fName" maxlength="255" required>
                 </span>
 
                 <span class="formItemSub2">
-                    <label for="LastName">Last Name</label>
+                    <label for="lName">Last Name</label>
                     <input type="text" name="LastName" id="lName" maxlength="255" required>
                 </span>
             </span>
@@ -97,6 +97,20 @@
         </form>
         
     </section>
+
+    <div class='textContent' id='successMessage' active='false'>
+        <div id='closeSuccessMessage'>X</div>
+        <h3>Thank you for contacting us</h3>
+        <p>This email is checked regularly during business hours (7:30-5 CST). We'll get back to you as soon as possible, usually within a few hours.</p>
+        <div>
+            <p>Until then, make sure to check out the following resources: </p>
+            <ul>
+                <li>Frequently Asked Questions: <a href="faq.php">www.ironveilforge.com/faq/</a></li>
+                <li>Also check the Process page: <a href="forgingProcess.php">www.ironveilforge.com/forgingprocess/</a></li>
+            </ul>
+        </div>
+        
+    </div>
 
     <section>
         <img src="../Images/FooterBorder.svg" class="bannerImgBorder" alt="">

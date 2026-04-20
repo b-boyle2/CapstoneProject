@@ -33,7 +33,7 @@
                     <div class="dropdown">
                         <button class="navLink" onclick="location.href='weapons.php'"aria-haspopup="true" aria-expanded="false">Weapons</button>
                         <ul class="dropdownContent">
-                            <li><button class="navSubLink" onclick="location.href='swords.php'" role="menuitem">Swords</button></li>
+                            <li><button class="navSubLink here" onclick="location.href='swords.php'" role="menuitem">Swords</button></li>
                             <li><button class="navSubLink" onclick="location.href='daggersKnives.php'" role="menuitem">Daggers</button></li>
                             <li><button class="navSubLink" onclick="location.href='bluntHandWeapons.php'" role="menuitem">Blunt Hand</button></li>
                             <li><button class="navSubLink" onclick="location.href='polearms.php'" role="menuitem">Polearms</button></li>

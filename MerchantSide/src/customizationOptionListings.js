@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             imgLink.textContent = option.Image;
 
             const priceModifier = document.createElement("td");
-            priceModifier.classList.add("price");
+            priceModifier.classList.add("alignRight");
             priceModifier.textContent = `+ $${option.PriceModifier}`;
 
             row.appendChild(iconCell);

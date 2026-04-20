@@ -52,7 +52,7 @@
                     <div class="dropdown">
                         <button class="navLink" onclick="location.href='about.php'"aria-haspopup="true" aria-expanded="false">About</button>
                         <ul class="dropdownContent">
-                            <li><button class="navSubLink" onclick="location.href='forgingProcess.php'" role="menuitem">Forging Process</button></li>
+                            <li><button class="navSubLink here" onclick="location.href='forgingProcess.php'" role="menuitem">Forging Process</button></li>
                             <li><button class="navSubLink" onclick="location.href='ourStory.php'" role="menuitem">Our Story</button></li>
                         </ul>
                     </div>

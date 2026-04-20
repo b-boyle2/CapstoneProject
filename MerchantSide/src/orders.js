@@ -18,17 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    previousOrdersHeader.addEventListener('click', () => {
-        if (previousOrdersHeader.classList.contains('activeSubsection')){
-            return;
-        }
-        else {
-            previousOrdersHeader.classList.add('activeSubsection');
-            activeOrdersHeader.classList.remove('activeSubsection');
-            displayOrders(previousOrdersData);
-            console.log(previousOrdersData);
-        }
-    })
+    if (previousOrdersHeader) {
+        previousOrdersHeader.addEventListener('click', () => {
+            if (previousOrdersHeader.classList.contains('activeSubsection')){
+                return;
+            }
+            else {
+                previousOrdersHeader.classList.add('activeSubsection');
+                activeOrdersHeader.classList.remove('activeSubsection');
+                displayOrders(previousOrdersData);
+                console.log(previousOrdersData);
+            }
+        })
+    }
+    
     
     function loadOrders() {
         fetch(`src/getOrders.php`)

@@ -44,7 +44,7 @@
                         <button class="navLink" onclick="location.href='contact.php'"aria-haspopup="true" aria-expanded="false">Customer Service</button>
                         <ul class="dropdownContent">
                             <li><button class="navSubLink" onclick="location.href='faq.php'" role="menuitem">FAQ</button></li>
-                            <li><button class="navSubLink" onclick="location.href='shippingReturns.php'" role="menuitem">Shipping & Returns</button></li>
+                            <li><button class="navSubLink here" onclick="location.href='shippingReturns.php'" role="menuitem">Shipping & Returns</button></li>
                             <li><button class="navSubLink" onclick="location.href='refundPolicy.php'" role="menuitem">Refund Policy</button></li>
                         </ul>
                     </div>

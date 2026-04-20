@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+#emptyCart{
+    display: none;
+}
+
 #mainSection {
     display: flex;
     flex-direction: row;

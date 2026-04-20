@@ -31,105 +31,122 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     function displayCartItems(data) {
-        //initialize subtotal breakdown upon initial display
-        runningSubtotal = 0;
-        cartQuantity = 0;
+        const emptyCart = document.querySelector('#emptyCart');
+        const populatedCart = document.querySelector('#populatedCart');
+        let cartCount = 0;
+        data.forEach(item =>{
+            cartCount += 1;
+        })
 
-        data.forEach(weapon => {
-            const cartItem = document.createElement("div");
-            cartItem.classList.add("cartItem");
+        if(cartCount == 0) {
+            emptyCart.style.display = 'flex';
+            populatedCart.style.display = 'none';
+        }
 
-            const imgContainer = document.createElement("div");
-            imgContainer.classList.add("imgContainer");
-            const img = document.createElement("img");
-            img.src = weapon.Image;
-            imgContainer.appendChild(img);
+        else {
+            emptyCart.style.display = 'none';
+            populatedCart.style.display = 'flex';
+            //initialize subtotal breakdown upon initial display
+            runningSubtotal = 0;
+            cartQuantity = 0;
 
-            const details = document.createElement("div");
-            details.classList.add("details");
-            const topSection = document.createElement("div");
-            topSection.classList.add("topSection");
+            data.forEach(weapon => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cartItem");
 
-            const itemName = document.createElement("h3");
-            itemName.classList.add("name");
-            itemName.innerHTML = weapon.Name;
-            const price = document.createElement("h3");
-            price.classList.add("price");
-            price.innerHTML = `$${weapon.PriceAtAdd}`;
-            topSection.appendChild(itemName);
-            topSection.appendChild(price);
+                const imgContainer = document.createElement("div");
+                imgContainer.classList.add("imgContainer");
+                const img = document.createElement("img");
+                img.src = weapon.Image;
+                imgContainer.appendChild(img);
 
-            const description = document.createElement("div");
-            description.classList.add("description");
-            description.innerHTML = weapon.Description;
+                const details = document.createElement("div");
+                details.classList.add("details");
+                const topSection = document.createElement("div");
+                topSection.classList.add("topSection");
 
-            const buttonContainer = document.createElement("div");
-            buttonContainer.classList.add("buttonContainer");
+                const itemName = document.createElement("h3");
+                itemName.classList.add("name");
+                itemName.innerHTML = weapon.Name;
+                const price = document.createElement("h3");
+                price.classList.add("price");
+                price.innerHTML = `$${weapon.PriceAtAdd}`;
+                topSection.appendChild(itemName);
+                topSection.appendChild(price);
 
-            const stepperInputTest = document.createElement("div");
-            stepperInputTest.classList.add("stepperInput");
-            
-            const inputRange = document.createElement("input");
-            inputRange.dataset.type = "range";
-            inputRange.dataset.min = "1";
-            inputRange.dataset.max = "100";
-            inputRange.dataset.value = weapon.Quantity;
+                const description = document.createElement("div");
+                description.classList.add("description");
+                description.innerHTML = weapon.Description;
 
-            const input = document.createElement("div");
-            input.classList.add("input");
+                const buttonContainer = document.createElement("div");
+                buttonContainer.classList.add("buttonContainer");
 
-            const minusButton = document.createElement("button");
-            minusButton.classList.add("minusButton");
-            minusButton.innerHTML = "-";
+                const stepperInputTest = document.createElement("div");
+                stepperInputTest.classList.add("stepperInput");
 
-            const range = document.createElement("div");
-            range.classList.add("range");
-            const list = document.createElement("div");
-            list.classList.add("list");
-            for (let i = inputRange.dataset.min; i <= inputRange.dataset.max; i++) {
-                list.innerHTML += `<span>${i}</span>`;
-            }
-            list.style.marginTop = `-${(inputRange.dataset.value - inputRange.dataset.min)*40}px`;
-            range.appendChild(list);
+                const inputRange = document.createElement("input");
+                inputRange.dataset.type = "range";
+                inputRange.dataset.min = "1";
+                inputRange.dataset.max = "100";
+                inputRange.dataset.value = weapon.Quantity;
 
-            const plusButton = document.createElement("button");
-            plusButton.classList.add("plusButton");
-            plusButton.innerHTML = "+";
+                const input = document.createElement("div");
+                input.classList.add("input");
 
-            input.appendChild(minusButton);
-            input.appendChild(range);
-            input.appendChild(plusButton);
+                const minusButton = document.createElement("button");
+                minusButton.classList.add("minusButton");
+                minusButton.innerHTML = "-";
 
-            stepperInputTest.appendChild(inputRange);
-            stepperInputTest.appendChild(input);
+                const range = document.createElement("div");
+                range.classList.add("range");
+                const list = document.createElement("div");
+                list.classList.add("list");
+                for (let i = inputRange.dataset.min; i <= inputRange.dataset.max; i++) {
+                    list.innerHTML += `<span>${i}</span>`;
+                }
+                list.style.marginTop = `-${(inputRange.dataset.value - inputRange.dataset.min)*40}px`;
+                range.appendChild(list);
 
-            const deleteButton = document.createElement("button");
-            deleteButton.classList.add("deleteButton");
-            const deleteIcon = document.createElement("img");
-            deleteIcon.src= "../Images/IconDelete.svg";
-            deleteButton.appendChild(deleteIcon);
+                const plusButton = document.createElement("button");
+                plusButton.classList.add("plusButton");
+                plusButton.innerHTML = "+";
 
-            buttonContainer.appendChild(stepperInputTest);
-            buttonContainer.appendChild(deleteButton);
+                input.appendChild(minusButton);
+                input.appendChild(range);
+                input.appendChild(plusButton);
 
-            details.appendChild(topSection);
-            details.appendChild(description);
-            details.appendChild(buttonContainer);
+                stepperInputTest.appendChild(inputRange);
+                stepperInputTest.appendChild(input);
 
-            cartItem.appendChild(imgContainer);
-            cartItem.appendChild(details);
-            cartItem.dataset.productID = weapon.ProductID;
-            cartItem.dataset.productPrice = weapon.PriceAtAdd;
-            cartItem.dataset.productQuantity = weapon.Quantity;
+                const deleteButton = document.createElement("button");
+                deleteButton.classList.add("deleteButton");
+                const deleteIcon = document.createElement("img");
+                deleteIcon.src= "../Images/IconDelete.svg";
+                deleteButton.appendChild(deleteIcon);
 
-            cartItemList.appendChild(cartItem);
+                buttonContainer.appendChild(stepperInputTest);
+                buttonContainer.appendChild(deleteButton);
 
-            runningSubtotal += (parseFloat(weapon.Quantity) * parseFloat(weapon.PriceAtAdd));
-            cartQuantity += parseInt(weapon.Quantity);
+                details.appendChild(topSection);
+                details.appendChild(description);
+                details.appendChild(buttonContainer);
 
-            
-            updateSubtotal();
-        });
+                cartItem.appendChild(imgContainer);
+                cartItem.appendChild(details);
+                cartItem.dataset.productID = weapon.ProductID;
+                cartItem.dataset.productPrice = weapon.PriceAtAdd;
+                cartItem.dataset.productQuantity = weapon.Quantity;
+
+                cartItemList.appendChild(cartItem);
+
+                runningSubtotal += (parseFloat(weapon.Quantity) * parseFloat(weapon.PriceAtAdd));
+                cartQuantity += parseInt(weapon.Quantity);
+
+
+                updateSubtotal();
+            });
+        }
+        
     }
 
     loadWeapons();
@@ -217,6 +234,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 product.remove();
                 updateCartCounter(userID, cartCounter);
+
+                if(cartQuantity == 0) {
+                    emptyCart.style.display = 'flex';
+                    populatedCart.style.display = 'none';
+                }
             }
         })
         /*.then(res => res.text())

@@ -19,6 +19,7 @@ $sql = "
         o.TotalPrice
     FROM orders o
     JOIN Users u ON o.UserID = u.ID
+    ORDER BY CreatedAt DESC
     ";
 
 $result = $conn->query($sql);

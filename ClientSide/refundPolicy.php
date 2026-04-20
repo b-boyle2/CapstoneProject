@@ -45,7 +45,7 @@
                         <ul class="dropdownContent">
                             <li><button class="navSubLink" onclick="location.href='faq.php'" role="menuitem">FAQ</button></li>
                             <li><button class="navSubLink" onclick="location.href='shippingReturns.php'" role="menuitem">Shipping & Returns</button></li>
-                            <li><button class="navSubLink" onclick="location.href='refundPolicy.php'" role="menuitem">Refund Policy</button></li>
+                            <li><button class="navSubLink here" onclick="location.href='refundPolicy.php'" role="menuitem">Refund Policy</button></li>
                         </ul>
                     </div>
 

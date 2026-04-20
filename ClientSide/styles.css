@@ -117,6 +117,7 @@ a:hover {
 
 .siteTitle h2:hover{
     text-shadow: none;
+    transition: all 0.5s;
 }
 
 #index{
@@ -197,15 +198,11 @@ a:hover {
     text-align: left;
     padding-left: 7px;
     width: 100%;
-}
-
-.here{
-    background-color: var(--gold);
-}
-    
+}   
 
 .navBar button:hover{
     background-color: var(--darkRed);
+    color: white;
     cursor: pointer;
 }
 
@@ -242,6 +239,10 @@ a:hover {
 
 .dropdown:hover .dropdownContent, .dropdown:focus-within .dropdownContent {
     display:block;
+}
+
+.navLink.here, .navSubLink.here{
+    color: var(--darkRed);
 }
 
 /* NAV BAR AND DROPDOWNS END */
@@ -397,7 +398,7 @@ h4{
     white-space: nowrap;
 }
 
-.button1:hover, .button2:hover{
+.button1:hover, .button2:hover, .button3:hover{
     background-color: var(--darkRed);
     cursor: pointer;
 }
@@ -500,6 +501,36 @@ p{
     font-size: 13pt;
     line-height: 165%;
     letter-spacing: -1.9%;
+}
+
+#successMessage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 7;
+    width: 50%;
+    display: none;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.8);
+}
+
+#successMessage a{
+    text-decoration: underline;
+}
+
+#successMessage a:hover{
+    color: var(--darkRed);
+}
+
+#closeSuccessMessage{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.3em;
+}
+
+#closeSuccessMessage:hover{
+    cursor: pointer;
 }
 
 .indexCard{

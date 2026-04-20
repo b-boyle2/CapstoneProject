@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subcategory.textContent = weapon.Subcategory;
 
             const price = document.createElement("td");
-            price.classList.add("price");
+            price.classList.add("alignRight");
             price.textContent = weapon.Price;
 
             row.appendChild(iconCell);
