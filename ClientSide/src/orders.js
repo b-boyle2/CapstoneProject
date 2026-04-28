@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 singleOrderDiv = document.createElement('div');
+                singleOrderDiv.dataset.id = order.ID;
                 singleOrderDiv.classList.add('singleOrder');
 
                 orderHeadDiv = document.createElement('div');
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div>
                         Order # ${order.ID}
                         
-                        <span class="status">${status}</span>
+                        <span class="status">${status.charAt(0).toUpperCase() + status.slice(1)}</span>
                     </div>
                 `;
 
@@ -117,10 +118,47 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="buttonBorder"><button class="button2 secondaryButton"><span>Write a Product Review</span></button></div>
                 `;
 
+                if(status == 'pending' || status == 'processing') {
+                    buttonContainer.innerHTML += `<div class="buttonBorder"><button class="button2 secondaryButton cancelOrderButton"><span>Cancel Order</span></button></div>`;
+                }
+
                 ordersList.appendChild(singleOrderDiv);
             });
         }
     }
+
+    ordersList.addEventListener('click', (e) => {
+        const cancelOrderButton = e.target.closest(".cancelOrderButton");
+        if (!cancelOrderButton) return;
+
+        const order = cancelOrderButton.closest(".singleOrder");
+        let orderID = order.dataset.id;
+        console.log(`Order ID = ${orderID}`)
+
+        console.log("Updated Status");
+        let formData = new FormData();
+        formData.append("orderID", orderID);
+
+        fetch(`src/cancelOrder.php`, {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                console.log("order canceled");
+                location.reload();
+            } else {
+                console.error("Update failed:", data.error);
+            }
+        })
+        /*.then(res => res.text())
+        .then(data => {
+            console.log(data);        // logs raw PHP output
+            document.body.innerHTML = data; // optional: display it in page
+        })*/
+        .catch(err => console.error(err));
+    })
 
     loadOrders();
 

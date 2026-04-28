@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    
     <nav>
         <div>
             <h1 class="siteTitle">Ironveil Forge</h1>

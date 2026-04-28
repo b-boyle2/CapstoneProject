@@ -97,7 +97,6 @@
 
                 <div class="buttons">
                     <button class="button2" id="addCartButton"><span>Add to Cart</span></button>
-                    <button class="button2"><span>Customize</span></button>
                 </div>
                 
             </div>

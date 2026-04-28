@@ -28,18 +28,32 @@ $inscriptions = $_POST['inscriptions'] ?? '';
 $length = isset($_POST['totalLength']) ? (float)$_POST['totalLength'] : 1;
 $weight = isset($_POST['weight']) ? (float)$_POST['weight'] : 1;
 $price = isset($_POST['price']) ? (float)$_POST['price'] : 1;
-$image = $_POST['image'] ?? '../Images/Placeholder.png';
+$image = '../Images/Placeholder.png';
+$image2 = '';
+$image3 = '';
+$image4 = '';
 
-if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
-    $imageTmp = $_FILES['image']['tmp_name'];
-    $imageName = basename($_FILES['image']['name']);
-    $uploadDir = "../Images/Uploads/";
-    $uploadPath = $uploadDir . $imageName;
-
-    if (move_uploaded_file($imageTmp, $uploadPath)) {
-        $image = $uploadPath;
+function uploadImage($key) {
+    if (!isset($_FILES[$key]) || $_FILES[$key]['error'] !== 0) {
+        return '';
     }
+
+    $tmp = $_FILES[$key]['tmp_name'];
+    $name = basename($_FILES[$key]['name']);
+    $dir = __DIR__ . '/../../Images/Uploads/';
+    $path = $dir . $name;
+
+    if (move_uploaded_file($tmp, $path)) {
+        return "../Images/Uploads/" . $name;
+    }
+
+    return '';
 }
+
+$image = uploadImage('image');
+$image2 = uploadImage('image2');
+$image3 = uploadImage('image3');
+$image4 = uploadImage('image4');
 
 // verify table
 $allowedTables = ['swords', 'daggers', 'blunthandweapons', 'polearms', 'ranged'];

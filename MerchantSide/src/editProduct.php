@@ -41,7 +41,7 @@ function processFile($fileInputName, $currentPath) {
     if (isset($_FILES[$fileInputName]) && $_FILES[$fileInputName]['error'] === 0) { 
         $tmp = $_FILES[$fileInputName]['tmp_name']; 
         $name = basename($_FILES[$fileInputName]['name']); 
-        $uploadDir = "../Images/Uploads/"; 
+        $uploadDir =  __DIR__ . '/../../Images/Uploads/'; 
         $uploadPath = $uploadDir . $name; 
 
         if (move_uploaded_file($tmp, $uploadPath)) { 

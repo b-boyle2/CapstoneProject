@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 }
 
 $table = isset($_GET['weaponType']) ? $_GET['weaponType'] : '';
-$id = isset($_GET['weaponID']) ? intval($_GET['weaponID']) : 0;
+$id = isset($_GET['productID']) ? intval($_GET['productID']) : 0;
 $subcategory = isset($_GET['subcategory']) ? intval($_GET['subcategory']) : 0;
 
 //validate table name to prevent SQL injection
@@ -25,7 +25,7 @@ $sql =
         p.Name, 
         p.Image, 
         w.Subcategory_ID, 
-        p.Price 
+        p.Price
         FROM products p
         JOIN $table w ON w.ProductID = p.ID
         WHERE Subcategory_ID = $subcategory AND ProductID != $id

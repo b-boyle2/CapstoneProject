@@ -16,19 +16,54 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $id = isset($_POST['orderID']) ? (int)$_POST['orderID'] : null;
 $status = $_POST['newStatus'] ?? "";
 
-// SQL update
-$sql = "
-UPDATE orders 
-SET 
-    Status = ?
-WHERE ID = ?";
-$stmt = $conn->prepare($sql);
-// Bind parameters
-$stmt->bind_param(
-    "si",
-    $status,
-    $id
-);
+if($status == 'shipped') {
+    $sql = "
+        UPDATE orders 
+        SET 
+            Status = ?,
+            ShippedAt = NOW()
+        WHERE ID = ?
+    ";
+    $stmt = $conn->prepare($sql);
+    // Bind parameters
+    $stmt->bind_param(
+        "si",
+        $status,
+        $id
+    );
+}
+elseif ($status =='delivered') {
+    $sql = "
+        UPDATE orders 
+        SET 
+            Status = ?,
+            DeliveredAt = NOW()
+        WHERE ID = ?
+    ";
+    $stmt = $conn->prepare($sql);
+    // Bind parameters
+    $stmt->bind_param(
+        "si",
+        $status,
+        $id
+    );
+}
+else {
+    $sql = "
+        UPDATE orders 
+        SET 
+            Status = ?
+        WHERE ID = ?
+    ";
+    $stmt = $conn->prepare($sql);
+    // Bind parameters
+    $stmt->bind_param(
+        "si",
+        $status,
+        $id
+    );
+}
+
 
 // execute
 if ($stmt->execute()) {

@@ -22,7 +22,7 @@ $image = $_POST['image'] ?? '../Images/Placeholder.png';
 if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
     $imageTmp = $_FILES['image']['tmp_name'];
     $imageName = basename($_FILES['image']['name']);
-    $uploadDir = "../Images/CustomizationOptions/";
+    $uploadDir =  __DIR__ . '/../../Images/CustomizationOptions/'; 
     $uploadPath = $uploadDir . $imageName;
 
     if (move_uploaded_file($imageTmp, $uploadPath)) {

@@ -145,6 +145,7 @@
     background-color: var(--mainDarkGray);
     overflow: visible;
     margin: 0;
+    width: 100%;
 }
 
 .button2.secondaryButton:hover{

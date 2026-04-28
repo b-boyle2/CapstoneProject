@@ -67,55 +67,58 @@
         <h2>Payment Method</h2>
 
         <div class="section">
-                <form id="paymentInfoForm" class="checkoutForm">
-                    <div class="formItem">
-                        <label for="paymentMethod">Select a payment method</label>
-                        <select name="Method" id="paymentMethod">
-                            <option value="visa">Visa</option>
-                            <option value="mastercard">Mastercard</option>
-                            <option value="american express">American Express</option>
-                            <option value="discover">Discover</option>
-                            <option value="jcb">JCB</option>
-                        </select>
+            <form id="paymentInfoForm" class="checkoutForm">
+                <div class="formItem">
+                    <label for="paymentMethod">Select a payment method</label>
+                    <select name="Method" id="paymentMethod">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
+                        <option value="american express">American Express</option>
+                        <option value="discover">Discover</option>
+                        <option value="jcb">JCB</option>
+                    </select>
+                </div>
+                
+                <div class="formItem">
+                    <label for="name">Name on card (first and last)</label>
+                    <input type="text" name="CardName" id="name" maxlength="255" required>
+                </div>
+                <div class="formItem">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" name="CardNum" id="cardNumber"  placeholder="XXXX XXXX XXXX XXXX" maxlength="20" required>
+                </div>
+                <div class="formSubsection">
+                    <div class="formItemSub">
+                        <label for="expiry">Expiry</label>
+                        <input type="text" name="Expiry" id="expiry" placeholder="MM / YY" maxlength="7" required>
                     </div>
-                    
-                    <div class="formItem">
-                        <label for="name">Name on card (first and last)</label>
-                        <input type="text" name="CardName" id="name" maxlength="255" required>
+                    <div class="formItemSub">
+                        <label for="cvv">CVV</label>
+                        <input type="number" name="CVV" id="cvv" oninput="if(this.value.length > 3) this.value = this.value.slice(0,3);" required>
                     </div>
-
-                    <div class="formItem">
-                        <label for="cardNumber">Card Number</label>
-                        <input type="text" name="CardNum" id="cardNumber"  placeholder="XXXX XXXX XXXX XXXX" maxlength="20" required>
+                    <div class="formItemSub">
+                        <label for="zipCode">ZIP Code</label>
+                        <input type="number" name="ZIP" id="zipCode" oninput="if(this.value.length > 5) this.value = this.value.slice(0,5);" required>
                     </div>
-
-                    <div class="formSubsection">
-                        <div class="formItemSub">
-                            <label for="expiry">Expiry</label>
-                            <input type="text" name="Expiry" id="expiry" placeholder="MM / YY" maxlength="7" required>
-                        </div>
-
-                        <div class="formItemSub">
-                            <label for="cvv">CVV</label>
-                            <input type="number" name="CVV" id="cvv" oninput="if(this.value.length > 3) this.value = this.value.slice(0,3);" required>
-                        </div>
-
-                        <div class="formItemSub">
-                            <label for="zipCode">ZIP Code</label>
-                            <input type="number" name="ZIP" id="zipCode" oninput="if(this.value.length > 5) this.value = this.value.slice(0,5);" required>
-                        </div>
-                    </div>
-
-                    <div class="formCheckbox">
-                        <input type="checkbox" name="saveAddress" id="saveAddress" value="yes" class="checkBox">
-                        <label for="saveAddress">Save my payment information so checkout is easy next time</label>
-                    </div>
-
-                    <button  class="submitButton" id="submitOrder">Pay Now</button>
-                </form>
-                <p id="formMessage"></p>
-            </div>
+                </div>
+                <div class="formCheckbox">
+                    <input type="checkbox" name="saveAddress" id="saveAddress" value="yes" class="checkBox">
+                    <label for="saveAddress">Save my payment information so checkout is easy next time</label>
+                </div>
+                <button type='submit' class="submitButton" id="submitOrder">Pay Now</button>
+            </form>
+        </div>
     </section>
+
+    <div class='textContent' id='successMessage' active='false'>
+        <div id='closeSuccessMessage'>X</div>
+        <h3>Your order has been received</h3>
+        <p>You can check the status of your order by using our order status feature. you will receive an order confirmation e-mail with the detail of your order and a link to track its progress.</p>
+        <div class='popupButtonsDiv'>
+            <div class='buttonBorder'><button class='button2 secondaryButton' id='viewOrder'>View Order</button></div>
+            <button class='button2' id='toShopping'>Continue Shopping</button>
+        </div>
+    </div>
 
     <section>
         <img src="../Images/FooterBorder.svg" class="bannerImgBorder" alt="">
@@ -189,6 +192,6 @@
     </section>
 
     <script type='module' src='src/main.js'></script>
-    <script src="https://unpkg.com/imask"></script>
     <script type='module' src='src/checkout.js'></script>
+    <script src="https://unpkg.com/imask"></script>
 </body>

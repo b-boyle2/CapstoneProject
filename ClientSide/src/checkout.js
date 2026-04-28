@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const expiryInput = document.getElementById('expiry');
     const phoneNumInput = document.getElementById('phoneNumber');
 
+    const successMessage = document.querySelector('#successMessage');
+    const closeButton = document.querySelector('#closeSuccessMessage');
+    const continueShoppingButton = document.querySelector('#toShopping');
+    const viewOrderButton = document.querySelector('#viewOrder');
+
     //const checkBox = document.getElementById('saveAddress');
     const checkBox = document.getElementsByClassName('checkBox')[0];
     const form = document.getElementsByClassName('checkoutForm')[0];
@@ -111,10 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log('saved');
                     if (page == 'paymentInfo'){
                         console.log("Payment Process Complete");
-                        window.location.href='cart.php';
-                    }
-                    else if (page == 'shippingInfo'){
-                        console.log("Payment Process Complete");
+                        event.preventDefault();
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth'});
+                        successMessage.style.display = 'block';
+                        successMessage.dataset.active = 'true';
                     }
                 })
                 /*.then(res => res.text())
@@ -126,9 +131,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 
             })
         .catch(err => console.error(err));
-        
-        
     });
+
+    document.addEventListener('click', (event) => {
+        if(successMessage.dataset.active == 'true') {
+            const isClickInsideMessage = successMessage.contains(event.target);
+            const isClickInsideButton = closeButton.contains(event.target);
+            const isClickInsideContinueShopping = continueShoppingButton.contains(event.target);
+            const isClickInsideViewOrder = viewOrderButton.contains(event.target);
+
+            if(!isClickInsideMessage || isClickInsideButton) {
+                //window.location.href='cart.php';
+                console.log('close message triggered')
+            }
+            else if(isClickInsideContinueShopping) {
+                window.location.href='weapons.php';
+            }
+            else if(isClickInsideViewOrder) {
+                window.location.href='orders.php';
+            }
+        }
+        
+    })
 
     loadSavedData();
 })

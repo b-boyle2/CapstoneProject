@@ -8,19 +8,41 @@ if ($conn->connect_error) {
     exit;
 }
 
+$limitOrders = $_GET['limitOrders'];
 
 // query only what's needed
-$sql = "
-    SELECT 
-        o.ID, 
-        o.Status, 
-        o.CreatedAt,
-        u.Username,
-        o.TotalPrice
-    FROM orders o
-    JOIN Users u ON o.UserID = u.ID
-    ORDER BY CreatedAt DESC
-    ";
+if ($limitOrders == 'true'){
+    $sql = 
+        "SELECT 
+            o.ID, 
+            o.Status, 
+            o.CreatedAt,
+            u.Username,
+            o.TotalPrice
+        FROM orders o
+        JOIN Users u ON o.UserID = u.ID
+        WHERE (o.Status =  'pending') OR (o.Status = 'processing')
+        ORDER BY CreatedAt DESC
+        LIMIT 5
+        ";
+        
+}
+
+else {
+    $sql = "
+        SELECT 
+            o.ID, 
+            o.Status, 
+            o.CreatedAt,
+            u.Username,
+            o.TotalPrice
+        FROM orders o
+        JOIN Users u ON o.UserID = u.ID
+        ORDER BY CreatedAt DESC
+        ";
+}
+
+
 
 $result = $conn->query($sql);
 

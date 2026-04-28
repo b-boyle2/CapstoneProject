@@ -228,6 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdownSelected.textContent = opt.textContent;
             dropdownOptions.style.display = "none";
             updatedStatus = opt.dataset.value;
+            saveButton.innerHTML='Save';
+            saveButton.style.color = 'black';
         }
     });
 
@@ -275,6 +277,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 console.log(`Original Status post: ${originalStatus}`);
                 console.log(`Updated Status post: ${updatedStatus}`);
+
+                saveButton.innerHTML='Saved';
+                saveButton.style.color = 'var(--gray)';
             } else {
                 console.error("Update failed:", data.error);
             }

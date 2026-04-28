@@ -1,7 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const page = document.querySelector('title');
+    let limitOrdersDisplayed = 'false';
+
+    if (page.innerHTML == 'Dashboard') {
+        limitOrdersDisplayed = 'true';
+    }
+
     const activeOrdersHeader = document.querySelector('#activeOrders');
     const previousOrdersHeader = document.querySelector('#previousOrders');
     const ordersList = document.querySelector('#orderListItems');
+
+
 
     let activeOrdersData;
     let previousOrdersData;
@@ -34,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     function loadOrders() {
-        fetch(`src/getOrders.php`)
+        fetch(`src/getOrders.php?limitOrders=${limitOrdersDisplayed}`)
             .then(res=> res.json())
             .then(data => {
                 filterOrders(data);
@@ -48,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function filterOrders(data) {
-        activeOrdersData = data.filter(order => order.Status === "pending" || order.Status === "processing" || order.Status === "shipped")
+        activeOrdersData = data.filter(order => order.Status === "pending" || order.Status === "processing" || order.Status === 'shipped')
         displayOrders(activeOrdersData);
         console.log(`Active orders: ${activeOrdersData}`);
     

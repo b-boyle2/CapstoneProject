@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateWeaponForms(addWeaponFormDivs, weaponTypeSelect.value);
 
-    document.querySelectorAll("#editWeaponForm input[type='file']").forEach(input => {
+    document.querySelectorAll("#addWeaponForm input[type='file']").forEach(input => {
         const label = document.querySelector(`label[for='${input.id}']`);
         if (!label) return;
 
@@ -236,6 +236,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("Update failed:", data.error);
             }
         })
+        /*.then(res => res.text())
+        .then(data => {
+            console.log(data);        // logs raw PHP output
+            document.body.innerHTML = data; // optional: display it in page
+        })*/
         .catch(err => console.error(err));
     });
 
@@ -250,6 +255,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         formSection.style.display = "flex";
         backButton.style.display = "flex";
+
+        form.querySelectorAll("input, select, textarea").forEach(el => {
+            el.disabled = false;
+        });
+
+        // optional but recommended: reset values too
+        form.reset();
+
+        // re-apply correct weapon section visibility
+        updateWeaponForms(addWeaponFormDivs, weaponTypeSelect.value);
 
     }
 
@@ -414,6 +429,19 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.innerHTML = data; // optional: display it in page
         })*/
         .catch(err => console.error(err));
+    });
+
+    document.querySelectorAll("#editWeaponForm input[type='file']").forEach(input => {
+        const label = document.querySelector(`label[for='${input.id}']`);
+        if (!label) return;
+
+        label.textContent = input.dataset.placeholder || "Upload Image";
+
+        input.addEventListener("change", function () {
+            label.textContent = this.files.length
+                ? this.files[0].name
+                : (input.dataset.placeholder || "Upload Image");
+        });
     });
 
     const deleteButton = document.querySelector(".deleteButton");
